@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head><title>Speech Accessibility Project Challenge 2 | Speech Accessibility Project Challenge 2</title><meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/SAPC2-website/assets/css/style.css">
+  </head>
+  <body>
+    <div class="wrapper">
+
+      <!-- HEADER: title + nav on the same line -->
+      <header class="site-header">
+        <div class="site-title-nav">
+          <div>
+            <a class="site-title" href="/SAPC2-website/">
+              Speech Accessibility Project Challenge 2
+            </a><p class="site-subtitle">Advancing universal dysarthric speech recognition from offline to real time</p></div>
+
+          <nav class="site-nav">
+            <a class="nav-highlight" href="/SAPC2-website/news/">News</a>
+            <a href="/SAPC2-website/timeline/">Timeline</a>
+            <a href="/SAPC2-website/leaderboard/">Leaderboard</a>
+            <a href="/SAPC2-website/baseline/">Baseline</a>
+            <a href="/SAPC2-website/papers/">Papers</a>
+            <a href="/SAPC2-website/faqs/">FAQs</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="page-content" aria-label="Content">
+        <h2 id="challenge-overview"><a id="overview"></a>Challenge Overview</h2>
+<p>
+  Welcome to the <strong>Speech Accessibility Project Challenge 2 (SAPC2)</strong>.
+</p>
+
+<p>
+  Building on the success of the
+  <a href="https://eval.ai/web/challenges/challenge-page/2362/overview">
+    Interspeech 2025 Speech Accessibility Project Challenge
+  </a>,
+  where the best system reduced WER from the Whisper-large-v2 baseline of
+  <strong>17.82%</strong> to <strong>8.11%</strong>, SAPC2 introduces a
+  <strong>larger, more diverse, and etiology-balanced speech corpus</strong>.
+</p>
+
+<p>
+  <strong>Competition Deadline:</strong> October 24, 2026 (AoE) | 
+  <strong>Paper Deadline:</strong> October 31, 2026 (AoE) | 
+  <strong>Workshop:</strong> NeurIPS 2026, Sydney, Australia | 
+  <strong>Contact:</strong>
+  <a href="mailto:sapchallenge@lists.illinois.edu">
+    sapchallenge@lists.illinois.edu
+  </a>
+</p>
+
+<h2 id="challenge-tracks"><a id="tracks"></a>Challenge Tracks</h2>
+<p>The challenge features two complementary tracks:</p>
+<ol>
+  <li><strong>Unconstrained ASR Track</strong>: Participants may use models of any size or architecture, aiming to advance the state of the art in dysarthric speech recognition.</li>
+  <li><strong>Streaming ASR Track</strong>: Submitted systems will be placed on a Pareto chart of system latency and system accuracy, promoting lightweight and deployable solutions for real-world use.</li>
+</ol>
+
+<p>Competitors will submit trained model parameters and inference code through Codabench (<a href="https://www.codabench.org/competitions/14176">Track 1</a>; <a href="https://www.codabench.org/competitions/14177">Track 2</a>) up to a maximum number of permitted submissions. Results on test1 will be released within three days of submission. Results on test2 will be released after the close of competition.</p>
+
+<h2 id="prizes--publication"><a id="prizes"></a>Prizes &amp; Publication</h2>
+<p>A total prize of U.S. $10,000 will be divided equally among all teams with a system on the Pareto frontier of accuracy and latency, as measured using the sequestered test2 set.</p>
+
+<p>To clarify how winners are selected across tracks:</p>
+
+<ul>
+  <li><strong>Track 1 (Unconstrained ASR):</strong> submissions are non-streaming systems and are ranked by recognition accuracy. For Pareto comparison, Track 1 latency is set to <strong>inf</strong>. Exactly <strong>one non-streaming ASR</strong> system will win.</li>
+  <li><strong>Track 2 (Streaming ASR):</strong> submissions are ranked by the competition’s accuracy-latency criteria, and <strong>one or more</strong> streaming systems may win.</li>
+</ul>
+
+<p>Teams submitting to the competition are invited to present their work at the <strong>SAPC2 competition workshop at NeurIPS 2026 in Sydney, Australia</strong>. Teams are welcome to submit a non-archival workshop paper describing their system (see <a href="/SAPC2-website/papers/">Call for Papers</a>) and should confirm their intent to attend. NeurIPS 2026 Workshops &amp; Competitions will take place on <strong>December 11–12, 2026</strong>. The SAPC2 session is tentatively scheduled for <strong>Friday, December 11, 15:30–17:45 (Room MR C4.3)</strong>, subject to change.</p>
+
+<h2 id="how-to-participate"><a id="how-to-participate"></a>How to Participate</h2>
+
+<div class="how-to-participate">
+
+<div class="step-item">
+  <div class="step-title">Step 1: Register Your Team</div>
+  <div class="step-text">
+    Please register your team for the challenge using the <a href="https://forms.gle/bajUuCF6xZYbVq2A9">Team Registration Form</a>.
+  </div>
+</div>
+
+<div class="step-item">
+  <div class="step-title">Step 2: Request Data Access</div>
+  <div class="step-text">
+    To access the SAP corpus, please submit the
+    <a href="https://speechaccessibilityproject.beckman.illinois.edu/docs/librariesprovider8/default-document-library/data-transfer-and-use-agreement-speech-accessibility-project.pdf?sfvrsn=909bd90f_20">Data Transfer and Use Agreement (DUA)</a>
+    and a one-page proposal to <a href="mailto:speechaccessibility@beckman.illinois.edu">speechaccessibility@beckman.illinois.edu</a>.<br />
+    <em>Note: Approval typically takes ~2–4 weeks.</em>
+  </div>
+</div>
+
+<div class="step-item">
+  <div class="step-title">Step 3: Develop Your System</div>
+  <div class="step-text">
+    To help you get started, we have provided a starting kit and local decoding scripts. Check out the
+    <a href="https://github.com/xiuwenz2/SAPC-template">SAPC-template on GitHub</a>.
+  </div>
+</div>
+
+<div class="step-item">
+  <div class="step-title">Step 4: Submit to Codabench</div>
+  <div class="step-text">
+    Competitors will submit trained systems through Codabench:
+    <a href="https://www.codabench.org/competitions/14176">Track 1 (Unconstrained ASR)</a>,
+    <a href="https://www.codabench.org/competitions/14177">Track 2 (Streaming ASR)</a>.<br />
+    <strong>Deadline for submissions: October 24, 2026 AoE</strong>
+  </div>
+</div>
+
+<div class="step-item">
+  <div class="step-title">Step 5: Submit Your Workshop Paper</div>
+  <div class="step-text">
+    Optionally, submit a 3–6 page, <strong>non-archival</strong> paper describing your system to
+    present at the workshop, through the process described on the
+    <a href="/SAPC2-website/papers/">Call for Papers</a> page.<br />
+    <strong>Paper submission deadline: October 31, 2026 (AoE)</strong> |
+    <strong>Acceptance notification: November 7, 2026</strong> |
+    <strong>Confirm intent to attend: November 15, 2026</strong>
+  </div>
+</div>
+
+</div>
+
+<h2 id="evaluation-metrics"><a id="metrics"></a>Evaluation Metrics</h2>
+<ul>
+  <li><strong>Accuracy metrics (Track 1 &amp; Track 2)</strong>
+    <ul>
+      <li>Accuracy transcripts are normalized with a fully formatted normalizer adapted from the HuggingFace ASR leaderboard.</li>
+      <li><strong>Character Error Rate (CER):</strong> primary metric, chosen for better correlation with human judgments and sensitivity to pronunciation variations in dysarthric speech.</li>
+      <li><strong>Word Error Rate (WER):</strong> secondary metric, reported for comparison with prior work and related literature.</li>
+      <li>CER/WER are clipped to <strong>100%</strong> at the utterance level. Scores are computed using two references (with and without disfluencies), and the lower error is selected per utterance.</li>
+    </ul>
+  </li>
+  <li><strong>Latency metrics (Track 2 only)</strong>
+    <ul>
+      <li>Latency is computed from streaming partial results on the streaming manifest (<code class="language-plaintext highlighter-rouge">*_streaming.csv</code>) and reported as median (<strong>P50</strong>, in ms).</li>
+      <li>Reference implementation: <a href="https://github.com/xiuwenz2/SAPC-template/blob/main/utils/compute_latency.py"><code class="language-plaintext highlighter-rouge">compute_latency.py</code></a>.</li>
+      <li>
+        <s>**Time To First Token (TTFT, P50, ms):** `first_non_empty_partial_time - (audio_send_start_time + mfa_speech_start)`.</s>
+      </li>
+      <li><span style="color: #E84A27;"><strong>Time To First Token, stable (TTFT-stable, P50, ms):</strong> <code class="language-plaintext highlighter-rouge">first_stable_partial_time - (audio_send_start_time + mfa_speech_start)</code>, where <code class="language-plaintext highlighter-rouge">first_stable_partial_time</code> is the earliest time at which a system’s first word has already settled to its final value. TTFT-stable replaces TTFT to reduce reward-hacking risk from guessing an early word before enough audio has been processed. Submissions with a <a href="https://github.com/xiuwenz2/SAPC-template/blob/main/utils/stable_sentence_prefix_match.py">stable sentence-prefix match rate</a> below <strong>1/3</strong> will be rejected.</span></li>
+      <li><strong>Time To Last Token (TTLT, P50, ms):</strong> <code class="language-plaintext highlighter-rouge">final_visible_time - audio_end_oracle_time</code>, where <code class="language-plaintext highlighter-rouge">audio_end_oracle_time = audio_send_start_time + audio_duration_sec</code>.</li>
+      <li>For robustness analysis, P90 latency may also be reported in detailed outputs.</li>
+      <li>For Pareto comparison, we use the average of TTFT-stable and TTLT as latency; non-streaming ASR is assigned infinity.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="organizerscontact"><a id="organizers"></a>Organizers/Contact</h2>
+<ul>
+  <li><strong>Mark Hasegawa-Johnson</strong> (<a href="mailto:jhasegaw@illinois.edu">jhasegaw@illinois.edu</a>) — University of Illinois</li>
+  <li><strong>Xiuwen Zheng</strong> (<a href="mailto:xiuwenz2@illinois.edu">xiuwenz2@illinois.edu</a>) — University of Illinois</li>
+  <li><strong>Subhashini Venugopalan</strong> — Google</li>
+  <li><strong>Dhruuv Agarwal</strong> — Google</li>
+  <li><strong>Venkatesh Ravichandran</strong> — Amazon</li>
+  <li><strong>Colin Lea</strong> — Apple</li>
+  <li><strong>Ed Cutrell</strong> — Microsoft</li>
+</ul>
+
+<p>General inquiries: <a href="mailto:sapchallenge@lists.illinois.edu">sapchallenge@lists.illinois.edu</a></p>
+
+<h2 id="acknowledgements"><a id="acknowledgements"></a>Acknowledgements</h2>
+<p>The Speech Accessibility Project is funded by a grant from the AI Accessibility Coalition. Computational resources for the challenge are provided by the National Center for Supercomputing Applications (NCSA). We would also like to thank Rob Kooper (NCSA), Wei Kang (Xiaomi Corp.), and Maisy Wieman (SoundHound AI) for their expertise and invaluable assistance in setting up the challenge.</p>
+
+<h2 id="references">References</h2>
+<ul>
+  <li>[1] Hasegawa-Johnson, M., et al. <em>Community-supported shared infrastructure in support of speech accessibility.</em> JSLHR, 67(11), 4162–4175, 2024.</li>
+  <li>[2] Zheng, X., et al. <em>The Interspeech 2025 Speech Accessibility Project Challenge.</em> Proc. Interspeech, 2025.</li>
+  <li>[3] Gohider, N., et al. <em>Towards Inclusive and Fair ASR: Insights from the SAPC Challenge for Optimizing Disordered Speech Recognition.</em> Proc. Interspeech, 2025.</li>
+  <li>[4] Ducorroy, A., et al. <em>Robust fine-tuning of speech recognition models via model merging: application to disordered speech.</em> Proc. Interspeech, 2025.</li>
+  <li>[5] La Quatra, M., et al. <em>Exploring Generative Error Correction for Dysarthric Speech Recognition.</em> Proc. Interspeech, 2025.</li>
+  <li>[6] Baumann, I., et al. <em>Pathology-Aware Speech Encoding and Data Augmentation for Dysarthric Speech Recognition.</em> Proc. Interspeech, 2025.</li>
+  <li>[7] Wagner, D., et al. <em>Personalized Fine-Tuning with Controllable Synthetic Speech from LLM-Generated Transcripts for Dysarthric Speech Recognition.</em> Proc. Interspeech, 2025.</li>
+  <li>[8] Wang, S., et al. <em>A Self-Training Approach for Whisper to Enhance Long Dysarthric Speech Recognition.</em> Proc. Interspeech, 2025.</li>
+  <li>[9] Takahashi, K., et al. <em>Fine-tuning Parakeet-TDT for Dysarthric Speech Recognition in the Speech Accessibility Project Challenge.</em> Proc. Interspeech, 2025.</li>
+  <li>[10] Tan, T., et al. <em>CBA-Whisper: Curriculum Learning-Based AdaLoRA Fine-Tuning on Whisper for Low-Resource Dysarthric Speech Recognition.</em> Proc. Interspeech, 2025.</li>
+  <li>[11] Thennal, D.K., et al. <em>Advocating Character Error Rate for Multilingual ASR Evaluation.</em> Findings of ACL: NAACL 2025.</li>
+</ul>
+
+      </main>
+
+      <footer class="site-footer">
+        <p>&copy; 2026 Speech Accessibility Project Challenge 2</p>
+      </footer>
+    </div>
+  </body>
+</html>

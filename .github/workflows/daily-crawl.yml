@@ -1,0 +1,57 @@
+name: Daily crawl
+
+# Section 20 — runs the full crawler once a day. Kept as its own GitHub
+# Actions workflow (Section 7: persistent job logs, manual reruns,
+# independent from the Vercel frontend deployment, easier debugging) rather
+# than a Vercel Cron function.
+on:
+  schedule:
+    - cron: "0 3 * * *" # 03:00 UTC daily
+  workflow_dispatch: {} # Section 22/59 — manual reruns
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      PLAYWRIGHT_ENABLED: "true"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright Chromium (fallback renderer)
+        run: npx playwright install --with-deps chromium
+
+      - name: Run all enabled sources (Section 20)
+        run: npm run crawl:all
+
+      - name: Reconcile stale records (Section 19)
+        run: npm run reconcile:stale
+
+      - name: Report source health (Section 21/40)
+        run: npm run health:report
+
+      # Section 40 — "daily crawl fails globally" is one of the required
+      # alert conditions. A GitHub issue is the zero-infrastructure option
+      # the spec explicitly allows; swap for a real notification channel
+      # (email, Slack, PagerDuty) once one is wired up.
+      - name: Open an issue if the crawl job failed
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Daily crawl failed — run ${context.runId}`,
+              body: `The scheduled daily crawl failed. See the run log: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`,
+              labels: ["crawler", "alert"],
+            });

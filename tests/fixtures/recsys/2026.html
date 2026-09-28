@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="RecSys Challenge 2026 - Conversational Music Recommendation">
+    <meta name="keywords" content="Recommender Systems, RecSys Challenge, Conversational Recommendation, Music Recommendation">
+    <meta name="author" content="RecSysChallenge 2026 Organizers">
+    <title>RecSys Challenge 2026</title>
+
+    <!-- CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/ekko-lightbox.min.css" rel="stylesheet">
+    <link href="./css/main.css" rel="stylesheet">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="images/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+<div id="top" class="container">
+    <div class="header clearfix">
+        <h3>
+            <a href="https://www.recsyschallenge.com/2026/" style="text-decoration:none;">
+                RecSys Challenge 2026
+            </a>
+        </h3>
+
+        <nav class="site-nav" aria-label="Main navigation">
+            <ul>
+                <li><a href="#program">Program</a></li>
+                <li><a href="#keynotes">Keynote Speakers</a></li>
+                <li><a href="#winners">Winners</a></li>
+                <li><a href="#task">Challenge Task</a></li>
+                <li><a href="#dataset">Dataset</a></li>
+                <li><a href="#organizers">Organization</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- ABOUT -->
+    <div id="about" class="lead">
+        <h1>
+            About
+            <sup>
+                <a class="dropup" style="font-size:10px;" href="#top">
+                    <span class="caret"></span> top
+                </a>
+            </sup>
+        </h1>
+    </div>
+
+    <p align="justify">
+        The RecSys 2026 Challenge will be organized by Seungheon Doh (Korea Advanced Institute of Science and
+        Technology, South Korea),
+        Sergio Oramas (Pandora/SiriusXM), Bruno Sguerra (Deezer Research), Abhinav Bohra (Amazon),
+        Claudio Pomo (Politecnico di Bari, Italy), and Francesco Barile (Maastricht University, Netherlands).
+    </p>
+
+    <p align="justify">
+        The RecSys Challenge 2026: Music-CRS focuses on the evolving landscape of music discovery, where static
+        recommendation lists are being replaced by dynamic, conversational interactions. As users increasingly interact
+        with AI through natural language, there is a critical need for systems that can seamlessly integrate
+        Natural Language Understanding (NLU) with high-precision Recommender Systems (RecSys).
+        This challenge aims to push the boundaries of how AI understands nuanced user preferences,
+        explores musical tastes through dialogue, and provides contextually relevant track recommendations.
+    </p>
+
+    <p align="justify">
+        By utilizing the TalkPlayData-Challenge dataset, a large-scale conversation resource generated through
+        an advanced agentic pipeline, we invite the global research community to tackle the complexities of
+        multi-turn preference elicitation. As a research community-driven initiative, the challenge dataset features
+        LLM-generated multi-turn dialogues paired with music metadata and user-item interaction data derived from
+        publicly available research datasets. The dataset does not include proprietary or confidential data provided
+        directly by SiriusXM, Deezer, or any challenge sponsor.
+        This challenge serves as a bridge between the NLP and RecSys communities, fostering next-generation
+        innovation in interactive and personalized music information retrieval.
+    </p>
+
+    <br>
+
+    <!-- CHALLENGE TASK -->
+    <h2 id="task">
+        Challenge Task
+        <sup>
+            <a class="dropup" style="font-size:10px;" href="#top">
+                <span class="caret"></span> top
+            </a>
+        </sup>
+    </h2>
+
+    <p align="justify">
+        The primary goal is to develop a Conversational Music Recommendation system that acts as an intelligent
+        agent capable of navigating user tastes through dialogue.
+    </p>
+
+    <p align="justify">
+        <strong>Main Task:</strong> Conversational Music Recommendation. The system must understand user music preferences
+        from previous conversation turns and user profiles to recommend relevant tracks from a catalog
+        while generating natural, helpful responses.
+    </p>
+
+    <ul class="section-list">
+        <li>
+            <strong>Recommendation (Ranked Retrieval).</strong>
+            Given the dialogue history and user context, the system must output a ranked list of the
+            top 20 music tracks from the provided catalog. This requires capturing both explicit
+            requests and latent preferences (e.g., mood, genre-specific nuances) within the conversation.
+        </li>
+        <li>
+            <strong>Response Generation.</strong>
+            The system must generate a natural language response to accompany the
+            recommendations. This response should justify the picks based on the user's profile or
+            previous turns and maintain a coherent conversational flow.
+        </li>
+    </ul>
+
+    <p align="justify">
+        <strong>Candidate catalog rule.</strong>
+        During inference, recommender systems must retrieve candidates from the entire track catalog.
+        Participants must not filter, subset, or restrict tracks using <code>track_split_types</code> or
+        any other mechanism. For BM25/BERT baselines, the configuration must include
+        <code>track_split_types: ["all_tracks"]</code>; submissions that do not use
+        <code>all_tracks</code> may be considered invalid.
+    </p>
+
+    <br>
+
+    <!-- EVALUATION -->
+    <h2 id="evaluation">
+        Evaluation
+        <sup>
+            <a class="dropup" style="font-size:10px;" href="#top">
+                <span class="caret"></span> top
+            </a>
+        </sup>
+    </h2>
+
+    <p align="justify">
+        The challenge employs a multi-dimensional evaluation framework to assess both what a system
+        recommends and how it communicates those recommendations. The official composite score is:
+    </p>
+
+    <p align="center">
+        <strong>Score = 0.50 x nDCG@20 + 0.10 x Catalog Diversity + 0.10 x Lexical Diversity + 0.30 x LLM-as-a-Judge</strong>
+    </p>
+
+    <p align="justify">
+        <strong>Development vs. blind evaluation.</strong>
+        The public evaluator supports transparent development-set evaluation. Blind A served as an
+        interim leaderboard phase, while <strong>Blind B is the official final evaluation split</strong>.
+        The final ranking is based on the Blind B leaderboard.
+    </p>
+
+    <table class="table table-striped lead timeline-table">
+        <thead>
+        <tr>
+            <th>Dimension</th>
+            <th>Weight</th>
+            <th>What it measures</th>
+            <th>How it is computed</th>
+            <th>Role in evaluation</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><strong>nDCG@20</strong></td>
+            <td>0.50</td>
+            <td>Ranking quality of the recommended tracks.</td>
+            <td>
+                Computed from the ranked list of predicted tracks against the ground-truth relevant item.
+                Higher-ranked correct recommendations receive more credit.
+            </td>
+            <td>Primary recommendation metric.</td>
+        </tr>
+        <tr>
+            <td><strong>Catalog Diversity</strong></td>
+            <td>0.10</td>
+            <td>How broadly a system covers the music catalog.</td>
+            <td>
+                Number of unique recommended tracks across all predictions divided by the total catalog size.
+            </td>
+            <td>Complementary diversity indicator.</td>
+        </tr>
+        <tr>
+            <td><strong>Lexical Diversity</strong></td>
+            <td>0.10</td>
+            <td>How varied the generated language is.</td>
+            <td>
+                Measured with <strong>Distinct-2</strong>, i.e., unique bigrams divided by total bigrams across
+                generated responses.
+            </td>
+            <td>Complementary response-generation indicator.</td>
+        </tr>
+        <tr>
+            <td><strong>LLM-as-a-Judge</strong></td>
+            <td>0.30</td>
+            <td>Quality of the generated explanation.</td>
+            <td>
+                Blind-set responses are judged by a <strong>Gemini</strong> model used as an automatic judge.
+                The judge evaluates two text-only dimensions:
+                <strong>Personalization</strong> and <strong>Explanation Quality</strong>.
+                These dimensions evaluate the written response independently from recommendation accuracy.
+                To preserve the integrity of the blind evaluation, we disclose the judge family but do not
+                publish the evaluation prompt.
+            </td>
+            <td>Blind-set response-quality evaluation.</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <p align="justify">
+        <strong>Aggregation policy.</strong>
+        Each conversation turn has exactly one ground-truth track. The evaluation reports nDCG@1,
+        nDCG@10, and nDCG@20, with <strong>nDCG@20</strong> as the primary retrieval metric.
+        Results are macro-averaged across sessions and turns. LLM judge scores use a 1-5 integer
+        scale and are normalized to [0, 1] before being weighted in the composite score.
+    </p>
+
+    <p align="justify">
+        To preserve the integrity of the blind evaluation, the judge family is disclosed, but the
+        detailed evaluation prompt is not published. Blind-set scoring is performed on the official
+        Codabench leaderboard infrastructure.
+    </p>
+
+    <br>
+
+    <!-- DATASET -->
+    <h2 id="dataset">
+        Dataset: TalkPlayData-Challenge
+        <sup>
+            <a class="dropup" style="font-size:10px;" href="#top">
+                <span class="caret"></span> top
+            </a>
+        </sup>
+    </h2>
+
+    <p align="justify">
+        The challenge uses <strong>TalkPlayData-Challenge</strong>, a large-scale multi-turn dialogue
+        dataset for conversational music recommendation, with pre-extracted multimodal track and user
+        embeddings provided. It is based on the publicly available TalkPlayData dataset and was prepared
+        for this research challenge by members of the organizing committee affiliated with KAIST.
+    </p>
+
+    <p align="justify">
+        The leaderboard evaluation proceeds in two blind stages. <strong>Blind A</strong> supported the
+        interim leaderboard during the main phase of the challenge. <strong>Blind B</strong> is the
+        final hidden evaluation set and the <strong>final leaderboard is based on Blind B</strong>.
+        The dataset is released under <strong>CC BY-NC 4.0</strong> for non-commercial research use only;
+        redistribution outside the scope of the challenge is not permitted.
+    </p>
+
+    <p align="justify">
+        <strong>Dataset Components</strong>
+    </p>
+
+    <ul class="section-list">
+        <li>
+            <strong>Conversation Datasets:</strong> Include multi-turn dialogue instances for each
+            <code>session_id</code> and <code>turn_number</code> pair in the corresponding split.
+        </li>
+        <li>
+            <strong>Track Metadata:</strong> Provides the official catalog and valid track identifiers
+            for recommendation outputs.
+        </li>
+        <li>
+            <strong>User Metadata:</strong> Provides user-side context where available. Blind B includes
+            cold-start cases where user IDs and profiles are not provided.
+        </li>
+        <li>
+            <strong>Pre-extracted Embeddings:</strong> To ensure focus on model architecture, we provide
+            pre-computed multimodal track embeddings (audio/content) and user embeddings
+            (collaborative filtering).
+        </li>
+    </ul>
+
+    <p><em>For further details, please refer to the
+        <a href="https://nlp4musa.github.io/music-crs-challenge/" target="_blank" rel="noopener">
+            dedicated website
+        </a>.</em>
+    </p>
+
+    <br>
+
+    <!-- USEFUL RESOURCES (temporarily hidden)
+    <div id="resources" class="lead">
+        <h1>
+            Useful Resources
+            <sup>
+                <a class="dropup" style="font-size:10px;" href="#top">
+                    <span class="caret"></span> top
+                </a>
+            </sup>
+        </h1>
+    </div>
+
+    <p align="justify">
+        The following resources are provided to support participation in the challenge.
+    </p>
+
+    <h2>
+        Conversation Datasets
+        <sup>
+            <a class="dropup" style="font-size:10px;" href="#top">
+                <span class="caret"></span> top
+            </a>
+        </sup>
+    </h2>
+
+    <ul class="section-list">
+        <li>
+            <strong>Train / Development Dataset:</strong>
+            <a href="https://huggingface.co/datasets/talkpl-ai/TalkPlayData-Challenge-Dataset" target="_blank" rel="noopener">
+                TalkPlayData-Challenge-Dataset
+            </a>
+        </li>
+        <li>
+            <strong>Blind Dataset A:</strong>
+            <a href="https://huggingface.co/datasets/talkpl-ai/TalkPlayData-Challenge-Blind-A" target="_blank" rel="noopener">
+                TalkPlayData-Challenge-Blind-A
+            </a>
+        </li>
+        <li>
+            <strong>Blind Dataset B:</strong>
+            <a href="https://huggingface.co/datasets/talkpl-ai/TalkPlayData-Challenge-Blind-B" target="_blank" rel="noopener">
+                TalkPlayData-Challenge-Blind-B
+            </a>
+        </li>
+    </ul>
+
+    <h2>
+        Shared Recommendation Resources
+        <sup>
+            <a class="dropup" style="font-size:10px;" href="#top">
+                <span class="caret"></span> top
+            </a>
+        </sup>
+    </h2>
+
+    <p align="justify">
+        The following resources are shared across Train, Development, Blind A, and Blind B.
+    </p>
+
+    <ul class="section-list">
+        <li>
+            <strong>User Metadata:</strong>
+            <a href="https://huggingface.co/datasets/talkpl-ai/TalkPlayData-Challenge-User-Metadata" target="_blank" rel="noopener">
+                TalkPlayData-Challenge-User-Metadata
+            </a>
+        </li>
+        <li>
+            <strong>Track Metadata:</strong>
+            <a href="https://huggingface.co/datasets/talkpl-ai/TalkPlayData-Challenge-Track-Metadata" target="_blank" rel="noopener">
+                TalkPlayData-Challenge-Track-Metadata
+            </a>
+        </li>
+        <li>
+            <strong>User Embeddings:</strong>
+            <a href="https://huggingface.co/datasets/talkpl-ai/TalkPlayData-Challenge-User-Embeddings" target="_blank" rel="noopener">
+                TalkPlayData-Challenge-User-Embeddings
+            </a>
+        </li>
+        <li>
+            <strong>Track Embeddings:</strong>
+            <a href="https://huggingface.co/datasets/talkpl-ai/TalkPlayData-Challenge-Track-Embeddings" target="_blank" rel="noopener">
+                TalkPlayData-Challenge-Track-Embeddings
+            </a>
+        </li>
+    </ul>
+
+    <h2>
+        Code and Participation
+        <sup>
+            <a class="dropup" style="font-size:10px;" href="#top">
+                <span class="caret"></span> top
+            </a>
+        </sup>
+    </h2>
+
+    <ul class="section-list">
+        <li>
+            <strong>Official Codabench Competition:</strong>
+            <a href="https://www.codabench.org/competitions/15786/" target="_blank" rel="noopener">
+                RecSys Challenge 2026: Conversational Music Recommendation
+            </a>
+        </li>
+        <li>
+            <strong>Registration Website:</strong>
+            <a href="https://nlp4musa.github.io/music-crs-challenge/" target="_blank" rel="noopener">
+                Music-CRS Challenge Website
+            </a>
+        </li>
+        <li>
+            <strong>Baseline Code:</strong>
+            <a href="https://github.com/nlp4musa/music-crs-baselines" target="_blank" rel="noopener">
+                music-crs-baselines
+            </a>
+        </li>
+        <li>
+            <strong>Evaluation Code:</strong>
+            <a href="https://github.com/nlp4musa/music-crs-evaluator" target="_blank" rel="noopener">
+                music-crs-evaluator
+            </a>
+        </li>
+    </ul>
+
+    -->
+
+    <!-- PRIZE -->
+    <h2 id="prize">
+        Prize
+        <sup>
+            <a class="dropup" style="font-size:10px;" href="#top">
+                <span class="caret"></span> top
+            </a>
+        </sup>
+    </h2>
+
+    <p align="justify">
+        The total prize pool is <strong>$2,000 USD</strong>, funded by external sponsors including
+        SiriusXM and Deezer. Sponsors provide financial support only and do not control or influence
+        the dataset, evaluation methodology, rankings, or outcomes of the challenge.
+    </p>
+
+    <ul class="section-list">
+        <li><strong>Academic Track - 1st Place:</strong> $1,000</li>
+        <li><strong>Industry Track - 1st Place:</strong> $1,000</li>
+    </ul>
+
+    <p align="justify">
+        Winners are responsible for any applicable taxes in their jurisdiction.
+    </p>
+
+    <br><br>
+
+    <!-- WINNERS -->
+    <div id="winners" class="lead">
+        <h1>
+            Winners
+            <sup>
+                <a class="dropup" style="font-size:10px;" href="#top">
+                    <span class="caret"></span> top
+                </a>
+            </sup>
+        </h1>
+    </div>
+
+    <section class="final-results" aria-labelledby="leaderboard-title">
+        <div class="leaderboard-heading">
+            <div>
+                <h2 id="leaderboard-title">Blind-Dataset-B (Final Leaderboard)</h2>
+                <p id="leaderboard-summary" class="leaderboard-summary" aria-live="polite">
+                    All &middot; 40 teams &middot; Composite Score, descending
+                </p>
+            </div>
+            <span class="final-badge">Final</span>
+        </div>
+
+        <div class="results-track-tabs" role="tablist" aria-label="Leaderboard track">
+            <button class="results-track-tab active" type="button" role="tab" aria-selected="true"
+                    data-results-track="all">All</button>
+            <button class="results-track-tab" type="button" role="tab" aria-selected="false"
+                    data-results-track="academic">Academic</button>
+            <button class="results-track-tab" type="button" role="tab" aria-selected="false"
+                    data-results-track="industry">Industry</button>
+        </div>
+
+        <p class="score-formula">
+            Composite Score = 0.50 &times; nDCG@20 + 0.10 &times; Catalog Diversity +
+            0.10 &times; Lexical Diversity + 0.30 &times; LLM-as-a-Judge.
+            LLM-as-a-Judge scores are normalized before aggregation.
+        </p>
+
+        <div class="leaderboard-table-wrap" tabindex="0" role="region"
+             aria-label="Blind-Dataset-B final results table">
+            <table class="table table-striped final-leaderboard">
+                <thead>
+                <tr>
+                    <th scope="col" class="rank-column">#</th>
+                    <th scope="col">Team ID</th>
+                    <th scope="col">Type</th>
+                    <th scope="col" class="numeric-column">Composite<br>Score</th>
+                    <th scope="col" class="numeric-column">nDCG@20</th>
+                    <th scope="col" class="numeric-column">Catalog<br>Diversity</th>
+                    <th scope="col" class="numeric-column">Lexical<br>Diversity</th>
+                    <th scope="col" class="numeric-column">LLM-as-a-<br>Judge</th>
+                    <th scope="col" class="code-column">Code</th>
+                </tr>
+                </thead>
+                <tbody id="final-leaderboard-body">
+                <tr>
+                    <td colspan="9" class="leaderboard-loading">Loading leaderboard...</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p class="leaderboard-scroll-hint">Scroll horizontally to see all metrics on smaller screens.</p>
+        <p class="leaderboard-note">
+            <span class="verification-key">*</span> Additional verification is currently in progress.
+            Source:
+            <a href="https://nlp4musa.github.io/music-crs-challenge/results.html"
+               target="_blank" rel="noopener">official Music-CRS Challenge results</a>.
+        </p>
+    </section>
+
+    <br><br>
+
+    <!-- PARTICIPATION (temporarily hidden)
+    <div id="participation" class="lead">
+        <h1>
+            Participation
+            <sup>
+                <a class="dropup" style="font-size:10px;" href="#top">
+                    <span class="caret"></span> top
+                </a>
+            </sup>
+        </h1>
+    </div>
+
+    <div class="wrapper">
+        <strong>Registration &amp; Data Access</strong><br>
+        <a href="https://nlp4musa.github.io/music-crs-challenge/" target="_blank" rel="noopener">
+            <button type="button" class="btn btn-lg btn-primary button">Go to Challenge Website</button>
+        </a>
+        <p class="register-footnote" style="margin-top:15px;">
+            Registration details and participation resources are available on the linked website.
+        </p>
+    </div>
+
+    <h2>
+        Registration and Teams
+        <sup>
+            <a class="dropup" style="font-size:10px;" href="#top">
+                <span class="caret"></span> top
+            </a>
+        </sup>
+    </h2>
+
+    <ul class="section-list">
+        <li>One account is allowed per participant. Multiple accounts may result in disqualification.</li>
+        <li>Each team must register a single account and submit from that account only.</li>
+        <li>The maximum team size is <strong>10 members</strong>.</li>
+        <li>Team mergers must be reported to the organizers before the challenge ends.</li>
+        <li>
+            Phase B requires frozen team membership. Solo participants must register as a one-person team.
+            Team registration is available through the official
+            <a href="https://forms.gle/bMG5UrE3WCyc7js39" target="_blank" rel="noopener">team registration form</a>.
+        </li>
+    </ul>
+
+    <h2>
+        Participation Tracks
+        <sup>
+            <a class="dropup" style="font-size:10px;" href="#top">
+                <span class="caret"></span> top
+            </a>
+        </sup>
+    </h2>
+
+    <ul class="section-list">
+        <li>
+            <strong>Academic Track:</strong> at least 50% of team members are currently enrolled
+            students or academic staff.
+        </li>
+        <li>
+            <strong>Industry Track:</strong> all other teams.
+        </li>
+        <li>Tracks are ranked separately based on the final <strong>Blind B</strong> leaderboard.</li>
+    </ul>
+
+    <h2>
+        Submission Format and Limits
+        <sup>
+            <a class="dropup" style="font-size:10px;" href="#top">
+                <span class="caret"></span> top
+            </a>
+        </sup>
+    </h2>
+
+    <ul class="section-list">
+        <li>
+            Submissions must be uploaded as <code>submission.zip</code> and must contain a file named
+            exactly <code>prediction.json</code>. Any other filename will fail scoring.
+        </li>
+        <li>
+            <code>prediction.json</code> must provide predictions for every
+            <code>(session_id, turn_number)</code> pair in the evaluation set.
+        </li>
+        <li>
+            Each prediction must include an ordered list of up to <strong>20</strong> unique valid track IDs
+            and a <code>predicted_response</code> string.
+        </li>
+        <li><strong>Blind A:</strong> 10 submissions per day, 500 submissions total.</li>
+        <li><strong>Blind B:</strong> 3 submissions total; this is the final phase.</li>
+        <li>
+            Participants must manually select which Blind B submission should be considered for the final
+            leaderboard evaluation.
+        </li>
+        <li>Top-ranked teams may be required to upload code for verification of results.</li>
+    </ul>
+
+    <br><br>
+
+    -->
+
+    <!-- TIMELINE -->
+    <div id="dates">
+        <h1>
+            Timeline
+            <sup>
+                <a class="dropup" style="font-size:10px;" href="#top">
+                    <span class="caret"></span> top
+                </a>
+            </sup>
+        </h1>
+
+        <p align="justify">
+            The dates below follow the official Codabench Timeline page. Dates may change; participants should
+            refer to Codabench for the latest schedule.
+        </p>
+
+        <table class="table table-striped lead timeline-table">
+            <thead>
+            <tr>
+                <th>When?</th>
+                <th>What?</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="timeline-past">
+                <td>31 March, 2026</td>
+                <td>Website published.</td>
+            </tr>
+            <tr>
+                <td>10 April, 2026</td>
+                <td>Start of the RecSys Challenge; Train, Development, and Blind A datasets released.</td>
+            </tr>
+            <tr>
+                <td>17 April, 2026</td>
+                <td>Submission system opens; leaderboard live for Blind A.</td>
+            </tr>
+            <tr>
+                <td>23 June, 2026</td>
+                <td>Blind Dataset B released; Blind B final phase opens.</td>
+            </tr>
+            <tr>
+                <td>30 June, 2026</td>
+                <td>End of the RecSys Challenge.</td>
+            </tr>
+            <tr>
+                <td>6 July, 2026</td>
+                <td>Final leaderboard and winners announced; EasyChair opens for paper submissions.</td>
+            </tr>
+            <tr>
+                <td>9 July, 2026</td>
+                <td>Code upload deadline for final predictions.</td>
+            </tr>
+            <tr>
+                <td><s>20 July</s> 24 July, 2026</td>
+                <td>Paper submission deadline.</td>
+            </tr>
+            <tr>
+                <td><s>3 August</s> 5 August, 2026</td>
+                <td>Paper acceptance notifications.</td>
+            </tr>
+            <tr>
+                <td>10 August, 2026</td>
+                <td>Camera-ready papers due.</td>
+            </tr>
+            <tr>
+                <td><s>September 2026</s> 2 October, 2026</td>
+                <td>
+                    RecSys Challenge Workshop at
+                    <a href="https://recsys.acm.org/recsys26/" target="_blank" rel="noopener">ACM RecSys 2026</a>.
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <br>
+
+    <!-- WORKSHOP PROGRAM -->
+    <section id="program" class="workshop-program" aria-labelledby="program-title">
+        <div class="program-heading">
+            <div>
+                <p class="program-eyebrow">RecSys Challenge Workshop</p>
+                <h1 id="program-title">Workshop Program <span>and Accepted Papers</span></h1>
+                <p class="program-description">Talks, research papers and breaks throughout the workshop day.</p>
+            </div>
+            <a class="program-top-link" href="#top">Back to top ↑</a>
+        </div>
+        <div class="program-details" aria-label="Workshop details">
+            <span><strong>Friday, 2 October 2026</strong></span>
+            <span>All times are local</span>
+        </div>
+        <ol class="program-schedule" aria-label="Workshop schedule and accepted papers">
+            <li class="program-item">
+                <span class="program-time">8:30&ndash;8:35</span>
+                <div class="program-entry"><strong>Opening Remarks</strong></div>
+            </li>
+            <li class="program-item schedule-keynote">
+                <span class="program-time">8:35&ndash;9:25</span>
+                <div class="program-entry">
+                    <span class="program-type">Keynote 1</span><span class="text-muted">40 min + 10 min Q&amp;A</span>
+                    <strong class="program-speaker">Enrico Palumbo</strong>
+                    <span class="text-muted">Spotify</span>
+                    <span class="program-talk-title">From Language to Items: Building Conversational Recommendation Experiences at Spotify</span>
+                </div>
+            </li>
+            <li class="program-item">
+                <span class="program-time">9:25&ndash;9:40</span>
+                <div class="program-entry"><strong>Challenge Presentation: Analysis and Insights</strong></div>
+            </li>
+            <li class="program-item schedule-session">
+                <span class="program-time">9:40&ndash;10:00</span>
+                <div class="program-entry"><strong>Paper Session 1: Auditing the benchmark (labels vs requests, metric consistency)</strong></div>
+            </li>
+            <li class="program-item">
+                <span class="program-time">9:40&ndash;9:50</span>
+                <div class="program-entry"><strong>Auditing Alignment among Item Relevance, Goal Progress, and LLM-Judged Responses in Music-CRS</strong> <span class="text-muted">(Paper 1280, Industry)</span> &mdash; Tomoya Terai</div>
+            </li>
+            <li class="program-item">
+                <span class="program-time">9:50&ndash;10:00</span>
+                <div class="program-entry"><strong>When the Label Ignores the Request: Auditing Policy-Selected Targets in Synthetic Conversational Music Recommendation</strong> <span class="text-muted">(Paper 1286, Industry)</span> &mdash; Sanjeev Suresh</div>
+            </li>
+            <li class="program-item schedule-break">
+                <span class="program-time">10:00&ndash;10:30</span>
+                <div class="program-entry">Coffee Break</div>
+            </li>
+            <li class="program-item schedule-session">
+                <span class="program-time">10:30&ndash;12:00</span>
+                <div class="program-entry"><strong>Paper Session 2: Building the system, from multi-source retrieval to grounded responses</strong></div>
+            </li>
+            <li class="program-item">
+                <span class="program-time">10:30&ndash;10:40</span>
+                <div class="program-entry"><strong>Talk Less, Rank Better: A Decoupled Pipeline for Conversational Music Recommendation</strong> <span class="text-muted">(Paper 1289, Academic)</span> &mdash; Abdallah Alkhetiar, Luigi Inguaggiato, Nicol&ograve; Locatelli, Roberto Manea, Alessio Pizzini, David Ravelli, Gianmarco Schifone, Matteo Vitali, Andrea Zhang, Michael Benigni, Andrea Pisani and Maurizio Ferrari Dacrema</div>
+            </li>
+            <li class="program-item">
+                <span class="program-time">10:40&ndash;10:50</span>
+                <div class="program-entry"><strong>A Practical Multi-Source Pipeline for Conversational Music Recommendation in the RecSys Challenge 2026</strong> <span class="text-muted">(Paper 1270, Industry)</span> &mdash; Ryohei Wakatsuki</div>
+            </li>
+            <li class="program-item">
+                <span class="program-time">10:50&ndash;11:00</span>
+                <div class="program-entry"><strong>A Multi-Source Retrieve&ndash;Fuse&ndash;Rerank System for Conversational Music Recommendation</strong> <span class="text-muted">(Paper 1282, Academic)</span> &mdash; Youness Soussou, Loubna Mekouar and Youssef Iraqi</div>
+            </li>
+            <li class="program-item">
+                <span class="program-time">11:00&ndash;11:10</span>
+                <div class="program-entry"><strong>Dialogue-Aware Conversational Music Recommendation via Multi-Modal Retrieval and Weighted RRF</strong> <span class="text-muted">(Paper 1272, Academic)</span> &mdash; Aditya Rai, Sanskar Aggarwal, Venkatesh Shukla and Amandeep Kaur</div>
+            </li>
+            <li class="program-item">
+                <span class="program-time">11:10&ndash;11:20</span>
+                <div class="program-entry"><strong>Dialogue-Aware Music Recommendation via Fused Retrieval and Learned Ranking for the TalkPlayData Challenge</strong> <span class="text-muted">(Paper 1276, Industry)</span> &mdash; Suryaa Veerabathiran Seran</div>
+            </li>
+            <li class="program-item">
+                <span class="program-time">11:20&ndash;11:30</span>
+                <div class="program-entry"><strong>MiniMaestro: Resource-Conscious Conversational Music Recommendation with a Single Open-Weight 8B Model</strong> <span class="text-muted">(Paper 1287, Industry)</span> &mdash; Simran Sundrani and Mohan Bhambhani</div>
+            </li>
+            <li class="program-item">
+                <span class="program-time">11:30&ndash;11:40</span>
+                <div class="program-entry"><strong>Two Views, One Voice: Evidence-Grounded Conversational Music Recommendation</strong> <span class="text-muted">(Paper 1274, Industry)</span> &mdash; Sungwook Yoo, Sewook Yoo</div>
+            </li>
+            <li class="program-item">
+                <span class="program-time">11:40&ndash;11:50</span>
+                <div class="program-entry"><strong>Picking is Not Ranking, and Explanation Quality Has Many Dimensions: Lessons for Conversational Music Recommendation</strong> <span class="text-muted">(Paper 1285, Academic)</span> &mdash; Maxime Manderlier and Fabian Lecron</div>
+            </li>
+            <li class="program-item">
+                <span class="program-time">11:50&ndash;12:00</span>
+                <div class="program-entry"><strong>Beyond Single-Signal Retrieval: A Graph-Aware Agentic Framework for Conversational Music Recommendation</strong> <span class="text-muted">(Paper 1187, Academic)</span> &mdash; Marco Valentini, Bianca Di Bitetto, Gianmichele De Palma, Berardino Como, Roberta Russo, Francesco Maria Dicataldo, Francesco Salvatore Desiderato, Francesco Falcone, Chiara Mallamaci, Antonio Ferrara, Daniele Malitesta, Tommaso Di Noia and Fedelucio Narducci</div>
+            </li>
+            <li class="program-item schedule-break">
+                <span class="program-time">12:00&ndash;13:30</span>
+                <div class="program-entry">Lunch Break</div>
+            </li>
+            <li class="program-item schedule-keynote">
+                <span class="program-time">13:30&ndash;14:10</span>
+                <div class="program-entry">
+                    <span class="program-type">Keynote 2</span>
+                    <strong class="program-speaker">Domonkos Tikk</strong>
+                    <span class="text-muted">Taboola</span>
+                    <span class="program-talk-title">Netflix Prize revisited: a hard problem even after 20 years</span>
+                </div>
+            </li>
+            <li class="program-item schedule-session">
+                <span class="program-time">14:10&ndash;15:00</span>
+                <div class="program-entry"><strong>Paper Session 3: Ceilings, shift and negative results (why gains do not transfer)</strong></div>
+            </li>
+            <li class="program-item">
+                <span class="program-time">14:10&ndash;14:20</span>
+                <div class="program-entry"><strong>Distribution-Robust Reranking for Conversational Music Recommendation: PoliBaJukebox at the ACM RecSys Challenge 2026</strong> <span class="text-muted">(Paper 1273, Academic)</span> &mdash; Andrea Lops, Nicola Cipriani, Gabriele Colapinto, Marcantonio de Candia, Vito Di Bari, Mauro Foglia, Gledjan Meta, Davide Savoia, Antonio Ferrara, Daniele Malitesta, Tommaso Di Noia and Fedelucio Narducci</div>
+            </li>
+            <li class="program-item">
+                <span class="program-time">14:20&ndash;14:30</span>
+                <div class="program-entry"><strong>Frozen Embeddings, LLM Retrieval Lanes, Critic-Guided Replies: Conversational Music Recommendation at an Information-Limited Ceiling</strong> <span class="text-muted">(Paper 1281, Industry)</span> &mdash; Artem Volgin, Ben-Orli Nathanson, Daniele Dal Grande, Alisa Milchevskaya, Adham Al Hossary and Rami Albatal</div>
+            </li>
+            <li class="program-item">
+                <span class="program-time">14:30&ndash;14:40</span>
+                <div class="program-entry"><strong>Routing Discovery in Conversational Music Recommendation</strong> <span class="text-muted">(Paper 1278, Academic)</span> &mdash; Madhav Patil, Shreyas Biradar and Divyansh Bhatia</div>
+            </li>
+            <li class="program-item">
+                <span class="program-time">14:40&ndash;14:50</span>
+                <div class="program-entry"><strong>An Empirical Analysis of Retrieval and Evaluation in the RecSys Challenge 2026 Music-CRS Track</strong> <span class="text-muted">(Paper 1279, Academic)</span> &mdash; Siwon Lee</div>
+            </li>
+            <li class="program-item">
+                <span class="program-time">14:50&ndash;15:00</span>
+                <div class="program-entry"><strong>State-Driven Retrieval and Learned Re-Ranking for Conversational Music Recommendation</strong> <span class="text-muted">(Paper 1275, Industry)</span> &mdash; Nidhin Pattaniyil, Semih Yagli and Tanwir Zaman</div>
+            </li>
+            <li class="program-item schedule-break">
+                <span class="program-time">15:00&ndash;15:30</span>
+                <div class="program-entry">Coffee Break</div>
+            </li>
+            <li class="program-item">
+                <span class="program-time">15:30&ndash;16:30</span>
+                <div class="program-entry"><strong>Poster Session</strong></div>
+            </li>
+            <li class="program-item">
+                <span class="program-time">16:30&ndash;17:00</span>
+                <div class="program-entry"><strong>🏆 Award Ceremony and Closing</strong></div>
+            </li>
+        </ol>
+    </section>
+
+    <br>
+
+    <!-- KEYNOTE SPEAKERS -->
+    <div id="keynotes" class="lead">
+        <h1>Keynote Speakers
+            <sup><a class="dropup" style="font-size:10px;" href="#top"><span class="caret"></span> top</a></sup>
+        </h1>
+
+        <div class="row" style="margin-top:20px; margin-bottom:30px;">
+            <div class="col-sm-4">
+                <img src="./images/enrico-palumbo.jpg"
+                     alt="Portrait of Enrico Palumbo"
+                     class="img-responsive img-thumbnail"
+                     loading="lazy"
+                     style="width:100%; max-width:240px; margin:0 auto 15px;">
+            </div>
+            <div class="col-sm-8">
+                <h3 style="margin-top:0;">Enrico Palumbo</h3>
+                <p style="margin-top:8px; text-align:justify;">
+                    Enrico Palumbo is a Senior Research Scientist at Spotify, previously at Amazon Alexa. His research
+                    focuses on improving Search and Recommendations through Generative AI, with a recent interest in
+                    agentic systems and generative recommendation. He has been a core contributor to the design and
+                    launch of AI products used by hundreds of millions of users, including Spotify's Agentic Search,
+                    Query Autocomplete, and Conversational Agent, and Alexa's non-English models. His work has resulted
+                    in several patents and publications in top-tier venues such as RecSys, KDD, WebConf, CIKM, and ESWA.
+                    He holds a PhD in Knowledge Graph Embeddings for Recommender Systems, which he carried out jointly
+                    between the Polytechnic University of Turin, EURECOM, and Links Foundation.
+                </p>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row" style="margin-top:20px; margin-bottom:30px;">
+            <div class="col-sm-4">
+                <img src="./images/istvan-pilaszy.jpg"
+                     alt="Portrait of Istvan Pilaszy"
+                     class="img-responsive img-thumbnail"
+                     style="width:100%; max-width:240px; margin:0 auto 15px;">
+            </div>
+            <div class="col-sm-8">
+                <h3 style="margin-top:0;">Istvan Pilaszy</h3>
+                <p style="margin-top:8px; text-align:justify;">
+                    Istvan Pilaszy is a co-founder of Gravity R&amp;D, a recommender systems company acquired by
+                    Taboola in 2022. He was a member of Gravity&rsquo;s team in the Netflix Prize competition, which
+                    eventually joined The Ensemble, tying for first place in the final competition. He holds a PhD in
+                    Computer Science from the Budapest University of Technology and Economics, where his research focused
+                    on factorization-based large-scale recommendation algorithms. At Gravity R&amp;D, Istvan was
+                    responsible for the core recommendation engine, ensuring its scalability, efficiency, code quality,
+                    and reliability. He developed new recommendation algorithms, brought them into production, and scaled
+                    them to real-world workloads. Gravity&rsquo;s recommendation engine lives on at Taboola and continues
+                    to evolve. Since the acquisition, Istvan has focused on real-time bidding and adapting the engine
+                    to the needs of a much broader range of use cases.
+                </p>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row" style="margin-top:30px; margin-bottom:20px;">
+            <div class="col-sm-4">
+                <img src="./images/domonkos-tikk.jpg"
+                     alt="Portrait of Domonkos Tikk"
+                     class="img-responsive img-thumbnail"
+                     style="width:100%; max-width:240px; margin:0 auto 15px;">
+            </div>
+            <div class="col-sm-8">
+                <h3 style="margin-top:0;">Domonkos Tikk</h3>
+                <p style="margin-top:8px; text-align:justify;">
+                    Domonkos Tikk is a co-founder of Gravity R&amp;D, a recommender systems company acquired by Taboola in
+                    2022, and currently leads Taboola&rsquo;s R&amp;D site in Hungary. He holds a PhD in computer science
+                    from the Budapest University of Technology and Economics. His research interests span recommender
+                    systems, machine learning, and text mining. He led Gravity&rsquo;s team in the Netflix Prize
+                    competition, which eventually joined The Ensemble, tying for first place in the final competition.
+                    Domonkos has been an active member of the ACM RecSys community for more than 15 years, serving in
+                    numerous organizational roles, including RecSys Challenge Co-Chair, Industry Co-Chair, and Program
+                    Co-Chair of RecSys 2019. He is also a member of the ACM RecSys Steering Committee. He has co-authored
+                    approximately 200 publications, which have received more than 13,000 citations. He is also a recipient
+                    of an Alexander von Humboldt Research Fellowship for experienced researchers.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <!-- GUIDELINES -->
+    <div id="guidelines" class="lead">
+        <h1>
+            Paper Submission Guidelines
+            <sup>
+                <a class="dropup" style="font-size:10px;" href="#top">
+                    <span class="caret"></span> top
+                </a>
+            </sup>
+        </h1>
+        <p>
+            <font color="green"><strong>Submission website:</strong></font>
+            <a href="https://easychair.org/conferences/?conf=recsys2026"
+               target="_blank" rel="noopener">EasyChair</a>
+        </p>
+        <p>
+            <font color="green"><strong>Important dates:</strong></font>
+            Paper submission deadline: <strong>20 July 2026</strong>;
+            acceptance notifications: <strong>3 August 2026</strong>;
+            camera-ready deadline: <strong>10 August 2026</strong>.
+        </p>
+        <div class="apc-notice">
+            <h2>Important note to authors about ACM's new open access publishing model</h2>
+            <p>
+                ACM has introduced a new open access publishing model for the International Conference
+                Proceedings Series (ICPS). Authors based at institutions that are not yet part of the
+                ACM Open program and do not qualify for a full geographic waiver will be required to
+                pay an article processing charge (APC) to publish their ICPS article in the ACM Digital
+                Library. To determine whether or not an APC will be applicable to your article, please
+                follow the detailed guidance here:
+                <a href="https://www.acm.org/publications/icps/author-guidance" target="_blank" rel="noopener noreferrer">
+                    ACM ICPS author guidance
+                </a>.
+            </p>
+            <p>
+                Further information may be found on the ACM website:
+                <a href="https://www.acm.org/publications/icps/faq" target="_blank" rel="noopener noreferrer">
+                    full details of the new ICPS publishing model
+                </a>
+                and
+                <a href="https://www.acm.org/publications/openaccess" target="_blank" rel="noopener noreferrer">
+                    full details of the ACM Open program
+                </a>.
+            </p>
+            <p>
+                Please direct all questions about the new model to
+                <a href="mailto:icps-info@acm.org">icps-info@acm.org</a>.
+            </p>
+        </div>
+        <ul>
+            <li>
+                All participants of the challenge are invited to submit if they consider their submission particularly
+                effective, novel, otherwise interesting, or exploiting identified particularities of the data.
+            </li>
+            <li>
+                <font color="green"><strong>Note:</strong></font> paper submission is mandatory if you want to be
+                eligible for a prize. Accepted papers are given a presentation slot at the workshop.
+                At least one author of each accepted paper must attend the workshop in person and present their work.
+                Please note that attending the RecSys Challenge Workshop requires registration for the conference and the workshop;
+                there is no separate registration option for the challenge alone.
+                A badly written paper or the absence of an author at the workshop may prevent a team from being
+                eligible for the prize. Please contact the workshop organizers if none of the authors will be able
+                to attend.
+            </li>
+            <li>
+                <font color="green"><strong>Page limit:</strong></font> 4 pages + 1 page for references
+                (<a href="https://www.acm.org/publications/proceedings-template" target="_blank" rel="noopener">ACM SIG Format</a>)
+                in double-column format.
+                Instructions for Word and LaTeX authors are given below:
+                <ul>
+                    <li>
+                        <strong>Microsoft Word</strong>: Write your paper using
+                        <a href="https://www.acm.org/binaries/content/assets/publications/word_style/interim-template-style/interim-layout.docx" target="_blank" rel="noopener">
+                            ACM’s interim template
+                        </a>.
+                        Follow the embedded instructions to apply the paragraph styles to your various text elements.
+                        The text is in double-column format and no additional formatting is required at this stage.
+                    </li>
+                    <li>
+                        <strong>LaTeX</strong>: Please use the latest version of the
+                        <a href="https://portalparts.acm.org/hippo/latex_templates/acmart-primary.zip" target="_blank" rel="noopener">
+                            Primary Article Template
+                        </a>
+                        – LaTeX to create your submission. Start the document with the
+                        <span style="font-family: monospace;">\documentclass[sigconf]{acmart}</span>
+                        command to generate the output in a double-column format. Please see the
+                        <a href="https://portalparts.acm.org/hippo/latex_templates/acmart.pdf" target="_blank" rel="noopener">
+                            LaTeX documentation
+                        </a>
+                        and
+                        <a href="https://www.acm.org/publications/taps/latex-best-practices" target="_blank" rel="noopener">
+                            ACM’s LaTeX best practices guide
+                        </a>
+                        for further instructions, <strong>ignoring the single-column instructions</strong>.
+                        Do not use the “manuscript” option, otherwise the document will not be compiled in double-column,
+                        as required. Check the sample-sigconf.tex file included in the template package for a formatting example.
+                        To ensure 100% <strong>compatibility</strong> with The ACM Publishing System (TAPS), please
+                        <strong>restrict the use of packages</strong> to the
+                        <a href="https://www.acm.org/publications/taps/whitelist-of-latex-packages" target="_blank" rel="noopener">
+                            whitelist of approved LaTeX packages
+                        </a>.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Anonymization of submissions is not required; please include your team name in the abstract and text,
+                as well as a link to your code repository, the achieved score, and a reference to the RecSys Challenge
+                Website
+                (<a href="https://www.recsyschallenge.com/2026/" target="_blank" rel="noopener">https://www.recsyschallenge.com/2026/</a>).
+                Note: this will be replaced with a reference to an overview paper in the RecSys proceedings for the
+                camera-ready version.
+            </li>
+            <li>
+                <font color="green"><strong>Submission website:</strong></font>
+                <a href="https://easychair.org/conferences/?conf=recsys2026"
+                   target="_blank" rel="noopener">EasyChair</a>
+            </li>
+            <li>
+                The topics of interest include, but are not limited to:
+                <ul>
+                    <li>Conversational recommendation for music discovery.</li>
+                    <li>Multi-turn preference elicitation and dialogue-aware recommendation.</li>
+                    <li>Joint modeling of ranked retrieval and response generation.</li>
+                    <li>Personalization using user profiles, listening history, and conversational context.</li>
+                    <li>Methods for improving explanation quality in music recommendation dialogues.</li>
+                    <li>Diversity, novelty, and exploration in conversational music recommendation.</li>
+                    <li>Efficient and scalable architectures for large-scale music recommendation.</li>
+                    <li>Analysis of conversational recommendation behavior and failure cases.</li>
+                </ul>
+            </li>
+
+            <li>The submitted papers will be evaluated based on novelty, clarity, and presented empirical results.</li>
+            <li>Each paper will be reviewed by at least two PC members.</li>
+            <li>Our proceedings will be published in the ACM Digital Library within its International Conference Proceedings Series.</li>
+            <li>Accepted papers must be presented in the RecSys Challenge Workshop by at least one registered author.</li>
+            <li>Please read the prominent ACM open access publishing notice above before submitting.</li>
+        </ul>
+    </div>
+
+    <!-- TERMS -->
+    <div id="terms" class="lead">
+        <h1>
+            Terms &amp; Conditions
+            <sup>
+                <a class="dropup" style="font-size:10px;" href="#top">
+                    <span class="caret"></span> top
+                </a>
+            </sup>
+        </h1>
+    </div>
+
+    <p align="justify">
+        These terms summarize the official Codabench Terms &amp; Conditions for the Music-CRS Challenge 2026.
+        By registering, participants agree to comply with the official rules.
+    </p>
+
+    <ul class="section-list">
+        <li>
+            The challenge is open to researchers, students, and practitioners, except those directly involved
+            in organizing the challenge.
+        </li>
+        <li>
+            Participants are responsible for ensuring that their participation does not violate agreements
+            with employers or institutions and must comply with applicable laws and regulations.
+        </li>
+        <li>
+            Participants are expected to act in good faith. Cheating, plagiarism, prompt injection, output
+            contamination, attempts to manipulate the evaluation process, duplicate accounts, or multi-team
+            participation may result in deletion of submissions or disqualification.
+        </li>
+        <li>
+            Code and data must not be shared outside the team unless they are openly shared with all
+            participants through official channels.
+        </li>
+        <li>
+            Registration information is collected only for challenge administration. Participants may use a
+            pseudonym on public leaderboards, but winners must provide their real identity to receive prizes.
+        </li>
+        <li>
+            The dataset and challenge are provided "as is" without warranties of any kind. Participation is
+            voluntary and at the participant's own risk.
+        </li>
+        <li>
+            The organizers may update the guidelines as necessary and may modify, postpone, or cancel the
+            challenge if unforeseen circumstances arise.
+        </li>
+    </ul>
+
+    <p align="justify">
+        Official reference:
+        <a href="https://www.codabench.org/competitions/15786/" target="_blank" rel="noopener">
+            Codabench RecSys Challenge 2026
+        </a>.
+    </p>
+
+    <!-- ORGANIZATION -->
+    <div id="organizers" class="lead">
+        <h1>
+            Organization
+            <sup>
+                <a class="dropup" style="font-size:10px;" href="#top">
+                    <span class="caret"></span> top
+                </a>
+            </sup>
+        </h1>
+
+        <h2>
+            Organizing Committee
+            <sup>
+                <a class="dropup" style="font-size:10px;" href="#top">
+                    <span class="caret"></span> top
+                </a>
+            </sup>
+        </h2>
+    </div>
+
+    <ul class="section-list">
+        <li>Seungheon Doh — Sony Group Corporation, Japan (since Jul. 2026; formerly KAIST, South Korea)</li>
+        <li>Sergio Oramas — Pandora/SiriusXM</li>
+        <li>Bruno Sguerra — Deezer Research</li>
+        <li>Abhinav Bohra — Amazon</li>
+        <li>Claudio Pomo — Politecnico di Bari, Italy</li>
+        <li>Francesco Barile — Maastricht University, Netherlands</li>
+    </ul>
+
+    <br>
+
+    <!-- JavaScript -->
+    <script src="./js/jquery-1.11.3.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/ekko-lightbox.min.js"></script>
+    <script src="./js/leaderboard.js"></script>
+    <script type="text/javascript">
+        $(document).delegate('*[data-toggle="lightbox"]', 'click', function (event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
+    </script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-70716117-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</div>
+</body>
+</html>

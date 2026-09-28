@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GigaBrain Challenge 2026 @ CVPR 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-bg {
+            background-image: url('img/CVPR_Denver_2026.jpg');
+            background-size: cover;
+            background-position: center;
+            background-color: rgba(0, 0, 0, 0.55);
+            background-blend-mode: multiply;
+        }
+        .nav-bg {
+            background-image: url('img/CVPR_Denver_2026.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .nav-overlay {
+            background: rgba(0, 0, 0, 0.55);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .award-entry {
+            display: flex;
+            gap: 0.875rem;
+            align-items: flex-start;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        .award-entry:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .award-entry:first-child {
+            padding-top: 0;
+        }
+        .award-medal {
+            width: 3.25rem;
+            height: 3.25rem;
+            flex-shrink: 0;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navigation -->
+    <nav class="nav-bg shadow-sm sticky top-0 z-50">
+        <div class="nav-overlay">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16">
+                    <div class="flex items-center">
+                        <span class="text-xl font-bold text-white">GigaBrain Challenge 2026</span>
+                    </div>
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="#about" class="text-white/80 hover:text-white transition">About</a>
+                        <a href="#submissions" class="text-white/80 hover:text-white transition">Submissions</a>
+                        <a href="#tracks" class="text-white/80 hover:text-white transition">Tracks</a>
+                        <a href="#schedule" class="text-white/80 hover:text-white transition">Schedule</a>
+                        <a href="#organizers" class="text-white/80 hover:text-white transition">Organizers</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-bg text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">GigaBrain Challenge 2026</h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8">CVPR 2026 Workshop Competition</p>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 text-lg">
+                <div class="flex items-center">
+                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    <span>June 3rd, 13:00-18:00</span>
+                </div>
+                <div class="flex items-center">
+                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    <span class="whitespace-nowrap">Colorado Convention Center Room 506</span>
+                </div>
+            </div>
+            <div class="mt-8 max-w-2xl mx-auto overflow-hidden rounded-2xl border border-white/20 bg-white/10 text-left shadow-lg backdrop-blur">
+                <h2 class="px-6 py-4 text-xl font-bold text-center border-b border-white/15">Workshop Schedule</h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full border-collapse text-base md:text-lg text-gray-100">
+                        <tbody class="divide-y divide-white/10">
+                            <tr class="hover:bg-white/10 transition">
+                                <td class="w-56 md:w-80 px-6 py-3 font-semibold text-white whitespace-nowrap">1:00pm-1:30pm</td>
+                                <td class="pl-6 pr-6 py-3 text-left">Workshop overview</td>
+                            </tr>
+                            <tr class="hover:bg-white/10 transition">
+                                <td class="w-56 md:w-80 px-6 py-3 font-semibold text-white whitespace-nowrap">1:30pm-2:10pm</td>
+                                <td class="pl-6 pr-6 py-3 text-left">RoboTwin Track</td>
+                            </tr>
+                            <tr class="hover:bg-white/10 transition">
+                                <td class="w-56 md:w-80 px-6 py-3 font-semibold text-white whitespace-nowrap">2:10pm-3:00pm</td>
+                                <td class="pl-6 pr-6 py-3 text-left">GigaWorld Track</td>
+                            </tr>
+                            <tr class="hover:bg-white/10 transition">
+                                <td class="w-56 md:w-80 px-6 py-3 font-semibold text-white whitespace-nowrap">3:00pm-3:20pm</td>
+                                <td class="pl-6 pr-6 py-3 text-left">Coffee Break</td>
+                            </tr>
+                            <tr class="hover:bg-white/10 transition">
+                                <td class="w-56 md:w-80 px-6 py-3 font-semibold text-white whitespace-nowrap">3:20pm-4:00pm</td>
+                                <td class="pl-6 pr-6 py-3 text-left">RoboChallenge Track</td>
+                            </tr>
+                            <tr class="hover:bg-white/10 transition">
+                                <td class="w-56 md:w-80 px-6 py-3 font-semibold text-white whitespace-nowrap">4:00pm-4:40pm</td>
+                                <td class="pl-6 pr-6 py-3 text-left">PhysClaw* Track</td>
+                            </tr>
+                            <tr class="hover:bg-white/10 transition">
+                                <td class="w-56 md:w-80 px-6 py-3 font-semibold text-white whitespace-nowrap">4:40pm-5:20pm</td>
+                                <td class="pl-6 pr-6 py-3 text-left">Best Paper Award</td>
+                            </tr>
+                            <tr class="hover:bg-white/10 transition">
+                                <td class="w-56 md:w-80 px-6 py-3 font-semibold text-white whitespace-nowrap">5:20pm-6:00pm</td>
+                                <td class="pl-6 pr-6 py-3 text-left">QA + Closing + Networking</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="mt-12">
+                <a href="#tracks" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 shadow-lg">Join the Challenge</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">About the Workshop</h2>
+            <div class="prose prose-lg text-gray-600 mx-auto">
+                <p class="mb-6">
+                    The GigaBrain Challenge 2026 aims to push the boundaries of embodied intelligence. The workshop features four competition tracks focused on simulation, world models, real-world robot evaluation, and creative agentic demos for embodied AI, along with a Best Paper session showcasing outstanding research contributions. Beyond the formal program, participants will also have the opportunity to hear firsthand know-how sharing from organizers, competition winners, and researchers on key topics such as world models, VLA, embodied foundation model evaluation, simulation, and agentic systems for embodied intelligence. If you would like to connect with the embodied AI community and gain practical insights into where the field is heading, we would love to see you there in person.
+                </p>
+                <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mt-8">
+                    <p class="font-semibold text-blue-900">Note:</p>
+                    <p class="text-blue-800">The competition will conclude by May 15, 2026. No onsite competition will be held at CVPR; the workshop session will focus on awards ceremonies and presentations by winning teams.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenge Tracks -->
+    <section id="tracks" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-4 text-gray-900">Competition Tracks</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">Final rankings for all four tracks. Congratulations to the winning teams!</p>
+            <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+                <!-- Track 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300 border border-gray-100">
+                    <div class="p-8">
+                        <div class="uppercase tracking-wide text-sm text-blue-600 font-semibold mb-2">Track 1</div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">RoboTwin Track</h3>
+                        <p class="text-gray-600 mb-6">
+                            Evaluate VLA performance in simulation environments.
+                        </p>
+                        <div class="mb-6">
+                            <div class="text-sm text-gray-500 font-semibold">Resources:</div>
+                            <div class="mt-3 flex flex-wrap gap-2">
+                                    <a href="./guide/robotwin.html" class="inline-flex items-center gap-2 rounded-full bg-blue-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-700">
+                                        <span class="inline-flex h-4 w-4 items-center justify-center">
+                                            <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4">
+                                                <path d="M6 2a2 2 0 0 0-2 2v14.5A3.5 3.5 0 0 0 7.5 22H20a1 1 0 1 0 0-2H7.5A1.5 1.5 0 0 1 6 18.5V4h12v10a1 1 0 0 0 1.64.77l1.36-1.14 1.36 1.14A1 1 0 0 0 24 14V4a2 2 0 0 0-2-2H6Z"/>
+                                            </svg>
+                                        </span>
+                                        <span>Guide</span>
+                                    </a>
+                                    <a href="https://huggingface.co/datasets/TianxingChen/RoboTwin2.0/tree/main" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full bg-blue-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-700">
+                                        <span class="inline-flex h-4 w-4 items-center justify-center">
+                                            <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face" class="h-4 w-4">
+                                        </span>
+                                        <span>Dataset</span>
+                                    </a>
+                                    <a href="https://huggingface.co/spaces/open-gigaai/CVPR-2026-RoboTwin-Track-LeaderBoard" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full bg-blue-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-700">
+                                        <span class="inline-flex h-4 w-4 items-center justify-center">
+                                            <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4">
+                                                <path d="M11.1 2.3a1 1 0 0 1 1.8 0l1.3 2.6a1 1 0 0 0 .75.54l2.87.42a1 1 0 0 1 .55 1.7l-2.07 2.01a1 1 0 0 0-.29.89l.49 2.86a1 1 0 0 1-1.45 1.05l-2.57-1.35a1 1 0 0 0-.93 0l-2.57 1.35a1 1 0 0 1-1.45-1.05l.49-2.86a1 1 0 0 0-.29-.89L3.62 7.56a1 1 0 0 1 .55-1.7l2.87-.42a1 1 0 0 0 .75-.54l1.3-2.6Z"/>
+                                                <path d="M7 22a1 1 0 0 1-1-1v-3.5c0-.55.45-1 1-1h10c.55 0 1 .45 1 1V21a1 1 0 0 1-1 1H7Z"/>
+                                            </svg>
+                                        </span>
+                                        <span>Leaderboard</span>
+                                    </a>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-100 pt-6">
+                            <h4 class="text-sm font-bold text-gray-900 mb-3">Competition Results</h4>
+                            <div>
+                                <div class="award-entry">
+                                    <img src="./img/awards/medal-champion.png" alt="Champion" class="award-medal">
+                                    <div class="min-w-0 flex-1">
+                                        <div class="text-xs font-semibold text-amber-700 uppercase tracking-wide">Champion</div>
+                                        <div class="font-bold text-gray-900 mt-0.5">Team: zzl</div>
+                                        <p class="text-sm text-gray-600 mt-1">Yixian Zou, Ningyue Zhang, Shangwei Li, Zhengning Wang</p>
+                                        <p class="text-xs text-gray-500 mt-1">University of Electronic Science and Technology of China</p>
+                                    </div>
+                                </div>
+                                <div class="award-entry">
+                                    <img src="./img/awards/medal-runner-up.png" alt="1st Runner-Up" class="award-medal">
+                                    <div class="min-w-0 flex-1">
+                                        <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide">1st Runner-Up</div>
+                                        <div class="font-bold text-gray-900 mt-0.5">Team: yc</div>
+                                        <p class="text-sm text-gray-600 mt-1">Yuanchang Liang, Xiaobo Wang, Shengtao Zheng, Chenxu Zhao, Ping Jiang, Minghui Wu</p>
+                                        <p class="text-xs text-gray-500 mt-1">National University of Singapore, Shenzhen University of Advanced Technology, Sangfor Technologies Inc., Tsinghua University, Mininglamp Technology</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Track 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300 border border-gray-100">
+                    <div class="p-8">
+                        <div class="uppercase tracking-wide text-sm text-green-600 font-semibold mb-2">Track 2</div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">World Model Track</h3>
+                        <p class="text-gray-600 mb-6">
+                            Evaluate the performance of World Models acting as VLA evaluators.
+                        </p>
+                        <div class="mb-6">
+                            <div class="text-sm text-gray-500 font-semibold">Resources:</div>
+                            <div class="mt-3 flex flex-wrap gap-2">
+                                    <a href="./guide/world-model.html" class="inline-flex items-center gap-2 rounded-full bg-green-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-green-700">
+                                        <span class="inline-flex h-4 w-4 items-center justify-center">
+                                            <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4">
+                                                <path d="M6 2a2 2 0 0 0-2 2v14.5A3.5 3.5 0 0 0 7.5 22H20a1 1 0 1 0 0-2H7.5A1.5 1.5 0 0 1 6 18.5V4h12v10a1 1 0 0 0 1.64.77l1.36-1.14 1.36 1.14A1 1 0 0 0 24 14V4a2 2 0 0 0-2-2H6Z"/>
+                                            </svg>
+                                        </span>
+                                        <span>Guide</span>
+                                    </a>
+                                    <a href="https://huggingface.co/datasets/open-gigaai/CVPR-2026-WorldModel-Track-Dataset" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full bg-green-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-green-700">
+                                        <span class="inline-flex h-4 w-4 items-center justify-center">
+                                            <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face" class="h-4 w-4">
+                                        </span>
+                                        <span>Dataset</span>
+                                    </a>
+                                    <a href="https://huggingface.co/spaces/open-gigaai/CVPR-2026-WorldModel-Track-LeaderBoard" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full bg-green-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-green-700">
+                                        <span class="inline-flex h-4 w-4 items-center justify-center">
+                                            <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4">
+                                                <path d="M11.1 2.3a1 1 0 0 1 1.8 0l1.3 2.6a1 1 0 0 0 .75.54l2.87.42a1 1 0 0 1 .55 1.7l-2.07 2.01a1 1 0 0 0-.29.89l.49 2.86a1 1 0 0 1-1.45 1.05l-2.57-1.35a1 1 0 0 0-.93 0l-2.57 1.35a1 1 0 0 1-1.45-1.05l.49-2.86a1 1 0 0 0-.29-.89L3.62 7.56a1 1 0 0 1 .55-1.7l2.87-.42a1 1 0 0 0 .75-.54l1.3-2.6Z"/>
+                                                <path d="M7 22a1 1 0 0 1-1-1v-3.5c0-.55.45-1 1-1h10c.55 0 1 .45 1 1V21a1 1 0 0 1-1 1H7Z"/>
+                                            </svg>
+                                        </span>
+                                        <span>Leaderboard</span>
+                                    </a>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-100 pt-6">
+                            <h4 class="text-sm font-bold text-gray-900 mb-3">Competition Results</h4>
+                            <div>
+                                <div class="award-entry">
+                                    <img src="./img/awards/medal-champion.png" alt="Champion" class="award-medal">
+                                    <div class="min-w-0 flex-1">
+                                        <div class="text-xs font-semibold text-amber-700 uppercase tracking-wide">Champion</div>
+                                        <div class="font-bold text-gray-900 mt-0.5">Team: xuwu</div>
+                                        <p class="text-sm text-gray-600 mt-1">Zhenyu Wu, Xiuwei Xu, Ziwei Wang, Jiwen Lu</p>
+                                        <p class="text-xs text-gray-500 mt-1">Tsinghua University</p>
+                                    </div>
+                                </div>
+                                <div class="award-entry">
+                                    <img src="./img/awards/medal-runner-up.png" alt="1st Runner-Up" class="award-medal">
+                                    <div class="min-w-0 flex-1">
+                                        <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide">1st Runner-Up</div>
+                                        <div class="font-bold text-gray-900 mt-0.5">Team: ABot-PhysWorld</div>
+                                        <p class="text-sm text-gray-600 mt-1">Peng Zhang, Jiangyang Li, Lingjun Zhang, Changjie Wu, Xu Wang, Linzhe Shi, Hang Zhang</p>
+                                        <p class="text-xs text-gray-500 mt-1">AMAP CV Lab</p>
+                                    </div>
+                                </div>
+                                <div class="award-entry">
+                                    <img src="./img/awards/medal-third.png" alt="Third Place" class="award-medal">
+                                    <div class="min-w-0 flex-1">
+                                        <div class="text-xs font-semibold text-orange-700 uppercase tracking-wide">Third Place</div>
+                                        <div class="font-bold text-gray-900 mt-0.5">Team: Agent</div>
+                                        <p class="text-sm text-gray-600 mt-1">Zhengwei Hu, Hao Ke, Zhaoyang Liu, Jiahua Wang, Yang Zhong, Yuhao Yang, Xuelin Tian</p>
+                                        <p class="text-xs text-gray-500 mt-1">Xiaomi EV</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Track 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300 border border-gray-100">
+                    <div class="p-8">
+                        <div class="uppercase tracking-wide text-sm text-purple-600 font-semibold mb-2">Track 3</div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">RoboChallenge Track</h3>
+                        <p class="text-gray-600 mb-6">
+                            Evaluate VLA performance on real-world robots.
+                        </p>
+                        <div class="mb-6">
+                            <div class="text-sm text-gray-500 font-semibold">Resources:</div>
+                            <div class="mt-3 flex flex-wrap gap-2">
+                                    <a href="./guide/robochallenge.html" class="inline-flex items-center gap-2 rounded-full bg-purple-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-purple-700">
+                                        <span class="inline-flex h-4 w-4 items-center justify-center">
+                                            <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4">
+                                                <path d="M6 2a2 2 0 0 0-2 2v14.5A3.5 3.5 0 0 0 7.5 22H20a1 1 0 1 0 0-2H7.5A1.5 1.5 0 0 1 6 18.5V4h12v10a1 1 0 0 0 1.64.77l1.36-1.14 1.36 1.14A1 1 0 0 0 24 14V4a2 2 0 0 0-2-2H6Z"/>
+                                            </svg>
+                                        </span>
+                                        <span>Guide</span>
+                                    </a>
+                                    <a href="https://huggingface.co/datasets/RoboChallenge/Table30v2" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full bg-purple-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-purple-700">
+                                        <span class="inline-flex h-4 w-4 items-center justify-center">
+                                            <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face" class="h-4 w-4">
+                                        </span>
+                                        <span>Dataset</span>
+                                    </a>
+                                    <a href="https://robochallenge.cn/competition/cvpr" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full bg-purple-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-purple-700">
+                                        <span class="inline-flex h-4 w-4 items-center justify-center">
+                                            <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4">
+                                                <path d="M11.1 2.3a1 1 0 0 1 1.8 0l1.3 2.6a1 1 0 0 0 .75.54l2.87.42a1 1 0 0 1 .55 1.7l-2.07 2.01a1 1 0 0 0-.29.89l.49 2.86a1 1 0 0 1-1.45 1.05l-2.57-1.35a1 1 0 0 0-.93 0l-2.57 1.35a1 1 0 0 1-1.45-1.05l.49-2.86a1 1 0 0 0-.29-.89L3.62 7.56a1 1 0 0 1 .55-1.7l2.87-.42a1 1 0 0 0 .75-.54l1.3-2.6Z"/>
+                                                <path d="M7 22a1 1 0 0 1-1-1v-3.5c0-.55.45-1 1-1h10c.55 0 1 .45 1 1V21a1 1 0 0 1-1 1H7Z"/>
+                                            </svg>
+                                        </span>
+                                        <span>Leaderboard</span>
+                                    </a>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-100 pt-6">
+                            <h4 class="text-sm font-bold text-gray-900 mb-3">Competition Results</h4>
+                            <div>
+                                <div class="award-entry">
+                                    <img src="./img/awards/medal-champion.png" alt="Champion" class="award-medal">
+                                    <div class="min-w-0 flex-1">
+                                        <div class="text-xs font-semibold text-amber-700 uppercase tracking-wide">Champion</div>
+                                        <div class="font-bold text-gray-900 mt-0.5">Team: Tymtbo</div>
+                                        <p class="text-sm text-gray-600 mt-1">Lixin Huang, Kun Yu, Zhengming Zhou, Bowen Fu, Zhiying Du, Wenguo Hou, Xin Zhao, Diyun Xiang, Rui Cai</p>
+
+                                    </div>
+                                </div>
+                                <div class="award-entry">
+                                    <img src="./img/awards/medal-runner-up.png" alt="1st Runner-Up" class="award-medal">
+                                    <div class="min-w-0 flex-1">
+                                        <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide">1st Runner-Up</div>
+                                        <div class="font-bold text-gray-900 mt-0.5">Team: JIIOV</div>
+                                        <p class="text-sm text-gray-600 mt-1">Zhi Lv, Lianghai Tian, Zhenyu Zhao, Riqiang Jin, Qi Xu, Mochen Yu, Yao Tang</p>
+                                        
+                                    </div>
+                                </div>
+                                <div class="award-entry">
+                                    <img src="./img/awards/medal-third.png" alt="Third Place" class="award-medal">
+                                    <div class="min-w-0 flex-1">
+                                        <div class="text-xs font-semibold text-orange-700 uppercase tracking-wide">Third Place</div>
+                                        <div class="font-bold text-gray-900 mt-0.5">Team: mcBrains (MotuBrainWoW1)</div>
+                                        <p class="text-sm text-gray-600 mt-1">Rongxu Cui, Jian Wang</p>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Track 4 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300 border border-gray-100">
+                    <div class="p-8">
+                        <div class="uppercase tracking-wide text-sm text-orange-600 font-semibold mb-2">Demo Track</div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">PhysClaw* Track</h3>
+                        <p class="text-gray-600 mb-6">
+                            Collect creative ways to use OpenClaw on embodied agents.
+                        </p>
+                        <div class="mb-6">
+                            <div class="text-sm text-gray-500 font-semibold">Resources:</div>
+                            <div class="mt-3 flex flex-wrap gap-2">
+                                    <a href="./guide/physclaw.html" class="inline-flex items-center gap-2 rounded-full bg-orange-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-orange-700">
+                                        <span class="inline-flex h-4 w-4 items-center justify-center">
+                                            <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4">
+                                                <path d="M6 2a2 2 0 0 0-2 2v14.5A3.5 3.5 0 0 0 7.5 22H20a1 1 0 1 0 0-2H7.5A1.5 1.5 0 0 1 6 18.5V4h12v10a1 1 0 0 0 1.64.77l1.36-1.14 1.36 1.14A1 1 0 0 0 24 14V4a2 2 0 0 0-2-2H6Z"/>
+                                            </svg>
+                                        </span>
+                                        <span>Guide</span>
+                                    </a>
+                                    <a href="https://gigaai-research.github.io/PhysClaw/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full bg-gray-800 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-900">
+                                        <span class="inline-flex h-4 w-4 items-center justify-center">
+                                            <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                                            </svg>
+                                        </span>
+                                        <span>PhysClaw*</span>
+                                    </a>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-100 pt-6">
+                            <h4 class="text-sm font-bold text-gray-900 mb-3">Competition Results</h4>
+                            <div>
+                                <div class="award-entry">
+                                    <img src="./img/awards/medal-champion.png" alt="Champion" class="award-medal">
+                                    <div class="min-w-0 flex-1">
+                                        <div class="text-xs font-semibold text-amber-700 uppercase tracking-wide">Champion</div>
+                                        <div class="font-bold text-gray-900 mt-0.5">Team: ActiveClaw</div>
+                                        <p class="text-sm text-gray-600 mt-1">Shilin Ma, Chubin Zhang, Xulong Bai, Zifeng Gao, Shiyi Zhang, Yansong Tang</p>
+                                        <p class="text-xs text-gray-500 mt-1">Tsinghua Shenzhen International Graduate School, Tsinghua University</p>
+                                    </div>
+                                </div>
+                                <div class="award-entry">
+                                    <img src="./img/awards/medal-runner-up.png" alt="1st Runner-Up" class="award-medal">
+                                    <div class="min-w-0 flex-1">
+                                        <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide">1st Runner-Up</div>
+                                        <div class="font-bold text-gray-900 mt-0.5">Team: OpenClaw CardioHarness</div>
+                                        <p class="text-sm text-gray-600 mt-1">Zhipeng Jiang, Xinyu Zhang, Hanzhang Fang, Jing Huang, Ying Zhou</p>
+                                        <p class="text-xs text-gray-500 mt-1">New Jersey Institute of Technology; Indiana University -- Bloomington; New Jersey Institute of Technology; New Jersey Institute of Technology; Georgia Institute of Technology</p>
+                                    </div>
+                                </div>
+                                <div class="award-entry">
+                                    <img src="./img/awards/medal-third.png" alt="Third Place" class="award-medal">
+                                    <div class="min-w-0 flex-1">
+                                        <div class="text-xs font-semibold text-orange-700 uppercase tracking-wide">Third Place</div>
+                                        <div class="font-bold text-gray-900 mt-0.5">Team: feedbot</div>
+                                        <p class="text-sm text-gray-600 mt-1">Weijie Ke, Shuo Wang, Ying Wang, Pei Zhang, Haofeng Yu, Bingshan Hu</p>
+                                        <p class="text-xs text-gray-500 mt-1">University of Shanghai for Science and Technology</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="submissions" class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Paper Submissions</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl shadow-md border border-gray-100 p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Call for Papers</h3>
+                    <p class="text-gray-600 mb-6">
+                        We welcome submissions related to VLA, embodied foundation models, world models, and reinforcement learning. Accepted papers will be presented in the workshop and selected works will be assigned poster boards.
+                        We will select a
+                        <span class="inline-flex items-center rounded-full bg-yellow-100 text-yellow-900 px-2 py-0.5 text-sm font-semibold ml-2">Best Paper Award.</span>
+                    </p>
+                    <a href="https://openreview.net/group?id=thecvf.com/CVPR/2026/Workshop/GigaBrain_Challenge#tab-your-consoles" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 shadow-sm">
+                        OpenReview Submission
+                    </a>
+                </div>
+                <div class="bg-white rounded-xl shadow-md border border-gray-100 p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Submission Deadline</h3>
+                    <div class="flex items-center justify-between bg-blue-50 border border-blue-100 rounded-lg p-4">
+                        <div>
+                            <div class="text-sm font-semibold text-blue-800">Deadline</div>
+                            <div class="text-2xl font-bold text-blue-900">Mar 20, 2026</div>
+                        </div>
+                        <div class="text-sm text-blue-800">
+                            Timezone: AoE (UTC-12)
+                        </div>
+                    </div>
+                    <div class="mt-6 text-gray-600">
+                        Please plan to submit before the deadline. The submission portal will be provided via OpenReview.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="wechat-landing" class="fixed inset-0 z-50 hidden">
+        <div id="wechat-landing-backdrop" class="absolute inset-0 bg-black/50"></div>
+        <div class="relative mx-auto mt-20 w-[min(92vw,28rem)] rounded-2xl bg-white p-6 shadow-xl">
+            <div class="flex items-start justify-between gap-4">
+                <div>
+                    <div class="text-sm font-semibold text-gray-500">WeChat Group</div>
+                    <div id="wechat-landing-title" class="text-xl font-bold text-gray-900">Join</div>
+                </div>
+                <button id="wechat-landing-close" type="button" class="rounded-lg px-2 py-1 text-gray-500 hover:text-gray-700">✕</button>
+            </div>
+            <div class="mt-4 text-sm text-gray-600">
+                Please scan the QR code below in WeChat to join the group.
+            </div>
+            <div class="mt-6 flex justify-center">
+                <img id="wechat-landing-img" src="" alt="WeChat Group QR Code" class="w-56 h-56 rounded-xl border border-gray-100 object-contain bg-white">
+            </div>
+            <div class="mt-4 flex items-center justify-center">
+                <a id="wechat-landing-open" href="#" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-blue-600 hover:text-blue-700 underline">Open QR image</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const group = (params.get('wechat') || '').toLowerCase();
+            const groupMap = {
+                rt: { title: 'RoboTwin Track', img: './img/RT_vx.JPG' },
+                wm: { title: 'World Model Track', img: './img/WM_vx.JPG' },
+                rc: { title: 'RoboChallenge Track', img: './img/RC_vx.JPG' },
+                pc: { title: 'PhysClaw* Track', img: './img/Claw_vx.JPG' }
+            };
+            const selected = groupMap[group];
+            if (!selected) return;
+
+            const modal = document.getElementById('wechat-landing');
+            const titleEl = document.getElementById('wechat-landing-title');
+            const imgEl = document.getElementById('wechat-landing-img');
+            const openEl = document.getElementById('wechat-landing-open');
+            const closeBtn = document.getElementById('wechat-landing-close');
+            const backdrop = document.getElementById('wechat-landing-backdrop');
+
+            const close = () => {
+                modal?.classList.add('hidden');
+                try {
+                    const nextUrl = new URL(window.location.href);
+                    nextUrl.searchParams.delete('wechat');
+                    window.history.replaceState({}, '', nextUrl.toString());
+                } catch {}
+            };
+
+            if (titleEl) titleEl.textContent = selected.title;
+            if (imgEl) {
+                const cacheBusted = `${selected.img}?v=${Date.now()}`;
+                imgEl.src = cacheBusted;
+                if (openEl) openEl.setAttribute('href', cacheBusted);
+            }
+            modal?.classList.remove('hidden');
+
+            closeBtn?.addEventListener('click', close);
+            backdrop?.addEventListener('click', close);
+            window.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') close();
+            });
+        });
+    </script>
+
+    <!-- Timeline -->
+    <section id="schedule" class="py-16 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Important Dates</h2>
+            <div class="relative border-l-4 border-gray-200 ml-4 md:ml-0 md:pl-8 space-y-12">
+                <!-- Item 1 -->
+                <div class="relative pl-8 md:pl-0">
+                    <div class="absolute -left-3 top-0 md:-left-11 w-6 h-6 bg-blue-500 rounded-full border-4 border-white"></div>
+                    <div class="flex flex-col md:flex-row md:items-center">
+                        <div class="md:w-32 font-bold text-blue-600 mb-1 md:mb-0">Mid-March</div>
+                        <div class="flex-1">
+                            <h4 class="text-lg font-bold text-gray-900">Competition Kickoff</h4>
+                            <p class="text-gray-600">Track 1 (Simulation) and Track 2 (World Model) begin.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative pl-8 md:pl-0">
+                    <div class="absolute -left-3 top-0 md:-left-11 w-6 h-6 bg-blue-500 rounded-full border-4 border-white"></div>
+                    <div class="flex flex-col md:flex-row md:items-center">
+                        <div class="md:w-32 font-bold text-blue-600 mb-1 md:mb-0">Mar 10</div>
+                        <div class="flex-1">
+                            <h4 class="text-lg font-bold text-gray-900">Paper Submission Opens</h4>
+                            <p class="text-gray-600">
+                                OpenReview submission portal opens (
+                                <a href="https://openreview.net/group?id=thecvf.com/CVPR/2026/Workshop/GigaBrain_Challenge#tab-your-consoles" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-700 underline">OpenReview</a>
+                                ).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative pl-8 md:pl-0">
+                    <div class="absolute -left-3 top-0 md:-left-11 w-6 h-6 bg-blue-500 rounded-full border-4 border-white"></div>
+                    <div class="flex flex-col md:flex-row md:items-center">
+                        <div class="md:w-32 font-bold text-blue-600 mb-1 md:mb-0">Mar 20</div>
+                        <div class="flex-1">
+                            <h4 class="text-lg font-bold text-gray-900">Paper Submission Deadline</h4>
+                            <p class="text-gray-600">Deadline for paper submissions (timezone: AoE, UTC-12).</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="relative pl-8 md:pl-0">
+                    <div class="absolute -left-3 top-0 md:-left-11 w-6 h-6 bg-blue-500 rounded-full border-4 border-white"></div>
+                    <div class="flex flex-col md:flex-row md:items-center">
+                        <div class="md:w-32 font-bold text-blue-600 mb-1 md:mb-0">Mid-April</div>
+                        <div class="flex-1">
+                            <h4 class="text-lg font-bold text-gray-900">Phase 1 Conclusion & Phase 2 Start</h4>
+                            <p class="text-gray-600">Track 1 & 2 conclude. Track 3 (Real Robot) begins with invited teams.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="relative pl-8 md:pl-0">
+                    <div class="absolute -left-3 top-0 md:-left-11 w-6 h-6 bg-blue-500 rounded-full border-4 border-white"></div>
+                    <div class="flex flex-col md:flex-row md:items-center">
+                        <div class="md:w-32 font-bold text-blue-600 mb-1 md:mb-0">May 15</div>
+                        <div class="flex-1">
+                            <h4 class="text-lg font-bold text-gray-900">Competition Ends</h4>
+                            <p class="text-gray-600">All tracks conclude. Final rankings determined.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="relative pl-8 md:pl-0">
+                    <div class="absolute -left-3 top-0 md:-left-11 w-6 h-6 bg-green-500 rounded-full border-4 border-white"></div>
+                    <div class="flex flex-col md:flex-row md:items-center">
+                        <div class="md:w-32 font-bold text-green-600 mb-1 md:mb-0">June 3-7</div>
+                        <div class="flex-1">
+                            <h4 class="text-lg font-bold text-gray-900">CVPR 2026 Workshop</h4>
+                            <p class="text-gray-600">Awards ceremony and presentations by winning teams in Denver, USA.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Organizers -->
+    <section id="organizers" class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Organizers</h2>
+            
+            <!-- Row 1: 3 Organizers -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center mb-8">
+                <!-- Organizer 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <img src="./img/zz.png" alt="Zheng Zhu" class="w-24 h-24 rounded-full object-cover mx-auto mb-4 border border-gray-100">
+                    <h3 class="text-xl font-bold">
+                        <a href="https://www.zhengzhu.net/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-700 transition">Zheng Zhu</a>
+                    </h3>
+                    <p class="text-gray-900">GigaAI</p>
+                </div>
+                <!-- Organizer 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <img src="./img/wxf.png" alt="Xiaofeng Wang" class="w-24 h-24 rounded-full object-cover mx-auto mb-4 border border-gray-100">
+                    <h3 class="text-xl font-bold">
+                        <a href="https://jeffwang987.github.io/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-700 transition">Xiaofeng Wang</a>
+                    </h3>
+                    <p class="text-gray-900">GigaAI</p>
+                </div>
+                <!-- Organizer 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <img src="./img/lhy.png" alt="Hongyang Li" class="w-24 h-24 rounded-full object-cover mx-auto mb-4 border border-gray-100">
+                    <h3 class="text-xl font-bold">
+                        <a href="https://lihongyang.info/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-700 transition">Hongyang Li</a>
+                    </h3>
+                    <p class="text-gray-900">University of Hong Kong</p>
+                </div>
+            </div>
+
+            <!-- Row 2: 4 Organizers -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <!-- Organizer 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <img src="./img/zsh.png" alt="Shanghang Zhang" class="w-24 h-24 rounded-full object-cover mx-auto mb-4 border border-gray-100">
+                    <h3 class="text-xl font-bold">
+                        <a href="https://www.shanghangzhang.com" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-700 transition">Shanghang Zhang</a>
+                    </h3>
+                    <p class="text-gray-900">Peking University</p>
+                </div>
+                <!-- Organizer 5 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <img src="./img/my.png" alt="Yao Mu" class="w-24 h-24 rounded-full object-cover mx-auto mb-4 border border-gray-100">
+                    <h3 class="text-xl font-bold">
+                        <a href="https://yaomarkmu.github.io/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-700 transition">Yao Mu</a>
+                    </h3>
+                    <p class="text-gray-900">Shanghai Jiao Tong University</p>
+                </div>
+                <!-- Organizer 6 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <img src="./img/fhq.png" alt="Haoqiang Fan" class="w-24 h-24 rounded-full object-cover mx-auto mb-4 border border-gray-100">
+                    <h3 class="text-xl font-bold">
+                        <a href="https://scholar.google.com/citations?user=bzzBut4AAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-700 transition">Haoqiang Fan</a>
+                    </h3>
+                    <p class="text-gray-900">RoboChallenge, Dexmal</p>
+                </div>
+                <!-- Organizer 7 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <img src="./img/szz.png" alt="Zhizhong Su" class="w-24 h-24 rounded-full object-cover mx-auto mb-4 border border-gray-100">
+                    <h3 class="text-xl font-bold">
+                        <span class="text-blue-600">Zhizhong Su</span>
+                    </h3>
+                    <p class="text-gray-900">Horizon Robotics</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsors -->
+    <section id="sponsors" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 xl:gap-12 items-center justify-items-center">
+                <!-- Media Partner -->
+                <div class="text-center w-full max-w-[220px] sm:max-w-[260px] mx-auto">
+                    <h3 class="text-xl font-semibold mb-6 text-gray-800">媒体合作伙伴 (Media Partner)</h3>
+                    <img src="./img/jsznzx.jpg" alt="Media Partner" class="h-24 w-full object-contain mx-auto">
+                </div>
+                <!-- Computational Sponsor -->
+                <div class="text-center w-full max-w-[220px] sm:max-w-[260px] mx-auto">
+                    <h3 class="text-xl font-semibold mb-6 text-gray-800">算力赞助商 (Computational Sponsor)</h3>
+                    <a href="https://www.gpufree.cn/home" target="_blank" rel="noopener noreferrer" class="block">
+                        <img src="./img/slzy.png" alt="Computational FREEDOM" class="h-24 w-full object-contain mx-auto hover:opacity-80 transition-opacity">
+                        <p class="text-lg font-medium text-blue-600 mt-4">Computational FREEDOM</p>
+                    </a>
+                </div>
+                <!-- Technical Partner -->
+                <div class="text-center w-full max-w-[min(100%,360px)] lg:max-w-none mx-auto lg:mx-0 min-w-0">
+                    <h3 class="text-xl font-semibold mb-6 text-gray-800">技术合作伙伴 (Technical Partner)</h3>
+                    <img src="./img/agibot.png" alt="AGIBOT 智元" class="h-20 sm:h-24 w-full max-w-[320px] lg:max-w-full object-contain mx-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="text-sm text-gray-500">
+                &copy; 2026 GigaBrain Challenge Workshop. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

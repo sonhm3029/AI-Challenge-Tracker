@@ -1,0 +1,52 @@
+name: Deploy
+
+# Section 62 — Deployment Strategy:
+#   PR            -> preview deployment (Vercel builds previews automatically
+#                    once the Vercel GitHub integration is connected to this
+#                    repo; this workflow does not duplicate that).
+#   merge to main -> run migrations against production, then deploy.
+#
+# Requires these repository secrets to be configured before this workflow
+# can actually deploy (see docs/crawler-operations.md "Deployment" section):
+#   VERCEL_TOKEN, VERCEL_ORG_ID, VERCEL_PROJECT_ID, DATABASE_URL (production)
+on:
+  push:
+    branches: [main]
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    environment: production
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      # Section 41 — snapshot before a production migration. Managed
+      # Postgres (Supabase/RDS/etc.) backup APIs vary; wire the provider's
+      # CLI/API call here before enabling this workflow for real.
+      - name: Reminder to confirm a fresh backup exists
+        run: echo "Confirm a database backup/snapshot was taken before this migration runs (Section 41)."
+      - name: Run database migrations (Section 42 — migrations only, never ad-hoc schema changes)
+        run: npm run db:migrate
+
+  deploy:
+    needs: migrate
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Deploy to Vercel (production)
+        run: npx vercel deploy --prod --token="${{ secrets.VERCEL_TOKEN }}"
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}

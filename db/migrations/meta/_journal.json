@@ -1,0 +1,20 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1790605487942,
+      "tag": "0000_high_ghost_rider",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1790605492270,
+      "tag": "0001_search_vector",
+      "breakpoints": true
+    }
+  ]
+}

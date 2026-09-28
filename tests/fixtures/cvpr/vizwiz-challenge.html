@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+		<title>2026 VizWiz Grand Challenge Workshop &#8211; VizWiz</title>
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="VizWiz &raquo; Feed" href="https://vizwiz.org/feed/" />
+<link rel="alternate" type="application/rss+xml" title="VizWiz &raquo; Comments Feed" href="https://vizwiz.org/comments/feed/" />
+<!-- This site uses the Google Analytics by ExactMetrics plugin v6.2.2 - Using Analytics tracking - https://www.exactmetrics.com/ -->
+<script type="text/javascript" data-cfasync="false">
+	var em_version         = '6.2.2';
+	var em_track_user      = true;
+	var em_no_track_reason = '';
+	
+	var disableStr = 'ga-disable-UA-141899747-1';
+
+	/* Function to detect opted out users */
+	function __gaTrackerIsOptedOut() {
+		return document.cookie.indexOf(disableStr + '=true') > -1;
+	}
+
+	/* Disable tracking if the opt-out cookie exists. */
+	if ( __gaTrackerIsOptedOut() ) {
+		window[disableStr] = true;
+	}
+
+	/* Opt-out function */
+	function __gaTrackerOptout() {
+	  document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+	  window[disableStr] = true;
+	}
+
+	if ( 'undefined' === typeof gaOptout ) {
+		function gaOptout() {
+			__gaTrackerOptout();
+		}
+	}
+	
+	if ( em_track_user ) {
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','__gaTracker');
+
+window.ga = __gaTracker;		__gaTracker('create', 'UA-141899747-1', 'auto', {'allowLinker':true});
+		__gaTracker('set', 'forceSSL', true);
+		__gaTracker('require', 'linker');
+		__gaTracker('linker:autoLink', ['https://ivc.ischool.utexas.edu/VizWiz_visualization/view_dataset.php']);
+		__gaTracker('send','pageview');
+		__gaTracker( function() { window.ga = __gaTracker; } );
+	} else {
+		console.log( "" );
+		(function() {
+			/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+			var noopfn = function() {
+				return null;
+			};
+			var noopnullfn = function() {
+				return null;
+			};
+			var Tracker = function() {
+				return null;
+			};
+			var p = Tracker.prototype;
+			p.get = noopfn;
+			p.set = noopfn;
+			p.send = noopfn;
+			var __gaTracker = function() {
+				var len = arguments.length;
+				if ( len === 0 ) {
+					return;
+				}
+				var f = arguments[len-1];
+				if ( typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function' ) {
+					console.log( 'Not running function __gaTracker(' + arguments[0] + " ....) because you are not being tracked. " + em_no_track_reason );
+					return;
+				}
+				try {
+					f.hitCallback();
+				} catch (ex) {
+
+				}
+			};
+			__gaTracker.create = function() {
+				return new Tracker();
+			};
+			__gaTracker.getByName = noopnullfn;
+			__gaTracker.getAll = function() {
+				return [];
+			};
+			__gaTracker.remove = noopfn;
+			window['__gaTracker'] = __gaTracker;
+			window.ga = __gaTracker;		})();
+		}
+</script>
+<!-- / Google Analytics by ExactMetrics -->
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/vizwiz.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.5.22"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://vizwiz.org/wp-includes/css/dist/block-library/style.min.css?ver=5.5.22' type='text/css' media='all' />
+<link rel='stylesheet' id='animate-css-css'  href='https://vizwiz.org/wp-content/plugins/otter-blocks/vendor/codeinwp/gutenberg-animation/assets/css/animate.min.css?ver=5.5.22' type='text/css' media='all' />
+<link rel='stylesheet' id='themeisle-gutenberg-animation-style-css'  href='https://vizwiz.org/wp-content/plugins/otter-blocks/vendor/codeinwp/gutenberg-animation/assets/css/style.css?ver=5.5.22' type='text/css' media='all' />
+<link rel='stylesheet' id='themeisle-block_styles-css'  href='https://vizwiz.org/wp-content/plugins/otter-blocks/vendor/codeinwp/gutenberg-blocks/build/style.css?ver=1.5.8' type='text/css' media='all' />
+<link rel='stylesheet' id='dlm-frontend-css'  href='https://vizwiz.org/wp-content/plugins/download-monitor/assets/css/frontend.css?ver=5.5.22' type='text/css' media='all' />
+<link rel='stylesheet' id='neve-style-css'  href='https://vizwiz.org/wp-content/themes/neve/style.min.css?ver=2.4.2' type='text/css' media='all' />
+<style id='neve-style-inline-css' type='text/css'>
+body{font-size:15px;line-height:1.6;}body{font-family:"Poppins";font-weight:400;}h1:not(.site-title), .single .entry-title{font-size:1.5em;}h1:not(.site-title), .single .entry-title{line-height:1.6;}h2{font-size:1.3em;}h2{line-height:1.6;}h3{font-size:1.1em;}h3{line-height:1.6;}h4{font-size:1em;}h4{line-height:1.6;}h5{font-size:0.75em;}h5{line-height:1.6;}h6{font-size:0.75em;}h6{line-height:1.6;}h1, .single .entry-title, h2, h3, h4, h5, h6{font-family:"Roboto Slab";font-weight:500;text-transform:none;}body, .entry-title a, .entry-title a:hover, .entry-title a:focus{color:#000000;}.has-white-background-color{background-color:#ffffff;}.has-white-color{color:#ffffff;}.has-black-background-color{background-color:#000000;}.has-black-color{color:#000000;}.has-neve-button-color-background-color{background-color:#0366d6;}.has-neve-button-color-color{color:#0366d6;}.has-neve-link-color-background-color{background-color:#0366d6;}.has-neve-link-color-color{color:#0366d6;}.has-neve-link-hover-color-background-color{background-color:#0366d6;}.has-neve-link-hover-color-color{color:#0366d6;}.has-neve-text-color-background-color{background-color:#000000;}.has-neve-text-color-color{color:#000000;}@media(min-width: 576px){body{font-size:16px;line-height:1.6;}h1:not(.site-title), .single .entry-title{font-size:1.5em;}h1:not(.site-title), .single .entry-title{line-height:1.6;}h2{font-size:1.3em;}h2{line-height:1.6;}h3{font-size:1.1em;}h3{line-height:1.6;}h4{font-size:1em;}h4{line-height:1.6;}h5{font-size:0.75em;}h5{line-height:1.6;}h6{font-size:0.75em;}h6{line-height:1.6;}}@media(min-width: 960px){body{font-size:18px;line-height:1.8;}h1:not(.site-title), .single .entry-title{font-size:2.5em;}h1:not(.site-title), .single .entry-title{line-height:1.6;}h2{font-size:2em;}h2{line-height:1.6;}h3{font-size:1.35em;}h3{line-height:1.6;}h4{font-size:1.05em;}h4{line-height:1.6;}h5{font-size:1em;}h5{line-height:1.6;}h6{font-size:1em;}h6{line-height:1.6;}body:not(.single):not(.archive):not(.blog) .neve-main > .container .col{max-width:100%;}body:not(.single):not(.archive):not(.blog) .nv-sidebar-wrap{max-width:0%;}.neve-main > .archive-container .nv-index-posts.col{max-width:100%;}.neve-main > .archive-container .nv-sidebar-wrap{max-width:0%;}.neve-main > .single-post-container .nv-single-post-wrap.col{max-width:100%;}.neve-main > .single-post-container .nv-sidebar-wrap{max-width:0%;}}.hfg_header .header-top-inner,.hfg_header .header-top-inner.dark-mode,.hfg_header .header-top-inner.light-mode { } .hfg_header .header-main-inner,.hfg_header .header-main-inner.dark-mode,.hfg_header .header-main-inner.light-mode { } .hfg_header .header-bottom-inner,.hfg_header .header-bottom-inner.dark-mode,.hfg_header .header-bottom-inner.light-mode { } .hfg_header .header-menu-sidebar .header-menu-sidebar-bg,.hfg_header .header-menu-sidebar .header-menu-sidebar-bg.dark-mode,.hfg_header .header-menu-sidebar .header-menu-sidebar-bg.light-mode { } @media (max-width: 576px) { .site-logo img { max-width: 120px; } .builder-item--logo > :not(.customize-partial-edit-shortcut):first-of-type { padding-top: 10px; padding-right: 0px; padding-bottom: 10px; padding-left: 0px; } .builder-item--logo { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } .builder-item--nav-icon > :not(.customize-partial-edit-shortcut):first-of-type { padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; } .builder-item--nav-icon { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } .builder-item--primary-menu > :not(.customize-partial-edit-shortcut):first-of-type { padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; } .builder-item--primary-menu { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } .builder-item--button_base > .component-wrap > :first-child { padding-top: 8px; padding-right: 12px; padding-bottom: 8px; padding-left: 12px; } .builder-item--button_base { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } .builder-item--custom_html > :not(.customize-partial-edit-shortcut):first-of-type { padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; } .builder-item--header_search > :not(.customize-partial-edit-shortcut):first-of-type { padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; } .builder-item--header_search { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } .builder-item--header_search_responsive > :not(.customize-partial-edit-shortcut):first-of-type { padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; } .builder-item--header_search_responsive { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } .builder-item--secondary-menu > :not(.customize-partial-edit-shortcut):first-of-type { padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; } .builder-item--secondary-menu { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } .builder-item--footer-one-widgets > :not(.customize-partial-edit-shortcut):first-of-type { padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; } .builder-item--footer-one-widgets { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } .builder-item--footer-two-widgets > :not(.customize-partial-edit-shortcut):first-of-type { padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; } .builder-item--footer-two-widgets { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } .builder-item--footer-three-widgets > :not(.customize-partial-edit-shortcut):first-of-type { padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; } .builder-item--footer-three-widgets { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } .builder-item--footer-four-widgets > :not(.customize-partial-edit-shortcut):first-of-type { padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; } .builder-item--footer-four-widgets { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } .builder-item--footer-menu > :not(.customize-partial-edit-shortcut):first-of-type { padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; } .builder-item--footer-menu { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } .builder-item--footer_copyright > :not(.customize-partial-edit-shortcut):first-of-type { padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; } .builder-item--footer_copyright { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } } @media (min-width: 576px) { .site-logo img { max-width: 120px; } .builder-item--logo > :not(.customize-partial-edit-shortcut):first-of-type { padding-top: 10px; padding-right: 0px; padding-bottom: 10px; padding-left: 0px; } .builder-item--logo { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } .builder-item--nav-icon > :not(.customize-partial-edit-shortcut):first-of-type { padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; } .builder-item--nav-icon { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } .builder-item--primary-menu > :not(.customize-partial-edit-shortcut):first-of-type { padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; } .builder-item--primary-menu { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } .builder-item--button_base > .component-wrap > :first-child { padding-top: 8px; padding-right: 12px; padding-bottom: 8px; padding-left: 12px; } .builder-item--button_base { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } .builder-item--custom_html > :not(.customize-partial-edit-shortcut):first-of-type { padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; } .builder-item--header_search > :not(.customize-partial-edit-shortcut):first-of-type { padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; } .builder-item--header_search { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } .builder-item--header_search_responsive > :not(.customize-partial-edit-shortcut):first-of-type { padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; } .builder-item--header_search_responsive { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } .builder-item--secondary-menu > :not(.customize-partial-edit-shortcut):first-of-type { padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; } .builder-item--secondary-menu { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } .builder-item--footer-one-widgets > :not(.customize-partial-edit-shortcut):first-of-type { padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; } .builder-item--footer-one-widgets { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } .builder-item--footer-two-widgets > :not(.customize-partial-edit-shortcut):first-of-type { padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; } .builder-item--footer-two-widgets { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } .builder-item--footer-three-widgets > :not(.customize-partial-edit-shortcut):first-of-type { padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; } .builder-item--footer-three-widgets { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } .builder-item--footer-four-widgets > :not(.customize-partial-edit-shortcut):first-of-type { padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; } .builder-item--footer-four-widgets { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } .builder-item--footer-menu > :not(.customize-partial-edit-shortcut):first-of-type { padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; } .builder-item--footer-menu { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } .builder-item--footer_copyright > :not(.customize-partial-edit-shortcut):first-of-type { padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; } .builder-item--footer_copyright { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } } @media (min-width: 961px) { .site-logo img { max-width: 200px; } .builder-item--logo > :not(.customize-partial-edit-shortcut):first-of-type { padding-top: 10px; padding-right: 0px; padding-bottom: 10px; padding-left: 0px; } .builder-item--logo { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } .builder-item--nav-icon > :not(.customize-partial-edit-shortcut):first-of-type { padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; } .builder-item--nav-icon { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } .builder-item--primary-menu > :not(.customize-partial-edit-shortcut):first-of-type { padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; } .builder-item--primary-menu { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } .builder-item--button_base > .component-wrap > :first-child { padding-top: 8px; padding-right: 12px; padding-bottom: 8px; padding-left: 12px; } .builder-item--button_base { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } .builder-item--custom_html > :not(.customize-partial-edit-shortcut):first-of-type { padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; } .builder-item--custom_html { margin-top: -10px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } .builder-item--header_search > :not(.customize-partial-edit-shortcut):first-of-type { padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; } .builder-item--header_search { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } .builder-item--header_search_responsive > :not(.customize-partial-edit-shortcut):first-of-type { padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; } .builder-item--header_search_responsive { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } .builder-item--secondary-menu > :not(.customize-partial-edit-shortcut):first-of-type { padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; } .builder-item--secondary-menu { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } .builder-item--footer-one-widgets > :not(.customize-partial-edit-shortcut):first-of-type { padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; } .builder-item--footer-one-widgets { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } .builder-item--footer-two-widgets > :not(.customize-partial-edit-shortcut):first-of-type { padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; } .builder-item--footer-two-widgets { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } .builder-item--footer-three-widgets > :not(.customize-partial-edit-shortcut):first-of-type { padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; } .builder-item--footer-three-widgets { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } .builder-item--footer-four-widgets > :not(.customize-partial-edit-shortcut):first-of-type { padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; } .builder-item--footer-four-widgets { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } .builder-item--footer-menu > :not(.customize-partial-edit-shortcut):first-of-type { padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; } .builder-item--footer-menu { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } .builder-item--footer_copyright > :not(.customize-partial-edit-shortcut):first-of-type { padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; } .builder-item--footer_copyright { margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; } } .builder-item--primary-menu .nav-menu-primary > .primary-menu-ul li:not(.woocommerce-mini-cart-item) > a, .builder-item--primary-menu .nav-menu-primary > .primary-menu-ul li > a .caret-wrap .caret { color: #404248; } .builder-item--primary-menu .nav-menu-primary > .primary-menu-ul li:not(.woocommerce-mini-cart-item) > a:after { background-color: #8cc1fd; } .builder-item--primary-menu .nav-menu-primary > .primary-menu-ul li:not(.woocommerce-mini-cart-item):hover > a,.builder-item--primary-menu .nav-menu-primary > .primary-menu-ul li:hover > a > .caret-wrap .caret { color: #8cc1fd; } .builder-item--primary-menu .nav-menu-primary > .primary-menu-ul li.current-menu-item a, .builder-item--primary-menu .nav-menu-primary > .primary-menu-ul li.current-menu-item a .caret-wrap .caret { color: #0366d6; } .footer-top-inner,.footer-top-inner.dark-mode,.footer-top-inner.light-mode { } .footer-bottom-inner,.footer-bottom-inner.dark-mode,.footer-bottom-inner.light-mode { } 
+</style>
+<link rel='stylesheet' id='neve-google-font-headings-css'  href='//fonts.googleapis.com/css?family=Roboto+Slab%3A300%2C400%2C500%2C700&#038;subset=latin&#038;ver=5.5.22' type='text/css' media='all' />
+<link rel='stylesheet' id='neve-google-font-body-css'  href='//fonts.googleapis.com/css?family=Poppins%3A300%2C400%2C500%2C700&#038;subset=latin&#038;ver=5.5.22' type='text/css' media='all' />
+<link rel='stylesheet' id='themeisle-gutenberg-post-3119-1780853089.css-css'  href='https://vizwiz.org/wp-content/uploads/themeisle-gutenberg/post-3119-1780853089.css?ver=1.5.8' type='text/css' media='all' />
+<script type='text/javascript' id='exactmetrics-frontend-script-js-extra'>
+/* <![CDATA[ */
+var exactmetrics_frontend = {"js_events_tracking":"true","download_extensions":"zip,mp3,mpeg,pdf,docx,pptx,xlsx,rar,tar,txt","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https:\/\/vizwiz.org","hash_tracking":"false"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://vizwiz.org/wp-content/plugins/google-analytics-dashboard-for-wp/assets/js/frontend.min.js?ver=6.2.2' id='exactmetrics-frontend-script-js'></script>
+<link rel="https://api.w.org/" href="https://vizwiz.org/wp-json/" /><link rel="alternate" type="application/json" href="https://vizwiz.org/wp-json/wp/v2/pages/3119" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://vizwiz.org/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://vizwiz.org/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.5.22" />
+<link rel="canonical" href="https://vizwiz.org/workshops/2026-vizwiz-grand-challenge-workshop/" />
+<link rel='shortlink' href='https://vizwiz.org/?p=3119' />
+<link rel="alternate" type="application/json+oembed" href="https://vizwiz.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fvizwiz.org%2Fworkshops%2F2026-vizwiz-grand-challenge-workshop%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://vizwiz.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fvizwiz.org%2Fworkshops%2F2026-vizwiz-grand-challenge-workshop%2F&#038;format=xml" />
+<!-- start Simple Custom CSS and JS -->
+<link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;900&family=Roboto:wght@500&display=swap" rel="stylesheet"><!-- end Simple Custom CSS and JS -->
+<!-- start Simple Custom CSS and JS -->
+<style type="text/css">
+h4, h5{
+  font-weight: bold!important;
+}</style>
+<!-- end Simple Custom CSS and JS -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<style type="text/css" media="all">
+
+</style>
+		<style type="text/css" id="wp-custom-css">
+			/* VIDEO PAGE */
+.page-id-1440 .nv-page-title-wrap.nv-big-title .nv-page-title h1,
+.page-id-1744 .nv-page-title-wrap.nv-big-title .nv-page-title h1 {
+margin-bottom: 0;
+font-family: 'Montserrat', sans-serif;
+font-weight: 900;
+font-size: 34px;
+text-transform: uppercase;
+}
+.page-id-1440 .nv-page-title-wrap.nv-big-title .nv-page-title,
+.page-id-1744 .nv-page-title-wrap.nv-big-title .nv-page-title
+ {
+padding-bottom: 0px;
+border-bottom: 0;
+margin-bottom: 10px;
+text-align: center;
+}
+.page-id-1440 .has-3-columns h3,
+.page-id-1744 .has-3-columns h3{
+	font-family: 'Montserrat', sans-serif;
+color: #203DDA;
+font-weight: 900;
+	padding:0;
+	margin-bottom:0;
+	font-size:20px;
+	text-align:center;
+}
+.page-id-1440 .has-3-columns .wp-block-image,
+.page-id-1744 .has-3-columns .wp-block-image{
+margin-bottom: 5px;
+}
+.page-id-1440 .has-3-columns p strong,
+.page-id-1744 .has-3-columns p strong {
+font-family: 'Roboto', sans-serif;
+text-transform: uppercase;
+font-weight: 400;
+letter-spacing: none;
+	text-align:center;
+	font-size:15px;
+	line-height:1.3;
+	color:#848484;
+	display:inline-block;
+	margin-top:4px;
+}
+.page-id-1440 #wp-block-themeisle-blocks-advanced-columns-1b4b7ce5,
+.page-id-1744 #wp-block-themeisle-blocks-advanced-columns-45a64fdd{
+margin-top:-500px;
+	min-height:600px;
+	z-index:-100;
+}
+
+.page-id-1440 .nv-index-posts, .page-id-1440 .nv-single-page-wrap, .page-id-1440 .nv-single-post-wrap {
+        margin-bottom: 0px;
+    }
+.page-id-1440 .footer-top-inner, .page-id-1440 .footer-top-inner.dark-mode, .page-id-1440 .footer-top-inner.light-mode {
+display: none;
+}
+
+.page-id-1440 .video-container, .page-id-1744 .video-container { position: relative; padding-bottom: 56.25%; padding-top: 0px; overflow: hidden; }
+
+.page-id-1440 .video-container iframe,
+.page-id-1744 .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+		</style>
+		</head>
+
+<body class="page-template-default page page-id-3119 page-child parent-pageid-29 wp-custom-logo wp-embed-responsive nv-sidebar-full-width menu_sidebar_slide_left" >
+<div class="wrapper">
+	<header class="header" role="banner">
+		<a class="neve-skip-link show-on-focus" href="#content" tabindex="0">
+			Skip to content		</a>
+		<div id="header-grid"  class="hfg_header site-header">
+	
+<nav class="header--row header-main hide-on-mobile hide-on-tablet layout-full-contained nv-navbar header--row"
+	data-row-id="main" data-show-on="desktop">
+
+	<div
+		class="header--row-inner header-main-inner light-mode">
+		<div class="container">
+			<div
+				class="row row--wrapper"
+				data-section="hfg_header_layout_main" >
+				<div class="builder-item col-4 col-md-4 col-sm-4 hfg-item-left hfg-item-first"><div class="item--inner builder-item--logo"
+	data-section="title_tagline"
+	data-item-id="logo">
+	<div class="site-logo">
+	<a class="brand" href="https://vizwiz.org/" title="VizWiz"
+			aria-label="VizWiz">
+					<img src="https://vizwiz.org/wp-content/uploads/2019/05/logo-name1.png"
+					alt="VizWiz Logo">
+			</a>
+</div>
+
+	</div>
+
+</div><div class="builder-item col-8 col-md-8 col-sm-8 hfg-item-right hfg-item-last"><div class="item--inner builder-item--primary-menu has_menu"
+	data-section="header_menu_primary"
+	data-item-id="primary-menu">
+	<div class="nv-nav-wrap">
+	<div role="navigation" class="style-plain nav-menu-primary"
+			aria-label="Primary Menu">
+
+		<ul id="nv-primary-navigation-main" class="primary-menu-ul"><li id="menu-item-176" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-176"><a href="https://vizwiz.org/">Home</a></li>
+<li id="menu-item-459" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-459"><a href="https://vizwiz.org/browse">Browse Dataset</a></li>
+<li id="menu-item-52" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-52"><a href="#"><span class="menu-item-title-wrap">Tasks &#038; Datasets</span><div class="caret-wrap 3" tabindex="0"><span class="caret"></span></div></a>
+<ul class="sub-menu">
+	<li id="menu-item-243" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-243"><a href="https://vizwiz.org/tasks-and-datasets/vqa/">Visual Question Answering (VQA)</a></li>
+	<li id="menu-item-667" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-667"><a href="https://vizwiz.org/tasks-and-datasets/image-captioning/">Image Captioning</a></li>
+	<li id="menu-item-742" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-742"><a href="https://vizwiz.org/tasks-and-datasets/image-quality-issues/">Image Quality Assessment</a></li>
+	<li id="menu-item-916" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-916"><a href="https://vizwiz.org/tasks-and-datasets/vision-skills/">Recognizing Vision Skills for VQA</a></li>
+	<li id="menu-item-1258" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1258"><a href="https://vizwiz.org/tasks-and-datasets/answer-grounding-for-vqa/">Answer Grounding for VQA</a></li>
+	<li id="menu-item-409" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-409"><a href="https://vizwiz.org/tasks-and-datasets/vizwiz-answer-diff/">Reasons for VQA Answer Differences</a></li>
+	<li id="menu-item-2509" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2509"><a href="https://vizwiz.org/tasks-and-datasets/vqa-answer-therapy/">Grounding All Valid Answers for VQA</a></li>
+	<li id="menu-item-242" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-242"><a href="https://vizwiz.org/tasks-and-datasets/vizwiz-priv/">Visual Privacy Recognition</a></li>
+	<li id="menu-item-2384" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2384"><a href="https://vizwiz.org/tasks-and-datasets/image-classification/">Zero-Shot Image Classification</a></li>
+	<li id="menu-item-2308" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2308"><a href="https://vizwiz.org/tasks-and-datasets/salient-object-detection/">Salient Object Detection</a></li>
+	<li id="menu-item-1961" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1961"><a href="https://vizwiz.org/tasks-and-datasets/object-localization/">Few-Shot Object Localization</a></li>
+	<li id="menu-item-3107" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3107"><a href="https://vizwiz.org/tasks-and-datasets/hierarchical-instance-tracking/">Hierarchical Instance Tracking</a></li>
+	<li id="menu-item-3109" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3109"><a href="https://vizwiz.org/tasks-and-datasets/focus-ambiguity-in-visual-questions/">Focus Ambiguity in Visual Questions</a></li>
+</ul>
+</li>
+<li id="menu-item-244" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-244"><a href="#"><span class="menu-item-title-wrap">Workshops</span><div class="caret-wrap 17" tabindex="0"><span class="caret"></span></div></a>
+<ul class="sub-menu">
+	<li id="menu-item-3169" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-3119 current_page_item menu-item-3169"><a href="https://vizwiz.org/workshops/2026-vizwiz-grand-challenge-workshop/" aria-current="page">2026</a></li>
+	<li id="menu-item-2967" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2967"><a href="https://vizwiz.org/workshops/2025-vizwiz-grand-challenge-workshop/">2025</a></li>
+	<li id="menu-item-2620" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2620"><a href="https://vizwiz.org/workshops/2024-vizwiz-grand-challenge-workshop/">2024</a></li>
+	<li id="menu-item-2301" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2301"><a href="https://vizwiz.org/workshops/2023-workshop/">2023</a></li>
+	<li id="menu-item-1330" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1330"><a href="https://vizwiz.org/workshops/2022-workshop/">2022</a></li>
+	<li id="menu-item-954" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-954"><a href="https://vizwiz.org/workshops/2021-workshop/">2021</a></li>
+	<li id="menu-item-542" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-542"><a href="https://vizwiz.org/workshops/2020-workshop/">2020</a></li>
+	<li id="menu-item-295" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-295"><a href="https://vizwiz.org/workshops/2018-workshop/">2018</a></li>
+</ul>
+</li>
+<li id="menu-item-450" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-450"><a href="https://vizwiz.org/acknowledgments/">Acknowledgments</a></li>
+</ul>	</div>
+</div>
+
+	</div>
+
+</div>							</div>
+		</div>
+	</div>
+</nav>
+
+<div class="header--row header-bottom hide-on-mobile hide-on-tablet layout-full-contained header--row"
+	data-row-id="bottom" data-show-on="desktop">
+
+	<div
+		class="header--row-inner header-bottom-inner light-mode">
+		<div class="container">
+			<div
+				class="row row--wrapper"
+				data-section="hfg_header_layout_bottom" >
+				<div class="builder-item col-12 col-md-12 col-sm-12 hfg-item-left hfg-item-first hfg-item-last"><div class="item--inner builder-item--custom_html"
+	data-section="custom_html"
+	data-item-id="custom_html">
+	<div class="nv-html-content">
+	<p style="color:#3a8014;display:none">
+Algorithms to assist people who are blind<br />
+</p>
+</div>
+	</div>
+
+</div>							</div>
+		</div>
+	</div>
+</div>
+
+
+<nav class="header--row header-main hide-on-desktop layout-full-contained nv-navbar header--row"
+	data-row-id="main" data-show-on="mobile">
+
+	<div
+		class="header--row-inner header-main-inner light-mode">
+		<div class="container">
+			<div
+				class="row row--wrapper"
+				data-section="hfg_header_layout_main" >
+				<div class="builder-item col-8 col-md-8 col-sm-8 hfg-item-left hfg-item-first"><div class="item--inner builder-item--logo"
+	data-section="title_tagline"
+	data-item-id="logo">
+	<div class="site-logo">
+	<a class="brand" href="https://vizwiz.org/" title="VizWiz"
+			aria-label="VizWiz">
+					<img src="https://vizwiz.org/wp-content/uploads/2019/05/logo-name1.png"
+					alt="VizWiz Logo">
+			</a>
+</div>
+
+	</div>
+
+</div><div class="builder-item col-4 col-md-4 col-sm-4 hfg-item-right hfg-item-last"><div class="item--inner builder-item--nav-icon"
+	data-section="header_menu_icon"
+	data-item-id="nav-icon">
+	<div class="menu-mobile-toggle item-button navbar-toggle-wrapper">
+	<button class="navbar-toggle"
+				aria-label="
+			Navigation Menu			">
+		<div class="bars">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</div>
+		<span class="screen-reader-text">Toggle Navigation</span>
+	</button>
+</div> <!--.navbar-toggle-wrapper-->
+
+
+	</div>
+
+</div>							</div>
+		</div>
+	</div>
+</nav>
+
+<div class="header--row header-bottom hide-on-desktop layout-full-contained header--row"
+	data-row-id="bottom" data-show-on="mobile">
+
+	<div
+		class="header--row-inner header-bottom-inner light-mode">
+		<div class="container">
+			<div
+				class="row row--wrapper"
+				data-section="hfg_header_layout_bottom" >
+				<div class="builder-item col-12 col-md-12 col-sm-12 hfg-item-left hfg-item-first hfg-item-last"><div class="item--inner builder-item--custom_html"
+	data-section="custom_html"
+	data-item-id="custom_html">
+	<div class="nv-html-content">
+	<p style="color:#3a8014;display:none">
+Algorithms to assist people who are blind<br />
+</p>
+</div>
+	</div>
+
+</div>							</div>
+		</div>
+	</div>
+</div>
+
+<div id="header-menu-sidebar" class="header-menu-sidebar menu-sidebar-panel light-mode slide_left">
+	<div id="header-menu-sidebar-bg" class="header-menu-sidebar-bg">
+		<div class="close-sidebar-panel navbar-toggle-wrapper">
+			<button class="navbar-toggle active" 					aria-label="
+				Navigation Menu				">
+				<div class="bars">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</div>
+				<span class="screen-reader-text">
+				Toggle Navigation					</span>
+			</button>
+		</div>
+		<div id="header-menu-sidebar-inner" class="header-menu-sidebar-inner">
+			<div class="builder-item col-12 col-md-12 col-sm-12 hfg-item-right hfg-item-first hfg-item-last"><div class="item--inner builder-item--primary-menu has_menu"
+	data-section="header_menu_primary"
+	data-item-id="primary-menu">
+	<div class="nv-nav-wrap">
+	<div role="navigation" class="style-plain nav-menu-primary"
+			aria-label="Primary Menu">
+
+		<ul id="nv-primary-navigation-sidebar" class="primary-menu-ul"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-176"><a href="https://vizwiz.org/">Home</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-459"><a href="https://vizwiz.org/browse">Browse Dataset</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-52"><a href="#"><span class="menu-item-title-wrap">Tasks &#038; Datasets</span><div class="caret-wrap 3" tabindex="0"><span class="caret"></span></div></a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-243"><a href="https://vizwiz.org/tasks-and-datasets/vqa/">Visual Question Answering (VQA)</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-667"><a href="https://vizwiz.org/tasks-and-datasets/image-captioning/">Image Captioning</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-742"><a href="https://vizwiz.org/tasks-and-datasets/image-quality-issues/">Image Quality Assessment</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-916"><a href="https://vizwiz.org/tasks-and-datasets/vision-skills/">Recognizing Vision Skills for VQA</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1258"><a href="https://vizwiz.org/tasks-and-datasets/answer-grounding-for-vqa/">Answer Grounding for VQA</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-409"><a href="https://vizwiz.org/tasks-and-datasets/vizwiz-answer-diff/">Reasons for VQA Answer Differences</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2509"><a href="https://vizwiz.org/tasks-and-datasets/vqa-answer-therapy/">Grounding All Valid Answers for VQA</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-242"><a href="https://vizwiz.org/tasks-and-datasets/vizwiz-priv/">Visual Privacy Recognition</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2384"><a href="https://vizwiz.org/tasks-and-datasets/image-classification/">Zero-Shot Image Classification</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2308"><a href="https://vizwiz.org/tasks-and-datasets/salient-object-detection/">Salient Object Detection</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1961"><a href="https://vizwiz.org/tasks-and-datasets/object-localization/">Few-Shot Object Localization</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3107"><a href="https://vizwiz.org/tasks-and-datasets/hierarchical-instance-tracking/">Hierarchical Instance Tracking</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3109"><a href="https://vizwiz.org/tasks-and-datasets/focus-ambiguity-in-visual-questions/">Focus Ambiguity in Visual Questions</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-244"><a href="#"><span class="menu-item-title-wrap">Workshops</span><div class="caret-wrap 17" tabindex="0"><span class="caret"></span></div></a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-3119 current_page_item menu-item-3169"><a href="https://vizwiz.org/workshops/2026-vizwiz-grand-challenge-workshop/" aria-current="page">2026</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2967"><a href="https://vizwiz.org/workshops/2025-vizwiz-grand-challenge-workshop/">2025</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2620"><a href="https://vizwiz.org/workshops/2024-vizwiz-grand-challenge-workshop/">2024</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2301"><a href="https://vizwiz.org/workshops/2023-workshop/">2023</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1330"><a href="https://vizwiz.org/workshops/2022-workshop/">2022</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-954"><a href="https://vizwiz.org/workshops/2021-workshop/">2021</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-542"><a href="https://vizwiz.org/workshops/2020-workshop/">2020</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-295"><a href="https://vizwiz.org/workshops/2018-workshop/">2018</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-450"><a href="https://vizwiz.org/acknowledgments/">Acknowledgments</a></li>
+</ul>	</div>
+</div>
+
+	</div>
+
+</div>		</div>
+	</div>
+</div>
+<div class="header-menu-sidebar-overlay"></div>
+
+</div>
+	</header>
+	
+	<main id="content" class="neve-main" role="main">
+
+<div class=" container single-page-container">
+	<div class="row">
+				<div class="nv-single-page-wrap col">
+			<div class="nv-page-title-wrap nv-big-title">
+	<div class="nv-page-title ">
+				<h1>2026 VizWiz Grand Challenge Workshop</h1>
+					</div><!--.nv-page-title-->
+</div> <!--.nv-page-title-wrap-->
+<div class="nv-content-wrap entry-content">
+<div class="wp-block-themeisle-blocks-advanced-columns alignfull has-1-columns has-desktop-equal-layout has-tablet-equal-layout has-mobile-equal-layout has-default-gap has-vertical-unset ticss-c17b0899" id="wp-block-themeisle-blocks-advanced-columns-8e2a62ba"><div class="wp-block-themeisle-blocks-advanced-columns-overlay"></div><div class="innerblocks-wrap">
+<div class="wp-block-themeisle-blocks-advanced-column ticss-bb5cfc13" id="wp-block-themeisle-blocks-advanced-column-da2a4792">
+<h2>Overview</h2>
+
+
+
+<p>Our goal for this workshop is to educate researchers about the technological needs of people with vision impairments while empowering researchers to improve algorithms to meet these needs.  A key component of this event will be to <strong>track progress on four dataset challeng<strong>e</strong>s</strong>, where the tasks are to <a href="https://vizwiz.org/tasks-and-datasets/object-localization/" data-type="page" data-id="1912">locate objects in few-shot learning scenarios</a>, <a href="https://vizwiz.org/tasks-and-datasets/vqa-answer-therapy/">ground all answers</a>, <a href="https://vizwiz.org/tasks-and-datasets/focus-ambiguity-in-visual-questions/">locate all plausible region of focus</a>, and <a href="https://vizwiz.org/tasks-and-datasets/hierarchical-instance-tracking/">locate and track object and part instances</a>. The second key component of this event will be a discussion about current research and application issues, including invited speakers from both academia and industry who will share their experiences in building today&#8217;s state-­of-the-­art assistive technologies as well as designing next-generation tools.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img loading="lazy" width="1024" height="616" src="https://vizwiz.org/wp-content/uploads/2026/02/CVPR2026_Banner-1-1-1024x616.jpg" alt="Banner illustrating VizWiz Dataset Challenge tasks in four columns: (1) Few-shot localization of private objects, with examples like an empty pill bottle and a bank statement. (2) Grounding all answers, showing questions with multiple valid answers (e.g., identifying sugar type or airplane type). (3) Grounding all focus regions for visual questions, highlighting multiple regions linked to different answers (e.g., clock times, cleaning products, bird location). (4) Hierarchical instance tracking, showing sequential images tracking a pill bottle across views." class="wp-image-3174" srcset="https://vizwiz.org/wp-content/uploads/2026/02/CVPR2026_Banner-1-1-1024x616.jpg 1024w, https://vizwiz.org/wp-content/uploads/2026/02/CVPR2026_Banner-1-1-300x180.jpg 300w, https://vizwiz.org/wp-content/uploads/2026/02/CVPR2026_Banner-1-1-768x462.jpg 768w, https://vizwiz.org/wp-content/uploads/2026/02/CVPR2026_Banner-1-1-1536x923.jpg 1536w, https://vizwiz.org/wp-content/uploads/2026/02/CVPR2026_Banner-1-1-2048x1231.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+
+<h2>Important Dates</h2>
+
+
+
+<ul id="block-256cd0b4-1ec2-4a74-bfdf-46a2443ad3ef"><li>Challenges go live: Friday, Feb 27 (11:59pm AoE)</li><li>Challenge submissions due: Friday, May 1 (11:59pm AoE)</li><li>Abstract submissions due: Friday, May 8 (11:59pm AoE)</li><li>Abstract acceptance notifications: Friday, May 15 (11:59pm AoE)</li><li>Half-day Workshop: Thursday, June 4</li></ul>
+
+
+
+<h2>Submissions</h2>
+
+
+
+<p>We invite two types of submissions:</p>
+
+
+
+<h3 class="ticss-21d36bbd">Challenge Submissions</h3>
+
+
+
+<p>We invite submissions about algorithms for the following four challenge tasks: <a href="https://eval.ai/web/challenges/challenge-page/2400/overview"></a><a href="https://vizwiz.org/tasks-and-datasets/object-localization/">locate objects in few-shot learning scenarios</a>, <a href="https://vizwiz.org/tasks-and-datasets/vqa-answer-therapy/">ground all answers</a>, <a href="https://vizwiz.org/tasks-and-datasets/focus-ambiguity-in-visual-questions/">locate all plausible region of focus</a>, and <a href="https://vizwiz.org/tasks-and-datasets/hierarchical-instance-tracking/">locate and track object and part instances</a>. We accept submissions for algorithms that are not published, currently under review, and already published. </p>
+
+
+
+<p>The teams with the top-performing submissions will be invited to give short talks during the workshop.  </p>
+
+
+
+<h3>Extended Abstracts</h3>
+
+
+
+<p>We invite submissions of extended abstracts on topics related to all challenge tasks as well as assistive technologies for people with visual impairments. Papers must be at most two pages (with references) and follow the <a href="https://cvpr.thecvf.com/Conferences/2026/AuthorGuidelines">CVPR format </a>using the provided <a href="https://github.com/cvpr-org/author-kit/releases">author kit</a>. Reviewing will be single-blind and accepted papers will be presented as posters. We will accept submissions on work that is not published, currently under review, and already published. There will be no proceedings. Please send your extended abstracts to&nbsp;<a href="mailto:workshop@vizwiz.org">workshop@vizwiz.org</a>.</p>
+
+
+
+<p>Please note that we will require all camera-ready content to be accessible via a screen reader.  Given that making accessible PDFs and presentations may be a new process for some authors, we will host training sessions beforehand to both educate and assist all authors to succeed in making their content accessible.  </p>
+
+
+
+<h2>Challenge Results</h2>
+
+
+
+<ul id="block-075b4a28-2665-42e5-9449-a1efc47c648b"><li>Few-Shot Localization of Private Object <br><strong>1st place: </strong>72.98: Ping-Lun Lee, Yun-Ching Kao, Cheng-Kuan Lin, Yu-Chee Tseng (National Yang Ming Chiao Tung University)<br><strong>2nd place: </strong>63.82: Heeseung Cho, Yuna Park, Esther Kim, Jiho Kim, Hyoju Kim, Christian Wallraven, Junhyoung Oh (Korea University &amp; Seoul Women’s University)<br><strong>3rd place: </strong>0.52: Zihan Zhai, Tingting Li, Zhenyu Zhao, Xu Liu, Shuo Li, Fang Liu (Xidian University)</li><li>Grounding All Valid Answers<br><strong>1st place: </strong>86.32: Sicong Li, Qianqian Xu, Zhiyong Yang, Zitai Wang, Qingming Huang (CAS &amp; University of Chinese Academy of Sciences)<br><strong>2nd place: </strong>85.12: Hao Liang, Yuanhang Tao, Meina Kan, Shiguang Shan, Xilin Chen (Chinese Academy of Sciences)Grounding All Focus Regions for Visual Questions</li><li><strong>1st place: </strong>5.92: Hao Liang, Yuanhang Tao, Meina Kan, Shiguang Shan, Xilin Chen (Chinese Academy of Sciences)</li></ul>
+
+
+
+<h2>Program</h2>
+
+
+
+<h3>Location:</h3>
+
+
+
+<p>Room 709, Colorado Convention Center [<a href="https://maps.app.goo.gl/vJkzxLHouD6cHNaF9">map</a>]<br>Address: 700 14th St, Denver, CO 80202</p>
+
+
+
+<h3>Schedule: </h3>
+
+
+
+<ul id="block-8d197ade-419c-46b5-ac7e-b1a662496a3b"><li>8:45-9:00am: Opening remarks and winner announcements for three challenges (Few-Shot Localization of Private Object, Answer Grounding, and Grounding Focus Regions)</li><li>9:00-9:30am: Invited talk and Q&amp;A with Kate Saenko, AI research scientist at Meta<ul><li>Talk title: SAM 3: Segment Anything Model</li></ul></li><li>9:30-10:00am: Invited talk and Q&amp;A with Shaun Kane, research scientist in responsible AI at Google Research<ul><li>Talk title: Disabled People &amp; Disabled Data</li></ul></li><li>10:00-10:15am: Poster spotlight talks</li><li>10:15-10:30am: Break</li><li>10:30-11:00am: Invited talk and Q&amp;A with Cordelia Schmid, research director at INRIA<ul><li>Talk title: Grounded and Efficient Video Understanding</li></ul></li><li>11-11:30am: Invited talk and Q&amp;A with Ramin Ayanzadeh, assistant professor in quantum computing and machine intelligence at University of Colorado Boulder<ul><li>Talk title: Parallel Lives Through the Same Eyes</li></ul></li><li>11:30-12:15pm: Open Q&amp;A panel with four invited speakers</li><li>12:15-12:20pm: Closing remarks</li><li>12:20-1:00pm: Poster session</li></ul>
+
+
+
+<div class="wp-block-group"><div class="wp-block-group__inner-container"></div></div>
+
+
+
+<h3>Poster List:</h3>
+
+
+
+<ul id="block-10d37dd4-daea-4781-ae83-26ee23096de6"><li><strong>Agent2Seg: Agentic VLM-Guided Few-Shot Object Localization and Segmentation for Accessibility-Oriented Images<br></strong>Ping-Lun Lee*, Yun-Ching Kao*, Cheng-Kuan Lin, Yu-Chee Tseng<br><a href="https://drive.google.com/file/d/1OFeoyzXqviDzh7wIU30vSPn_C3zdCqqF/view?usp=sharing">Paper</a></li></ul>
+
+
+
+<ul id="block-10d37dd4-daea-4781-ae83-26ee23096de6"><li><strong>Resolving Perceptual Divergence via Multi-Output Formatting<br></strong>Hao Liang, Yuanhang Tao, Meina Kan, Shiguang Shan, Xilin Chen<br><a href="https://drive.google.com/file/d/1r3vQANGJ0OsUttjVKvzJfor9J_sXjVYp/view?usp=sharing">Paper</a></li></ul>
+
+
+
+<ul id="block-10d37dd4-daea-4781-ae83-26ee23096de6"><li><strong>Region-Enhanced Single-Grounding Prediction for VizWiz VQA<br></strong>Sicong Li, Qianqian Xu, Zhiyong Yang, Zitai Wang, Qingming Huang<br><a href="https://drive.google.com/file/d/1xAyh9j5IgeR4kOEqgSSdelLeQ3ksfDCR/view?usp=sharing">Paper</a></li></ul>
+
+
+
+<ul id="block-10d37dd4-daea-4781-ae83-26ee23096de6"><li><strong>VLM-Guided Detection and Rematching for Private Object Localization<br></strong>Heeseung Cho, Yuna Park, Esther Kim, Jiho Kim, Hyojoo Kim<br><a href="https://drive.google.com/file/d/1x7OqN1iK8RerPXiht4qUhPT8kvKCPb3R/view?usp=sharing">Paper</a></li></ul>
+
+
+
+<ul id="block-10d37dd4-daea-4781-ae83-26ee23096de6"><li><strong>Zero-Shot Focus Ambiguity Grounding via Multi-Output Formatting<br></strong>Hao Liang, Yuanhang Tao, Meina Kan, Shiguang Shan, Xilin Chen<br><a href="https://drive.google.com/file/d/1fHP7BmvxbznOer_qycePI-Cf-109KXwW/view?usp=sharing">Paper</a></li></ul>
+
+
+
+<h3>Invited Speakers:</h3>
+
+
+
+<div class="wp-block-group"><div class="wp-block-group__inner-container">
+<div class="wp-block-columns">
+<div class="wp-block-column" style="flex-basis:25%">
+<div class="wp-block-group"><div class="wp-block-group__inner-container"></div></div>
+
+
+
+<figure class="wp-block-image size-large is-resized"><img loading="lazy" src="https://vizwiz.org/wp-content/uploads/2026/02/profil_cordelia.jpg" alt="Headshot of Cordelia Schmid" class="wp-image-3204" width="600" height="600"/></figure>
+
+
+
+<p class="has-text-align-center"><a href="https://cordeliaschmid.github.io/">Cordelia Schmid</a><br>Research Director           <br>INRIA</p>
+
+
+
+<p></p>
+
+
+
+<p></p>
+</div>
+
+
+
+<div class="wp-block-column" style="flex-basis:25%">
+<div class="wp-block-group"><div class="wp-block-group__inner-container"></div></div>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="600" height="600" src="https://vizwiz.org/wp-content/uploads/2026/02/square-Saenko-600x600-1.jpg" alt="Headshot of Kate Saenko" class="wp-image-3205" srcset="https://vizwiz.org/wp-content/uploads/2026/02/square-Saenko-600x600-1.jpg 600w, https://vizwiz.org/wp-content/uploads/2026/02/square-Saenko-600x600-1-300x300.jpg 300w, https://vizwiz.org/wp-content/uploads/2026/02/square-Saenko-600x600-1-150x150.jpg 150w" sizes="(max-width: 600px) 100vw, 600px" /></figure>
+
+
+
+<p class="has-text-align-center"><a href="https://ai.bu.edu/ksaenko.html#">Kate Saenko</a>          <br>Research Scientist/Professor<br>Meta/Boston University</p>
+
+
+
+<p></p>
+</div>
+
+
+
+<div class="wp-block-column" style="flex-basis:25%">
+<div class="wp-block-group"><div class="wp-block-group__inner-container"></div></div>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="600" height="600" src="https://vizwiz.org/wp-content/uploads/2026/02/sk-in-iceland-2-1.png" alt="Headshot of Shaun Kane" class="wp-image-3221" srcset="https://vizwiz.org/wp-content/uploads/2026/02/sk-in-iceland-2-1.png 600w, https://vizwiz.org/wp-content/uploads/2026/02/sk-in-iceland-2-1-300x300.png 300w, https://vizwiz.org/wp-content/uploads/2026/02/sk-in-iceland-2-1-150x150.png 150w" sizes="(max-width: 600px) 100vw, 600px" /></figure>
+
+
+
+<p class="has-text-align-center"><a href="https://shaunkane.com/">Shaun Kane</a><br>Research Scientist<br>Google </p>
+</div>
+
+
+
+<div class="wp-block-column" style="flex-basis:25%">
+<div class="wp-block-group"><div class="wp-block-group__inner-container"></div></div>
+
+
+
+<figure class="wp-block-image size-large is-resized"><img loading="lazy" src="https://vizwiz.org/wp-content/uploads/2026/02/remin_2024-1024x1024.png" alt="Headshot of Ramin Ayanzadeh" class="wp-image-3209" width="600" height="600" srcset="https://vizwiz.org/wp-content/uploads/2026/02/remin_2024-1024x1024.png 1024w, https://vizwiz.org/wp-content/uploads/2026/02/remin_2024-300x300.png 300w, https://vizwiz.org/wp-content/uploads/2026/02/remin_2024-150x150.png 150w, https://vizwiz.org/wp-content/uploads/2026/02/remin_2024-768x768.png 768w, https://vizwiz.org/wp-content/uploads/2026/02/remin_2024.png 1500w" sizes="(max-width: 600px) 100vw, 600px" /></figure>
+
+
+
+<p class="has-text-align-center"><a href="https://www.colorado.edu/cs/ramin-ayanzadeh">Ramin&nbsp;Ayanzadeh</a><br>Assistant Professor<br>University of Colorado Boulder</p>
+
+
+
+<p></p>
+</div>
+</div>
+</div></div>
+
+
+
+<h2>Organizers</h2>
+
+
+
+<div class="wp-block-columns has-3-columns">
+<div class="wp-block-column">
+<div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img loading="lazy" src="https://vizwiz.org/wp-content/uploads/2025/01/profile-pic-edited.jpg" alt="Head shot of Danna Gurari" class="wp-image-2923" width="250" height="250" srcset="https://vizwiz.org/wp-content/uploads/2025/01/profile-pic-edited.jpg 850w, https://vizwiz.org/wp-content/uploads/2025/01/profile-pic-edited-300x300.jpg 300w, https://vizwiz.org/wp-content/uploads/2025/01/profile-pic-edited-150x150.jpg 150w, https://vizwiz.org/wp-content/uploads/2025/01/profile-pic-edited-768x769.jpg 768w" sizes="(max-width: 250px) 100vw, 250px" /></figure></div>
+
+
+
+<p class="has-text-align-center"><a href="https://home.cs.colorado.edu/~DrG/AboutMe.html" target="_blank" rel="noreferrer noopener">Danna Gurari</a><br>University of Colorado Boulder</p>
+</div>
+
+
+
+<div class="wp-block-column">
+<div class="wp-block-image"><figure class="aligncenter size-full is-resized"><img loading="lazy" src="https://vizwiz.org/wp-content/uploads/2019/05/jeff1.jpg" alt="Head shot of Jeffrey Bigham" class="wp-image-59" width="250" height="250" srcset="https://vizwiz.org/wp-content/uploads/2019/05/jeff1.jpg 300w, https://vizwiz.org/wp-content/uploads/2019/05/jeff1-150x150.jpg 150w" sizes="(max-width: 250px) 100vw, 250px" /></figure></div>
+
+
+
+<p class="has-text-align-center"><a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://www.cs.cmu.edu/~jbigham/" target="_blank">Jeffrey Bigham</a><br>Carnegie Mellon University, Apple</p>
+</div>
+
+
+
+<div class="wp-block-column">
+<div class="wp-block-image"><figure class="aligncenter size-full is-resized"><img loading="lazy" src="https://vizwiz.org/wp-content/uploads/2022/06/Cutrell-small.jpg" alt="Head shot of Ed Cutrell" class="wp-image-1696" width="250" height="250" srcset="https://vizwiz.org/wp-content/uploads/2022/06/Cutrell-small.jpg 360w, https://vizwiz.org/wp-content/uploads/2022/06/Cutrell-small-300x300.jpg 300w, https://vizwiz.org/wp-content/uploads/2022/06/Cutrell-small-150x150.jpg 150w" sizes="(max-width: 250px) 100vw, 250px" /></figure></div>
+
+
+
+<p class="has-text-align-center"><a href="http://cutrell.org/" target="_blank" rel="noreferrer noopener">Ed Cutrell</a><br>Microsoft</p>
+</div>
+</div>
+
+
+
+<div class="wp-block-columns has-3-columns">
+<div class="wp-block-column">
+<div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img loading="lazy" src="https://vizwiz.org/wp-content/uploads/2026/01/1742944696747-1.jpeg" alt="Head shot of Neelima Prasad" class="wp-image-3132" width="250" height="250" srcset="https://vizwiz.org/wp-content/uploads/2026/01/1742944696747-1.jpeg 560w, https://vizwiz.org/wp-content/uploads/2026/01/1742944696747-1-300x300.jpeg 300w, https://vizwiz.org/wp-content/uploads/2026/01/1742944696747-1-150x150.jpeg 150w" sizes="(max-width: 250px) 100vw, 250px" /></figure></div>
+
+
+
+<p class="has-text-align-center"><a href="https://www.linkedin.com/in/neelima-prasad-41b0b21aa/">Neelima Prasad</a><br>University of Colorado Boulder</p>
+</div>
+
+
+
+<div class="wp-block-column">
+<div class="wp-block-image"><figure class="aligncenter is-resized"><img loading="lazy" src="https://vizwiz.org/wp-content/uploads/2025/01/IMG_1626-2-1024x1024.jpg" alt="Head shot of Zhuoheng Li" width="250" height="250"/></figure></div>
+
+
+
+<p class="has-text-align-center"><a href="https://andy-lzh.github.io/">Zhuoheng Li</a><br>University of Colorado Boulder</p>
+</div>
+
+
+
+<div class="wp-block-column"></div>
+</div>
+
+
+
+<div class="wp-block-group"><div class="wp-block-group__inner-container"></div></div>
+
+
+
+<h2>Contact Us</h2>
+
+
+
+<p>For questions, comments, or feedback, please send them to&nbsp;<a rel="noreferrer noopener" href="https://home.cs.colorado.edu/~DrG/AboutMe.html" target="_blank">Danna Gurari</a>&nbsp;at&nbsp;<a rel="noreferrer noopener" href="mailto:danna.gurari@colorado.edu" target="_blank">danna.gurari@colorad</a><a href="mailto:danna.gurari@colorado.edu" target="_blank" rel="noreferrer noopener">o</a><a rel="noreferrer noopener" href="mailto:danna.gurari@colorado.edu" target="_blank">.edu</a>.</p>
+
+
+
+<div style="height:30px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<div class="wp-block-columns has-2-columns">
+<div class="wp-block-column"></div>
+
+
+
+<div class="wp-block-column"></div>
+
+
+
+<div class="wp-block-column"></div>
+</div>
+</div>
+</div></div>
+
+
+
+<p></p>
+</div>		</div>
+			</div>
+</div>
+</main><!--/.neve-main-->
+
+
+<footer class="site-footer hfg_footer " id="site-footer">
+	<div class="footer--row footer-top layout-full-contained"
+	id="cb-row--footer-top"
+	data-row-id="top" data-show-on="desktop">
+	<div
+		class="footer--row-inner footer-top-inner light-mode footer-content-wrap">
+		<div class="container">
+			<div
+				class="hfg-grid nv-footer-content hfg-grid-top row--wrapper "
+				data-section="hfg_footer_layout_top" >
+				<div class="builder-item col-12 col-md-12 col-sm-12 hfg-item-center hfg-item-first hfg-item-last"><div class="item--inner builder-item--footer_copyright"
+	data-section="footer_copyright"
+	data-item-id="footer_copyright">
+	<div class="component-wrap">
+	</div>
+
+	</div>
+
+</div>							</div>
+		</div>
+	</div>
+</div>
+
+</footer>
+
+</div><!--/.wrapper-->
+<script type='text/javascript' src='https://vizwiz.org/wp-content/plugins/otter-blocks/vendor/codeinwp/gutenberg-animation/build/animate.js?ver=5.5.22' id='themeisle-gutenberg-animation-frontend-js'></script>
+<script type='text/javascript' id='neve-script-js-extra'>
+/* <![CDATA[ */
+var NeveProperties = {"ajaxurl":"https:\/\/vizwiz.org\/wp-admin\/admin-ajax.php","nonce":"85e86aab2c"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://vizwiz.org/wp-content/themes/neve/assets/js/frontend.js?ver=2.4.2' id='neve-script-js'></script>
+<script type='text/javascript' src='https://vizwiz.org/wp-includes/js/comment-reply.min.js?ver=5.5.22' id='comment-reply-js'></script>
+<script type='text/javascript' src='https://vizwiz.org/wp-content/plugins/page-links-to/dist/new-tab.js?ver=3.3.4' id='page-links-to-js'></script>
+<script type='text/javascript' src='https://vizwiz.org/wp-includes/js/wp-embed.min.js?ver=5.5.22' id='wp-embed-js'></script>
+
+</body>
+
+</html>

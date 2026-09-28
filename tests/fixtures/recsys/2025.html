@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="RecSys Challenge 2025">
+    <meta name="keywords" content="Recommender Systems, RecSys Challenge">
+    <meta name="author" content="RecSysChallenge 2025 Organizers">
+    <title>RecSys Challenge 2025</title>
+    <!-- CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/ekko-lightbox.min.css" rel="stylesheet">
+    <link href="./css/main.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="images/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+<div id="top" class="container">
+    <div class="header clearfix" style="padding-bottom:5px;">
+            <span style="float:left; padding-right: 15px;">
+               <!-- <img src="./images/logo.png" alt="logo" width="50"> </span> <span style="float:right; padding-right: 15px;"> -->
+                <!--a style="text-decoration: none;" href="https://twitter.com/acmrecsys" title="Twitter"> <img
+                   src="./images/ico-twitter.svg" alt="" width="24">
+                </a-->
+            </span>
+        <h3><a href="http://recsyschallenge.com/2025" style="text-decoration:none;">
+            RecSys Challenge 2025</a>
+        </h3>
+        <div style="margin-top:20px;font-family: Arial,sans-serif">
+            <ul class="nav nav-pills navbar-nav navbar-left">
+                <li role="presentation"><a href="#about">About</a></li>
+                <li role="presentation"><a href="#dates">Timeline</a></li>
+                <li role="presentation"><a href="#participation">Participation</a></li>
+<!--                <li role="presentation"><a href="#guidelines">Submission</a></li>-->
+<!--                <li role="presentation"><a href="#dataset">Dataset</a></li>-->
+                <li role="presentation"><a href="#program">Program</a></li>
+                <li role="presentation"><a href="#organizers">Organization</a></li>
+                <li role="presentation"><a href="./assets/CfS_2026.pdf" target="\_blank">Call 2026</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- ABOUT -->
+    <div id="about" class="lead">
+        <h1>About<sup><a class="dropup" style="font-size:10px;" href="#top"><span class="caret">
+         </span>
+            top</a></sup>
+        </h1>
+    </div>
+    <p align="justify">
+        The RecSys 2025 Challenge will be organized by Jacek Dąbrowski, Maria Janicka, Łukasz Sienkiewicz and
+        Gergo Stomfai (Synerise), Dietmar Jannach (University of Klagenfurt, Austria), Marco Polignano (
+        University of Bari Aldo Moro, Italy), Claudio Pomo (Politecnico di Bari, Italy), Abhishek Srivastava
+        (IIM Visakhapatnam, India), and Francesco Barile (Maastricht University, Netheralnds).
+    </p>
+    <p align="justify">
+        The challenge is designed to promote a unified approach to behavior modeling. Many modern enterprises rely
+        on machine learning and predictive analytics for improved business decisions. Common predictive tasks in
+        such organizations include recommendation, propensity prediction, churn prediction, user lifetime value
+        prediction, and many others. A central piece of information that is used for these predictive tasks are
+        logs of past behavior of users e.g., what they bought, what they added to their shopping cart, which pages
+        they visited. Rather than treating these tasks as separate problems, we propose a unified modeling approach.
+    </p>
+    <p align="justify">
+        To achieve this, we introduce the concept of Universal Behavioral Profiles—user representations that
+        encode essential aspects of each individual’s past interactions. These profiles are designed to be universally
+        applicable across multiple predictive tasks, such as churn prediction and product recommendations.
+        By developing representations that capture fundamental patterns in user behavior, we enable models to
+        generalize effectively across different applications.
+    </p>
+
+
+    <br>
+    <h2>Challenge Task<sup><a class="dropup" style="font-size:10px;" href="#top"><span class="caret"></span>
+        top</a></sup>
+    </h2>
+    <p align="justify">
+        The objective of this challenge is to develop Universal Behavioral Profiles  based on the provided data,
+        which includes various types of events such as product buy, add to cart, remove from cart, page visit,
+        and search query. These user representations will be evaluated based on their ability to generalize across
+        a range of predictive tasks. The task of the challenge participants is to submit user representations,
+        which will serve as inputs to a simple neural network architecture. Based on the submitted representations,
+        models will be trained on several tasks, including some that are disclosed to participants, called "open tasks,"
+        as well as additional hidden tasks. The final performance score will aggregate results from all tasks.
+        We iterate model training and evaluation automatically upon submission, the task of the participants is
+        to submit universal user representations.
+    </p>
+    <p align="justify">
+        <strong>Open Tasks</strong>:
+        <ul>
+            <li>
+                <strong>Churn Prediction</strong>: Using the submitted user representations,
+                the model will predict whether an active user (defined as one with at least one product-buy event)
+                will churn, i.e., make no purchases within the next 14 days.
+            </li>
+            <li>
+                <strong>Product Propensity</strong>: Using the submitted user representations,
+                the model will predict products which a user is most likely to purchase within the next 14 days,
+                from a predefined subset of items.
+            </li>
+            <li>
+                <strong>Category Propensity</strong>: Using the submitted user representations,
+                the model will predict the categories in which a user is most likely to make a
+                purchase within the next 14 days, from a predefined subset of categories.
+            </li>
+        </ul>
+    </p>
+    <p align="justify">
+        <strong>Hidden Tasks</strong>:
+        <p align="justify">
+            In addition to the open tasks, the challenge includes hidden tasks, which remain undisclosed during
+    the competition. The purpose of these tasks is to ensure that submitted Universal Behavioral Profiles are
+    capable of generalization rather than being fine-tuned for specific known objectives. Similar to the open tasks,
+    the hidden tasks focus on predicting user behavior based on the submitted representations, but they introduce new
+    contexts that participants are not explicitly optimizing for.
+            After the competition concludes, the hidden tasks will be disclosed along with the corresponding code,
+    allowing participants to replicate results.
+        </p>
+    <br>
+    <h2>Evaluation<sup><a class="dropup" style="font-size:10px;" href="#top"><span class="caret"></span>
+        top</a></sup>
+    </h2>
+    <p align="justify">
+        The primary metric by which we measure model performance is AUROC. Additionally, the performance of category
+        propensity and product propensity models is evaluated based on the novelty and diversity of the results. In
+        these cases, the task’s score is derived as a weighted sum of all metrics,
+        specifically 0.8 × AUROC + 0.1 × Novelty + 0.1 × Diversity.
+    </p>
+    <p align="justify">
+        For each task, a leaderboard is created based on the respective task scores. The final score,
+        which evaluates the overall quality of user representations and their ability to generalize, is
+        determined by aggregating ranks from all per-task leaderboards using Borda count method. In this approach,
+        each model's rank in a task leaderboard is converted into points, where a model ranked k-th among N participants
+        receives (N - k) points. The final ranking is based on the total points accumulated across all tasks,
+        ensuring that models performing well consistently across multiple tasks achieve a higher overall score.
+
+    </p>
+    <br>
+    <h2 id="dataset">DataSet<sup><a class="dropup" style="font-size:10px;" href="#top"><span class="caret"></span>
+        top</a></sup>
+    </h2>
+    <p align="justify">
+        The challenge organizers will publish an anonymized dataset containing real-world user interaction logs. All recorded interactions can be utilized to create Universal Behavioral Profiles; however, participants will be required to submit behavioral profiles only for a subset of users, which will be used for model training and evaluation. 
+    </p>
+    <p align="justify">
+        The data will consist of four types of events and product attributes:
+    </p>
+    <p align="justify">
+        <strong>product_buy</strong>
+        <ul>
+            <li>
+                client_id (int64): Numeric ID of the client (user).
+            </li>
+            <li>
+                timestamp (object): Date and time of the event in the format YYYY-MM-DD HH:mm:ss.
+            </li>
+            <li>
+                sku (int64): Numeric ID of the item.
+            </li>
+        </ul>
+    </p>
+    <p align="justify">
+        <strong>add_to_cart</strong>
+        <ul>
+            <li>
+                client_id (int64): Numeric ID of the client (user).
+            </li>
+            <li>
+                timestamp (object): Date and time of the event in the format YYYY-MM-DD HH:mm:ss.
+            </li>
+            <li>
+                sku (int64): Numeric ID of the item.
+            </li>
+        </ul>
+    </p>
+    <p align="justify">
+        <strong>remove_from_cart</strong>
+        <ul>
+            <li>
+                client_id (int64): Numeric ID of the client (user).
+            </li>
+            <li>
+                timestamp (object): Date and time of the event in the format YYYY-MM-DD HH:mm:ss.
+            </li>
+            <li>
+                sku (int64): Numeric ID of the item.
+            </li>
+        </ul>
+    </p>
+    <p align="justify">
+        <strong>product_properties</strong>
+        <ul>
+            <li>
+                sku (int64): Numeric ID of the item.
+            </li>
+            <li>
+                category (int64): Numeric ID of the item category.
+            </li>
+            <li>
+                price (int64): Numeric ID of the item's price bucket.
+            </li>
+            <li>
+                embedding (object): A textual embedding of a product name, compressed using the product quantization method.
+            </li>
+        </ul>
+    </p>
+    <p align="justify">
+        <strong>page_visit</strong>
+        <ul>
+            <li>
+                client_id (int64): Numeric ID of the client.
+            </li>
+            <li>
+                timestamp (object): Date and time of the event in the format YYYY-MM-DD HH:mm:ss.
+            </li>
+            <li>
+                url (int64): Numeric ID of a visited URL. The explicit information about what (e.g., which item) is presented on a particular page is not provided.
+            </li>
+        </ul>
+    </p>
+    <p align="justify">
+        <strong>search_query</strong>
+        <ul>
+            <li>
+                client_id (int64): Numeric ID of the client.
+            </li>
+            <li>
+                timestamp (object): Date and time of the event in the format YYYY-MM-DD HH:mm:ss.
+            </li>
+            <li>
+                query (object): The textual embedding of the search query, compressed using the product quantization method.
+            </li>
+        </ul>
+    </p>
+
+    <table class="table table-striped w-auto">
+        <thead>
+            <tr>
+                <th><strong>Event type</strong></th>
+                <th><strong>Number of events</strong></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><em>product_buy</em></td>
+                <td>~1 700 000</td>
+            </tr>
+            <tr>
+                <td><em>add_to_cart</em></td>
+                <td>~5 200 000</td>
+            </tr>
+            <tr>
+                <td><em>remove_from_cart</em></td>
+                <td>~1 700 000</td>
+            </tr>
+            <tr>
+                <td><em>page_visit</em></td>
+                <td>~150 000 000</td>
+            </tr>
+            <tr>
+                <td><em>search_query</em></td>
+                <td>~9 600 000</td>
+            </tr>
+        
+            <tr>
+            <td><em>Total number of unique users</em></td>
+            <td>~19 000 000</td>
+            </tr>
+        </tbody>
+    </table>
+    <h3>Download</h3>
+    <p>
+        Universal Behavioral Modeling Dataset © 2025 by Synerise SA is licensed under Creative Commons
+        Attribution-NonCommercial 4.0 International. To view a copy of this license, visit
+        https://creativecommons.org/licenses/by-nc/4.0/<br>
+        <a href="https://data.recsys.synerise.com/dataset/ubc_data/ubc_data.tar.gz">
+            <strong><em>Download dataset</em></strong></a><br>
+        <br>We provide a competition repository that includes a baseline solution and a training pipeline,
+        allowing participants to run experiments on open tasks:<br>
+        <a href="https://github.com/Synerise/recsys2025">
+            <strong><em>Repository</em></strong></a><br>
+    </p>
+    <p><em>For further details, please refer to the  <a href="https://recsys.synerise.com/">
+        dedicated website of Synerise</a>.</em>
+    </p>
+    <br>
+    <h2>Prize<sup><a class="dropup" style="font-size:10px;" href="#top"><span class="caret"></span>
+        top</a></sup>
+    </h2>
+    <p align="justify">
+    <ul>
+        <li>
+            First three teams from the participants - $3500/$2500/$1500
+        </li>
+        <li>
+            Special prize for first three academic teams - $2500/1500/500
+        </li>
+    </ul>
+    </p>
+    <br>
+    <br>
+
+    <div id="participation" class="lead">
+        <h1>
+            Participation and Data
+            <sup><a class="dropup" style="font-size:10px;" href="#top"><span class="caret"></span>top</a>
+            </sup>
+        </h1>
+        <div class="wrapper">
+            <strong>Registration &amp; Data Access is open now!</strong><br>
+            <a href="https://recsys.synerise.com/" target="_blank">
+                <button type="button" class="btn btn-lg  btn-primary button">Registration &amp; Data Access</button>
+            </a>
+        </div>
+    </div>
+
+
+    <br>
+    <br>
+    <div id="dates">
+        <h1>Timeline <sup><a class="dropup" style="font-size:10px;" href="#top"><span class="caret"></span>
+            top</a></sup>
+        </h1>
+        <table class="table table-striped lead">
+            <thead>
+            <tr>
+                <th>When?</th>
+                <th>What?</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>10 March, 2025</td>
+                <td>
+                    <strong>Start RecSys Challenge</strong>
+                    <p>Release dataset</p>
+                </td>
+            </tr>
+            <tr>
+                <td>10 April, 2025</td>
+                <td>
+                    <strong>Submission System Open</strong>
+                    <p>Leaderboard live</p>
+                </td>
+            </tr>
+            <tr>
+                <td> 25 June, 2025<s>15 June, 2025</s></td>
+                <td>
+                    <strong>End RecSys Challenge</strong>
+                </td>
+            </tr>
+            <tr>
+                <td> 30 June, 2025 <s>20 June, 2025</s></td>
+                <td>
+                    <strong>Final Leaderboard &amp; Winners</strong>
+                    <p>EasyChair open for submissions</p>
+                </td>
+            </tr>
+            <tr>
+                <td> 5 July, 2025 <s>26 June, 2025</s></td>
+                <td>
+                    <strong>Code Upload</strong>
+                    <p>Upload code of the final predictions</p>
+                </td>
+            </tr>
+            <tr>
+                <td> 12 July, 2025 <s>7 July, 2025</s></td>
+                <td>
+                    <strong>Paper Submission Due</strong>
+                </td>
+            </tr>
+            <tr>
+                <td>28 July, 2025 <s>24 July, 2025</s></td>
+                <td>
+                    <strong>Paper Acceptance Notifications</strong>
+                </td>
+            </tr>
+            <tr>
+                <td> 7 August, 2025 <s>5 August, 2025</s></td>
+                <td>
+                    <strong>Camera-Ready Papers</strong>
+                </td>
+            </tr>
+            <tr>
+                <td>September 2025</td>
+                <td>
+                    <strong>RecSys Challenge Workshop</strong>
+                    <p>@ <a href="https://recsys.acm.org/recsys25/">ACM RecSys 2025</a></p>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div id="guidelines" class="lead">
+        <h1>
+            Paper Submission Guidelines<sup><a class="dropup" style="font-size:10px;" href="#top"><span
+                class="caret"></span> top</a></sup>
+        </h1>
+        <p>
+            <font color="green"><strong>Submission website:</strong></font>
+            <a href="https://easychair.org/my/conference?conf=recsys2025" target="_blank">EasyChair</a>
+        </p>
+        <ul>
+            <li>All participants of the challenge are invited to submit if they consider their submission particularly
+                effective, novel, otherwise interesting, or exploiting identified particularities of the data.
+            </li>
+            <li>
+                <font color="green"><strong>Note:</strong></font> paper submission is mandatory if you want to be
+                eligible for a prize. Accepted papers are given a presentation slot at the
+                workshop. At least one author of each accepted paper must attend the workshop and present their work.
+                Please note that a badly written paper or absence of presence at workshop, may prevent you from being
+                eligible for the prize. Please contact the workshop organization if none of the authors will be able to
+                attend the workshop.
+            </li>
+            <li>
+                <font color="green"><strong>Page limit:</strong></font> 4 pages + 1 page for references (<a
+                    href="https://www.acm.org/publications/proceedings-template">ACM SIG Format</a>) in double column
+                format.
+                Instructions for Word and LaTeX authors are given below:
+                <ul>
+                    <li><strong>Microsoft Word</strong>: Write your paper using
+                        <a href="https://www.acm.org/binaries/content/assets/publications/word_style/interim-template-style/interim-layout.docx" target="_blank" rel="noopener">ACM’s interim template</a>.
+                        Follow the embedded instructions to apply the paragraph styles to your various text elements.
+                        The text is in double-column format and no additional formatting is required at this stage.
+                    </li>
+                    <li><strong>LaTeX</strong>: Please use the latest version of the <a href="https://portalparts.acm.org/hippo/latex_templates/acmart-primary.zip" target="_blank" rel="noopener">Primary Article Template</a>
+                        – LaTeX to create your submission.Start the document with the
+                        <span style="font-family: monospace;">\documentclass[sigconf]{acmart}</span>
+                        command to generate the output in a double-column format. Please see the
+                        <a href="https://portalparts.acm.org/hippo/latex_templates/acmart.pdf" target="_blank" rel="noopener">LaTeX documentation</a>
+                        and <a href="https://www.acm.org/publications/taps/latex-best-practices" target="_blank" rel="noopener">ACM’s LaTeX best practices guide</a>
+                        for further instructions, <strong>ignoring the single-column instructions</strong>.
+                        Do not use the “manuscript” option, otherwise the document will not be compiled in double-column,
+                        as required. Check the sample-sigconf.tex file included in the template package for a formatting example.
+                        To ensure 100% <strong>compatibility</strong> with The ACM Publishing System (TAPS), please <strong>restrict the use of packages</strong>
+                        to the <a href="https://www.acm.org/publications/taps/whitelist-of-latex-packages" target="_blank" rel="noopener">whitelist of approved LaTeX packages</a>.</li>
+                </ul>
+            </li>
+            <li>Anonymization of submissions is not required; please include your team name in abstract and text, as
+                well as a link to your code repository, the achieved score, and a reference to the RecSys Challenge
+                Website (<a href="http://www.recsyschallenge.com/2025/">http://www.recsyschallenge.com/2025/</a>). Note:
+                This will be replaced with a reference to an overview paper in the RecSys proceedings for the
+                camera-ready version.
+            </li>
+            <li>
+                <font color="green"><strong>Submission website:</strong></font> <a href="https://easychair.org/my/conference?conf=recsys2025" target="_blank">EasyChair</a>
+            </li>
+            <li>The topics of interest include, but are not limited to:
+                <ul>
+                    <li>Development of novel algorithms for creating Universal Behavioral Profiles.</li>
+                    <li>Techniques for ensuring the generalization of user representations across both open and hidden predictive tasks.</li>
+                    <li>In-depth analysis and creative feature engineering of the provided event data (product interactions, page visits, searches, etc.).</li>
+                    <li>Methods for predicting user churn, as well as product and category propensity, based on user representations.</li>
+                    <li>Scalable and efficient approaches for generating user profiles from large-scale behavioral data.</li>
+                    <li>Innovative approaches to user representation that can be applied to a variety of downstream tasks.</li>
+                </ul>
+            </li>
+
+            <li>The submitted papers will be evaluated based on novelty, clarity, and presented empirical results.</li>
+            <li>Each paper will be reviewed by at least two PC members.</li>
+            <li>Our proceedings will be published in the ACM Digital Library within its International Conference Proceedings Series.</li>
+            <li>Accepted papers must be presented in the RecSys Challenge Workshop.</li>
+            <li>
+                <p><font color="green"><strong>Important Note on Publication Fees</strong></font></p>
+                <p>
+                    Please be aware that this workshop follows the new ACM International Conference Proceedings Series (ICPS) model.
+                    Under this model, <strong>the financial responsibility for the Article Processing Charge (APC) lies with the authors of accepted papers.</strong>
+                </p>
+                <p>
+                    However, the RecSys conference organizers are committed to supporting the community. Authors who face genuine difficulties in covering the APC will have the opportunity to submit a motivated request for financial support. These requests will be evaluated by the main conference organizers on a case-by-case basis. Please note that support is not guaranteed.
+                </p>
+                <p>
+                    For more details on the ACM ICPS model, please refer to the
+                    <a href="https://www.acm.org/publications/icps/faq" target="_blank" rel="noopener noreferrer">ICPS FAQ</a>
+                    and
+                    <a href="https://www.acm.org/publications/icps/organizer-guidance" target="_blank" rel="noopener noreferrer">organizer guidance</a>.
+                </p>
+            </li>
+        </ul>
+    </div>
+    <br>
+    <div class="lead" id="program">
+        <h1>Workshop Program and Accepted Papers<sup><a class="dropup" style="font-size:10px;" href="#top"><span class="caret"></span>
+            top</a></sup>
+        </h1>
+        <em>The RecSys Challenge Workshop will take place on September 22nd, 2025<br> <strong> All times are CET</strong></em>
+        <table class="table table-striped lead">
+            <tbody>
+            <tr>
+                <td>8:30-8:40</td>
+                <td><strong>Opening Remarks</strong></td>
+            </tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr style="color:gray;">
+                <td>8:40-9:40</td>
+                <td><strong>📈 Session 1: Sequential Dynamics and Temporal Modeling</strong></td>
+            </tr>
+            <tr>
+                <td>8:40-8:55</td>
+                <td><strong>Toward Universal User Representations: Contrastive Learning with Transformers and Embedding Ensembles (🥇)</strong> --- Yuki Sawada, Rintaro Hasegawa, Yuhi Nagatsuma, Shugo Takei, Kazuhito Yonekawa, and Hiromu Auchi</td>
+            </tr>
+            <tr>
+                <td>8:55-9:10</td>
+                <td><strong>Encode Me If You Can: Learning Universal User Representations via Event Sequence Autoencoding (🥈)</strong> --- Anton Klenitskiy, Artem Fatkulin, Daria Denisova, Anton Pembek, and Alexey Vasilev</td>
+            </tr>
+            <tr>
+                <td>9:10-9:25</td>
+                <td><strong>From Sequences to Profiles: Generating Universal Behavioral Profiles exploiting Recurrent Neural Networks (🥇🏛️)</strong> --- Simone Colecchia, Mauro Orazio Drago, Jihad Founoun, Paolo Gennaro, Ernesto Natuzzi, Luca Pagano, Sajjad Shaffaf, Giuseppe Vitello, Andrea Pisani, and Maurizio Ferrari Dacrema</td>
+            </tr>
+            <tr>
+                <td>9:25-9:40</td>
+                <td><strong>State-Space Sequential Encoders for Universal Behavioral Profiles</strong> --- Keita Nakano, Shusuke Irikuchi, and Akira Komori</td>
+            </tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr style="color:gray;">
+                <td>9:40-10:40</td>
+                <td><strong>🧩 Session 2: Hybrid Systems and Feature Fusion</strong></td>
+            </tr>
+            <tr>
+                <td>9:40-9:55</td>
+                <td><strong>Blending Sequential Embeddings, Graphs, and Engineered Features</strong> --- Sergei Makeev, Alexandr Andreev, Vladimir Baikalov, Vladislav Tytskiy, Aleksei Krasilnikov, and Kirill Khrylchenko</td>
+            </tr>
+            <tr>
+                <td>9:55-10:10</td>
+                <td><strong>Universal Behavioral Profiles using Graph Neural Networks (🥉)</strong> --- Shoji Takimura, Masato Hashimoto, Wataru Akashi, Ryo Koyama, Ryoki Wakamoto, and Kenichiro Miyaki</td>
+            </tr>
+            <tr>
+                <td>10:10-10:25</td>
+                <td><strong>Heterogeneous Feature Integration for Behavioral Profiles (🥈🏛️)</strong> --- Kaito Terasaki, Taketo Yoneda, Kiyotakashi Takagawa, Hayato Maruyama, Yongzhi Jin, Hibiki Ayabe, Kei Harada, and Kazushi Okamoto</td>
+            </tr>
+            <tr>
+                <td>10:25-10:40</td>
+                <td><strong>Beyond Aggregation: A Feature-Fused Universal Behavioral Transformer (🥉🏛️)</strong> --- Yichen Liu, Minhao Wang, Ruizhi Zhang, Wen Wu, and Wei Zhang</td>
+            </tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr style="background-color:#d1e7dd;">
+                <td>10:40-11:00</td>
+                <td>Coffee Break</td>
+            </tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr style="color:gray;">
+                <td>11:00-12:00</td>
+                <td><strong>💡 Session 3: Novel Representations and Relational Structures</strong></td>
+            </tr>
+            <tr>
+                <td>11:00-11:15</td>
+                <td><strong>One Paradigm for All: Relational Deep Learning for Representation of Universal Behavioral Profiles</strong> --- Marco Valentini, Antonio Ferrara, Chiara Mallamaci, Rossana Zampieri, Ilaria Buonfrate, Daniele Malitesta, Fedelucio Narducci, and Tommaso Di Noia</td>
+            </tr>
+            <tr>
+                <td>11:15-11:30</td>
+                <td><strong>Triple-Feature Transformer with Sparsity Regularization</strong> --- Xun Zhou and Haichuan Song</td>
+            </tr>
+            <tr>
+                <td>11:30-11:45</td>
+                <td><strong>BEHAV-E! You are Not Just a Number to Us, but an R2048 Embedding</strong> --- Juan Manuel Rodriguez and Antonela Tommasel</td>
+            </tr>
+            <tr>
+                <td>11:45-12:00</td>
+                <td><strong>Beyond Model Size: Narrative Driven Universal Modeling</strong> --- Alexandre Rousseau and Yann Veyssiere</td>
+            </tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr style="background-color:#d1e7dd;">
+                <td>12:00-13:00</td>
+                <td>Lunch</td>
+            </tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr>
+                <td>14:00-15:00</td>
+                <td><strong>Keynote: Kim Falk</strong> <em>In data we trust?</em></td>
+            </tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr>
+                <td>15:00-15:30</td>
+                <td><strong>🏆 Awards Ceremony</strong></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+
+    <div id="keynote" class="lead">
+        <h1>Keynote Speaker
+            <sup><a class="dropup" style="font-size:10px;" href="#top"><span class="caret"></span> top</a></sup>
+        </h1>
+
+        <div class="row" style="margin-top:10px;">
+            <div class="col-sm-4">
+                <!-- Sostituisci src con il percorso reale della foto -->
+                <img src="./images/keynote-kim-falk.png"
+                     alt="Keynote Speaker: Kim Falk"
+                     class="img-responsive img-thumbnail"
+                     style="width:100%; max-width:240px;">
+            </div>
+            <div class="col-sm-8">
+                <h3 style="margin-top:0;">Kim Falk</h3>
+
+                <!-- Titolo del talk -->
+                <!-- Modifica il testo tra <em>...</em> se necessario -->
+                <h4 style="margin:6px 0 8px 0;"><em>In data we trust?</em></h4>
+
+                <!-- Abstract del talk -->
+                <p style="margin:0 0 12px 0;">
+                    <strong>Abstract:</strong> Recommender engineers are essential in creating personalized user experiences,
+                    harnessing both technical expertise and engineering skills. Understanding user behavior through data
+                    is crucial for building better recommendations, but equally important is a solid grasp of business
+                    needs and problem contexts. This keynote examines the interplay between models and data, the challenges
+                    of bias, and the stochastic elements that influence system behavior. We’ll also explore where trust
+                    lies within recommendation systems and how to balance theoretical approaches with engineering realities.
+                    By addressing these challenges and trade-offs, this talk provides insights into building scalable,
+                    impactful, and trustworthy recommender systems.
+                </p>
+                <hr>
+                <!-- Short BIO -->
+                <p style="margin-top:8px; text-align: justify;">
+                    Kim Falk is a Principal Recommender Engineer at DPG Media, where he works on recommender systems in
+                    news and VOD platforms. Before, he was a staff recommender engineer at Shopify, where he was the
+                    technical lead of the Product Recommendations team. Kim has experience in machine learning but
+                    specializes in Recommender systems. He has previously worked on recommenders for customers like British
+                    Telecom and RTL+, added user segmentation in Sitecore CMS and worked on Danish NLP. Kim is also the
+                    author of Practical Recommender Systems.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <br>
+    <div id="organizers" class="lead">
+        <h1>Organization <sup><a class="dropup" style="font-size:10px;" href="#top"><span class="caret"></span>
+            top</a></sup>
+        </h1>
+        <h2>Workshop Program Committee <sup><a class="dropup" style="font-size:10px;" href="#top"><span class="caret"></span>
+            top</a></sup>
+        </h2>
+        <ul>
+            <li>Alejandro Bellogin, Universidad Autonoma de Madrid</li>
+            <li>Ludovico Boratto, University of Cagliari</li>
+            <li>Michal Daniluk, Synerise</li>
+            <li>Dietmar Jannach, University of Klagenfurt</li>
+            <li>Julia Neidhardt, TU Wien</li>
+            <li>Igor Sieradzki, Synerise</li>
+            <li>Ksawery Smoczyński, Synerise</li>
+            <li>Mikołaj Spytek, Synerise</li>
+            <li>Gergely Stomfai, Synerise</li>
+            <li>Antonela Tommasel, ISISTAN Research Institute, CONICET-UNCPBA</li>
+        </ul>
+        <br><br>
+    </div>
+    <!-- /.container -->
+    <!-- JavaScript -->
+    <script src="./js/jquery-1.11.3.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/ekko-lightbox.min.js"></script>
+    <script type="text/javascript">
+        $(document).delegate('*[data-toggle="lightbox"]', 'click', function (event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
+    </script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-70716117-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+</div>
+</body>
+</html>

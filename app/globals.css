@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fafaf9;
+  --foreground: #1c1917;
+  --surface: #ffffff;
+  --border: #e7e5e4;
+
+  --status-open-bg: #ecfdf5;
+  --status-open-fg: #047857;
+  --status-open-border: #a7f3d0;
+
+  --status-upcoming-bg: #eff6ff;
+  --status-upcoming-fg: #1d4ed8;
+  --status-upcoming-border: #bfdbfe;
+
+  --status-evaluation-bg: #fffbeb;
+  --status-evaluation-fg: #b45309;
+  --status-evaluation-border: #fde68a;
+
+  --status-closed-bg: #f5f5f4;
+  --status-closed-fg: #57534e;
+  --status-closed-border: #e7e5e4;
+
+  --status-unknown-bg: #f5f5f4;
+  --status-unknown-fg: #78716c;
+  --status-unknown-border: #e7e5e4;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0c0a09;
+    --foreground: #e7e5e4;
+    --surface: #1c1917;
+    --border: #292524;
+
+    --status-open-bg: #052e21;
+    --status-open-fg: #34d399;
+    --status-open-border: #065f46;
+
+    --status-upcoming-bg: #0c1e3d;
+    --status-upcoming-fg: #60a5fa;
+    --status-upcoming-border: #1e3a8a;
+
+    --status-evaluation-bg: #3a2705;
+    --status-evaluation-fg: #fbbf24;
+    --status-evaluation-border: #78350f;
+
+    --status-closed-bg: #1c1917;
+    --status-closed-fg: #a8a29e;
+    --status-closed-border: #292524;
+
+    --status-unknown-bg: #1c1917;
+    --status-unknown-fg: #a8a29e;
+    --status-unknown-border: #292524;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+:focus-visible {
+  outline: 2px solid var(--status-upcoming-fg);
+  outline-offset: 2px;
+}

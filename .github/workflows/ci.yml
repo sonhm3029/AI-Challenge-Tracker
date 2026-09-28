@@ -1,0 +1,95 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+env:
+  DATABASE_URL: postgres://tracker:tracker@localhost:5432/challenge_tracker_test
+  ADMIN_AUTH_SECRET: ci-secret
+  ADMIN_PASSWORD: ci-password
+  CRON_SECRET: ci-cron-secret
+  PLAYWRIGHT_ENABLED: "false"
+  NEXT_PUBLIC_SITE_URL: http://localhost:3000
+
+jobs:
+  # Section 43 — every PR runs typecheck, lint, unit + adapter fixture
+  # tests, and a production build.
+  build-and-test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: tracker
+          POSTGRES_PASSWORD: tracker
+          POSTGRES_DB: challenge_tracker_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Run database migrations (test DB)
+        run: npm run db:migrate
+
+      - name: Seed taxonomy + source registry (test DB)
+        run: npm run db:seed
+
+      - name: Unit, adapter fixture, and integration tests
+        run: npm test
+
+      - name: Build
+        run: npm run build
+
+  # Section 59 — a lightweight, read-only check that every enabled adapter
+  # still resolves and can discover editions against the live sites. Runs
+  # against real network, so it's informational (non-blocking) on PRs and
+  # only required on pushes to main.
+  validate-sources:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+    continue-on-error: true
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: tracker
+          POSTGRES_PASSWORD: tracker
+          POSTGRES_DB: challenge_tracker_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run db:migrate
+      - run: npm run db:seed
+      - run: npm run validate:sources

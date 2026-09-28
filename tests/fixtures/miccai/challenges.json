@@ -1,0 +1,673 @@
+{
+  "count": 264,
+  "next": null,
+  "previous": "https://grand-challenge.org/api/v1/challenges/?limit=34&offset=196",
+  "results": [
+    {
+      "api_url": "https://grand-challenge.org/api/v1/challenges/CURVAS-PDACVI/",
+      "url": "https://curvas-pdacvi.grand-challenge.org/",
+      "slug": "CURVAS-PDACVI",
+      "title": "CURVAS-Pancreatic Adenocarcinoma Vascular Invasion",
+      "description": "",
+      "public": true,
+      "status": "COMPLETED",
+      "logo": "https://public.grand-challenge-user-content.org/logos/challenge/821/logo_A76y4X4.png",
+      "submission_types": [
+        "Algorithm"
+      ],
+      "start_date": "2025-06-25T15:00:00Z",
+      "end_date": "2025-10-31T22:59:00Z",
+      "publications": [],
+      "created": "2025-04-17T11:25:08.972856Z",
+      "modified": "2026-02-24T15:47:46.544440Z",
+      "incentives": []
+    },
+    {
+      "api_url": "https://grand-challenge.org/api/v1/challenges/DehazingEcho2025/",
+      "url": "https://dehazingecho2025.grand-challenge.org/",
+      "slug": "DehazingEcho2025",
+      "title": "Dehazing Echocardiography Challenge 2025",
+      "description": "",
+      "public": true,
+      "status": "COMPLETED",
+      "logo": "https://public.grand-challenge-user-content.org/logos/challenge/823/logo_MAnBCrj.png",
+      "submission_types": [
+        "Algorithm"
+      ],
+      "start_date": "2025-06-10T16:00:00Z",
+      "end_date": "2025-08-15T15:59:00Z",
+      "publications": [],
+      "created": "2025-04-24T07:07:46.340045Z",
+      "modified": "2025-10-10T10:10:14.581390Z",
+      "incentives": []
+    },
+    {
+      "api_url": "https://grand-challenge.org/api/v1/challenges/t3challenge25/",
+      "url": "https://t3challenge25.grand-challenge.org/",
+      "slug": "t3challenge25",
+      "title": "The Trauma THOMPSON Challenge 2025",
+      "description": "",
+      "public": true,
+      "status": "COMPLETED",
+      "logo": "https://public.grand-challenge-user-content.org/logos/challenge/825/logo.jpg",
+      "submission_types": [
+        "Algorithm"
+      ],
+      "start_date": "2025-06-01T04:00:00Z",
+      "end_date": "2025-10-09T03:59:00Z",
+      "publications": [],
+      "created": "2025-04-24T11:17:41.242592Z",
+      "modified": "2025-10-01T09:40:05.617073Z",
+      "incentives": []
+    },
+    {
+      "api_url": "https://grand-challenge.org/api/v1/challenges/TopBrain2025/",
+      "url": "https://topbrain2025.grand-challenge.org/",
+      "slug": "TopBrain2025",
+      "title": "TopBrain Segmentation Challenge for Whole Brain Vessel Anatomy",
+      "description": "Segment over 40 landmark brain vessel anatomies for both CTA and MRA",
+      "public": true,
+      "status": "COMPLETED",
+      "logo": "https://public.grand-challenge-user-content.org/logos/challenge/826/TopBrain_Logo_Social_Jul292025.jpg",
+      "submission_types": [
+        "Algorithm"
+      ],
+      "start_date": "2025-10-06T04:00:00Z",
+      "end_date": "2025-10-15T21:59:00Z",
+      "publications": [
+        "https://doi.org/10.64898/2026.05.28.26354312"
+      ],
+      "created": "2025-04-25T12:59:37.926781Z",
+      "modified": "2026-06-14T23:51:47.506969Z",
+      "incentives": []
+    },
+    {
+      "api_url": "https://grand-challenge.org/api/v1/challenges/SurgVU25/",
+      "url": "https://surgvu25.grand-challenge.org/",
+      "slug": "SurgVU25",
+      "title": "Surgical Visual Understanding",
+      "description": "",
+      "public": true,
+      "status": "COMPLETED",
+      "logo": "https://public.grand-challenge-user-content.org/logos/challenge/827/miccai_2025_logo_V9HCXdi.jpg",
+      "submission_types": [
+        "Algorithm"
+      ],
+      "start_date": "2025-07-24T18:18:00Z",
+      "end_date": "2025-09-18T12:26:00Z",
+      "publications": [],
+      "created": "2025-04-28T14:16:30.787012Z",
+      "modified": "2026-08-05T17:27:16.292239Z",
+      "incentives": []
+    },
+    {
+      "api_url": "https://grand-challenge.org/api/v1/challenges/ToothFairy3/",
+      "url": "https://toothfairy3.grand-challenge.org/",
+      "slug": "ToothFairy3",
+      "title": "ToothFairy3: Multi-Class Segmentation in CBCT Volumes",
+      "description": "ToothFairy3, part of the ODIN2025 challenge cluster at MICCAI2025, advances CBCT segmentation with an expanded 77-class dataset and a new emphasis on computational efficiency. It introduces two tasks: a runtime-aware multi-structure segmentation and a novel interactive track for Inferior Alveolar Canal (IAC) segmentation using minimal user input. The challenge supports the development of both automated and prompt-based interactive AI tools to enhance clinical workflows in dentistry and maxillofacial surgery.",
+      "public": true,
+      "status": "OPEN",
+      "logo": "https://public.grand-challenge-user-content.org/logos/challenge/828/gc-thumbnail_2.png",
+      "submission_types": [
+        "Algorithm"
+      ],
+      "start_date": "2025-06-30T22:00:00Z",
+      "end_date": "2030-12-31T23:00:00Z",
+      "publications": [],
+      "created": "2025-05-02T11:57:15.286930Z",
+      "modified": "2026-08-21T08:44:21.864588Z",
+      "incentives": []
+    },
+    {
+      "api_url": "https://grand-challenge.org/api/v1/challenges/RARE25/",
+      "url": "https://rare25.grand-challenge.org/",
+      "slug": "RARE25",
+      "title": "RARE25",
+      "description": "Recognition of Anomalies in low-pREvalance cancer",
+      "public": true,
+      "status": "COMPLETED",
+      "logo": "https://public.grand-challenge-user-content.org/logos/challenge/829/logo_white_raven_0A0SQgP.png",
+      "submission_types": [
+        "Algorithm"
+      ],
+      "start_date": "2025-05-19T10:00:00Z",
+      "end_date": "2025-12-31T23:00:00Z",
+      "publications": [],
+      "created": "2025-05-08T11:33:03.271794Z",
+      "modified": "2026-05-18T09:47:43.597267Z",
+      "incentives": []
+    },
+    {
+      "api_url": "https://grand-challenge.org/api/v1/challenges/SELMA3D2025/",
+      "url": "https://selma3d2025.grand-challenge.org/",
+      "slug": "SELMA3D2025",
+      "title": "SSL for 3D light-sheet microscopy image segmentation",
+      "description": "",
+      "public": true,
+      "status": "COMPLETED",
+      "logo": "https://public.grand-challenge-user-content.org/logos/challenge/830/logo_2025_dtt48I5.png",
+      "submission_types": [
+        "Algorithm"
+      ],
+      "start_date": "2025-08-01T22:01:00Z",
+      "end_date": "2025-09-17T22:01:00Z",
+      "publications": [],
+      "created": "2025-05-23T08:38:35.941756Z",
+      "modified": "2026-08-10T19:06:06.991783Z",
+      "incentives": []
+    },
+    {
+      "api_url": "https://grand-challenge.org/api/v1/challenges/HANCOTHON25/",
+      "url": "https://hancothon25.grand-challenge.org/",
+      "slug": "HANCOTHON25",
+      "title": "HANCOTHON",
+      "description": "The HANCOCK dataset challenge at MICCAI 2025 focuses on predicting 5-year survival and 2-year recurrence in head and neck cancer patients using a multimodal dataset from 763 patients. It includes clinical data, pathology reports, histopathology images, tissue microarrays, blood data, and surgery reports. Participants are tasked with fusing these diverse data streams to perform two binary classification tasks: (i) predicting 5-year survival to guide therapy decisions and (ii) estimating 2-year recurrence risk for timely follow-up. This challenge aims to advance precision oncology by leveraging comprehensive patient-specific insights.",
+      "public": true,
+      "status": "COMPLETED",
+      "logo": "https://public.grand-challenge-user-content.org/logos/challenge/831/Icon_blue.png",
+      "submission_types": [
+        "Algorithm"
+      ],
+      "start_date": "2025-07-30T23:50:00Z",
+      "end_date": "2025-09-15T21:59:00Z",
+      "publications": [
+        "https://doi.org/10.1101/2024.05.29.24308141"
+      ],
+      "created": "2025-06-02T13:42:47.608011Z",
+      "modified": "2025-09-14T08:41:00.437029Z",
+      "incentives": []
+    },
+    {
+      "api_url": "https://grand-challenge.org/api/v1/challenges/MIDOG2025/",
+      "url": "https://midog2025.grand-challenge.org/",
+      "slug": "MIDOG2025",
+      "title": "Mitosis Domain Generalization Challenge 2025",
+      "description": "",
+      "public": true,
+      "status": "COMPLETED",
+      "logo": "https://public.grand-challenge-user-content.org/logos/challenge/832/MIDOG-logo-squared_Zeichenfl%C3%A4che_1_Kopie_16.jpg",
+      "submission_types": [
+        "Algorithm"
+      ],
+      "start_date": "2025-08-14T23:00:00Z",
+      "end_date": "2025-09-01T21:59:00Z",
+      "publications": [
+        "https://doi.org/10.5281/zenodo.15077360"
+      ],
+      "created": "2025-06-05T10:44:00.837080Z",
+      "modified": "2026-01-13T17:35:12.455705Z",
+      "incentives": []
+    },
+    {
+      "api_url": "https://grand-challenge.org/api/v1/challenges/AI4LIFE-CIDC25/",
+      "url": "https://ai4life-cidc25.grand-challenge.org/",
+      "slug": "AI4LIFE-CIDC25",
+      "title": "AI4Life Calcium Imaging Denoising Challenge 2025",
+      "description": "Welcome to AI4Life-CIDC25! In this challenge, we want to focus on unsupervised denoising of  calcium imaging microscopy. By participating, researchers can contribute to a critical area of scientific research, aiding in interpreting microscopy images and potentially unlocking discoveries in biology and medicine.",
+      "public": true,
+      "status": "COMPLETED",
+      "logo": "https://public.grand-challenge-user-content.org/logos/challenge/833/card_extended.png",
+      "submission_types": [
+        "Algorithm"
+      ],
+      "start_date": "2025-07-08T22:00:00Z",
+      "end_date": "2026-05-29T21:00:00Z",
+      "publications": [],
+      "created": "2025-06-23T17:36:31.972070Z",
+      "modified": "2026-05-27T09:20:35.243988Z",
+      "incentives": []
+    },
+    {
+      "api_url": "https://grand-challenge.org/api/v1/challenges/BEETLE/",
+      "url": "https://beetle.grand-challenge.org/",
+      "slug": "BEETLE",
+      "title": "BEETLE",
+      "description": "BEETLE is a multicenter, multiscanner benchmark for breast cancer histopathology segmentation. It focuses on multiclass semantic segmentation of hematoxylin and eosin (H&E)-stained whole-slide images (WSIs) into four tissue categories: invasive epithelium, non-invasive epithelium, necrosis, and other. The evaluation set comprises 170 densely annotated regions from 54 WSIs, covering all molecular subtypes and histological grades, thereby capturing much of the morphological heterogeneity seen in clinical practice. BEETLE provides a standardized resource for benchmarking breast cancer segmentation models, supporting the development of robust, generalizable algorithms for large-scale biomarker quantification across heterogeneous patient cohorts.",
+      "public": true,
+      "status": "OPEN",
+      "logo": "https://public.grand-challenge-user-content.org/logos/challenge/834/logo.png",
+      "submission_types": [
+        "Predictions"
+      ],
+      "start_date": null,
+      "end_date": null,
+      "publications": [
+        "https://arxiv.org/abs/2510.02037"
+      ],
+      "created": "2025-09-26T08:20:43.680221Z",
+      "modified": "2026-05-15T06:57:54.183153Z",
+      "incentives": []
+    },
+    {
+      "api_url": "https://grand-challenge.org/api/v1/challenges/DALPHIN/",
+      "url": "https://dalphin.grand-challenge.org/",
+      "slug": "DALPHIN",
+      "title": "DALPHIN",
+      "description": "DALPHIN is a multicentric, open visual question answering (VQA) benchmark for pathology AI copilots. It focuses on assessing multimodal large language models across a range of diagnostic reasoning tasks using histopathology images (thumbnails and regions of interest) derived from whole-slide images. The benchmark comprises 300 cases collected from six healthcare institutions in six countries, covering 130 diagnoses across 14 pathology subspecialties, including non-neoplastic entities and rare cancers. DALPHIN provides a standardized, long-term framework for reproducible, automated evaluation and enables direct comparison of pathology AI assistants both among themselves and against pathologists with different levels of expertise.",
+      "public": true,
+      "status": "OPEN",
+      "logo": "https://public.grand-challenge-user-content.org/logos/challenge/836/dalphin_logo.png",
+      "submission_types": [
+        "Predictions"
+      ],
+      "start_date": null,
+      "end_date": null,
+      "publications": [
+        "https://arxiv.org/abs/2605.03544"
+      ],
+      "created": "2025-11-20T08:27:52.687767Z",
+      "modified": "2026-09-23T08:02:28.947884Z",
+      "incentives": []
+    },
+    {
+      "api_url": "https://grand-challenge.org/api/v1/challenges/LUNOVO26/",
+      "url": "https://lunovo26.grand-challenge.org/",
+      "slug": "LUNOVO26",
+      "title": "Lung Nodule Volumetry 2026 Challenge",
+      "description": "",
+      "public": true,
+      "status": "OPEN",
+      "logo": "https://public.grand-challenge-user-content.org/logos/challenge/837/LUNOVO-logo2.png",
+      "submission_types": [
+        "Algorithm"
+      ],
+      "start_date": "2026-03-31T10:00:00Z",
+      "end_date": "2026-12-31T13:05:00Z",
+      "publications": [],
+      "created": "2026-01-26T11:42:23.130277Z",
+      "modified": "2026-08-20T09:18:33.045652Z",
+      "incentives": []
+    },
+    {
+      "api_url": "https://grand-challenge.org/api/v1/challenges/DoseRAD2026/",
+      "url": "https://doserad2026.grand-challenge.org/",
+      "slug": "DoseRAD2026",
+      "title": "Real-time dose calculation in radiotherapy",
+      "description": "",
+      "public": true,
+      "status": "COMPLETED",
+      "logo": "https://public.grand-challenge-user-content.org/logos/challenge/838/Logo_square.png",
+      "submission_types": [
+        "Algorithm"
+      ],
+      "start_date": "2026-07-17T18:00:00Z",
+      "end_date": "2026-08-31T21:59:00Z",
+      "publications": [],
+      "created": "2026-02-10T07:13:09.256232Z",
+      "modified": "2026-09-01T08:41:07.094464Z",
+      "incentives": []
+    },
+    {
+      "api_url": "https://grand-challenge.org/api/v1/challenges/mamasynth/",
+      "url": "https://mamasynth.grand-challenge.org/",
+      "slug": "mamasynth",
+      "title": "The MAMA-SYNTH Challenge",
+      "description": "DCE-MRI Pre-Contrast to Peak Contrast Enhancement Image Synthesis with Multi-Dimensional Evaluation",
+      "public": true,
+      "status": "COMPLETED",
+      "logo": "https://public.grand-challenge-user-content.org/logos/challenge/839/mama-synth-banner.png",
+      "submission_types": [
+        "Algorithm"
+      ],
+      "start_date": "2026-05-07T22:00:00Z",
+      "end_date": "2026-07-09T22:00:00Z",
+      "publications": [],
+      "created": "2026-03-19T08:41:55.903243Z",
+      "modified": "2026-08-25T07:12:11.732128Z",
+      "incentives": []
+    },
+    {
+      "api_url": "https://grand-challenge.org/api/v1/challenges/CLEAR-EC/",
+      "url": "https://clear-ec.grand-challenge.org/",
+      "slug": "CLEAR-EC",
+      "title": "CLEAR-EC",
+      "description": "",
+      "public": true,
+      "status": "OPEN",
+      "logo": "https://public.grand-challenge-user-content.org/logos/challenge/840/Screenshot_2026-06-30_at_12.14.08AM.png",
+      "submission_types": [
+        "Algorithm"
+      ],
+      "start_date": "2026-06-01T05:01:00Z",
+      "end_date": "2026-10-14T16:00:00Z",
+      "publications": [],
+      "created": "2026-03-26T14:49:56.139767Z",
+      "modified": "2026-09-11T04:22:13.300453Z",
+      "incentives": []
+    },
+    {
+      "api_url": "https://grand-challenge.org/api/v1/challenges/RARE26/",
+      "url": "https://rare26.grand-challenge.org/",
+      "slug": "RARE26",
+      "title": "RARE26",
+      "description": "Recognition of Anomalies in low-pREvalence cancer",
+      "public": true,
+      "status": "COMPLETED",
+      "logo": "https://public.grand-challenge-user-content.org/logos/challenge/841/logo.png",
+      "submission_types": [
+        "Algorithm"
+      ],
+      "start_date": "2026-05-01T00:00:00Z",
+      "end_date": "2026-09-08T00:00:00Z",
+      "publications": [],
+      "created": "2026-03-27T12:55:29.864864Z",
+      "modified": "2026-09-01T16:29:44.474714Z",
+      "incentives": []
+    },
+    {
+      "api_url": "https://grand-challenge.org/api/v1/challenges/autoPET-V/",
+      "url": "https://autopet-v.grand-challenge.org/",
+      "slug": "autoPET-V",
+      "title": "autoPET V - Automated Lesion Segmentation in Whole-Body PET/CT",
+      "description": "Automated Lesion Segmentation in Whole-Body PET/CT",
+      "public": true,
+      "status": "COMPLETED",
+      "logo": "https://public.grand-challenge-user-content.org/logos/challenge/842/autopet-5.png",
+      "submission_types": [
+        "Algorithm"
+      ],
+      "start_date": "2026-05-03T22:00:00Z",
+      "end_date": "2026-09-25T21:59:00Z",
+      "publications": [],
+      "created": "2026-03-30T15:08:03.955273Z",
+      "modified": "2026-09-28T11:23:18.108929Z",
+      "incentives": []
+    },
+    {
+      "api_url": "https://grand-challenge.org/api/v1/challenges/HECKTOR26/",
+      "url": "https://hecktor26.grand-challenge.org/",
+      "slug": "HECKTOR26",
+      "title": "HEad and neCK TumOR Lesion Segmentation, Staging and Prognosis",
+      "description": "",
+      "public": true,
+      "status": "COMPLETED",
+      "logo": "https://public.grand-challenge-user-content.org/logos/challenge/843/hecktor_logo.png",
+      "submission_types": [
+        "Algorithm"
+      ],
+      "start_date": "2026-05-31T23:59:00Z",
+      "end_date": "2026-08-06T23:59:00Z",
+      "publications": [],
+      "created": "2026-04-02T10:29:27.762419Z",
+      "modified": "2026-07-30T10:04:23.721718Z",
+      "incentives": []
+    },
+    {
+      "api_url": "https://grand-challenge.org/api/v1/challenges/PENGWIN2026/",
+      "url": "https://pengwin2026.grand-challenge.org/",
+      "slug": "PENGWIN2026",
+      "title": "Peripelvic Fracture Segmentation and Reduction Planning",
+      "description": "Peripelvic fractures are severe injuries with high disability and mortality rates. The PENGWIN 2026 Challenge aims to advance state-of-the-art techniques for intelligent surgical planning in 3D CT scans. It consists of three tasks: fully automated peripelvic fracture segmentation (Task 1), interactive segmentation (Task 2), and fracture reduction planning (Task 3). The dataset features 500 clinical cases with expert annotations and 16,000 simulated fracture cases to support the training of data-driven reduction models.",
+      "public": true,
+      "status": "COMPLETED",
+      "logo": "https://public.grand-challenge-user-content.org/logos/challenge/844/Logo_r256idb.png",
+      "submission_types": [
+        "Algorithm"
+      ],
+      "start_date": "2026-05-10T10:00:00Z",
+      "end_date": "2026-08-20T11:59:00Z",
+      "publications": [],
+      "created": "2026-04-02T11:14:15.923925Z",
+      "modified": "2026-08-21T03:27:07.818271Z",
+      "incentives": []
+    },
+    {
+      "api_url": "https://grand-challenge.org/api/v1/challenges/surgvu26/",
+      "url": "https://surgvu26.grand-challenge.org/",
+      "slug": "surgvu26",
+      "title": "Surgical Visual Understanding 2026",
+      "description": "",
+      "public": true,
+      "status": "COMPLETED",
+      "logo": "https://public.grand-challenge-user-content.org/logos/challenge/845/miccai_logo.png",
+      "submission_types": [
+        "Algorithm"
+      ],
+      "start_date": "2026-07-20T04:05:00Z",
+      "end_date": "2026-09-07T04:22:00Z",
+      "publications": [],
+      "created": "2026-04-03T09:27:42.940766Z",
+      "modified": "2026-09-28T09:19:40.865901Z",
+      "incentives": []
+    },
+    {
+      "api_url": "https://grand-challenge.org/api/v1/challenges/chimera-agent/",
+      "url": "https://chimera-agent.grand-challenge.org/",
+      "slug": "chimera-agent",
+      "title": "CHIMERA-agent",
+      "description": "An agentic multimodal AI benchmark covering the full prostate cancer patient journey, from MRI-based diagnosis to long-term biochemical recurrence prediction, under realistic clinical conditions of missingness, fragmentation, and cross-modality conflict.",
+      "public": true,
+      "status": "OPEN",
+      "logo": "https://public.grand-challenge-user-content.org/logos/challenge/846/CHIMERA_AGENT.png",
+      "submission_types": [
+        "Algorithm"
+      ],
+      "start_date": "2026-08-06T17:08:00Z",
+      "end_date": "2026-12-18T22:59:00Z",
+      "publications": [],
+      "created": "2026-04-09T10:53:22.182995Z",
+      "modified": "2026-09-14T10:25:35.088206Z",
+      "incentives": []
+    },
+    {
+      "api_url": "https://grand-challenge.org/api/v1/challenges/TopBrain2026/",
+      "url": "https://topbrain2026.grand-challenge.org/",
+      "slug": "TopBrain2026",
+      "title": "TopBrain Segmentation Challenge Version 2",
+      "description": "Segment over 50 landmark brain vessel anatomies for both CTA and MRA in TopBrain version 2",
+      "public": true,
+      "status": "OPEN_SOON",
+      "logo": "https://public.grand-challenge-user-content.org/logos/challenge/847/TopBrainAtlasforLogo.jpg",
+      "submission_types": [
+        "Predictions",
+        "Algorithm"
+      ],
+      "start_date": "2026-09-20T18:00:00Z",
+      "end_date": "2026-12-31T22:59:00Z",
+      "publications": [
+        "https://doi.org/10.64898/2026.05.28.26354312"
+      ],
+      "created": "2026-04-10T06:25:01.442475Z",
+      "modified": "2026-09-23T18:12:21.932620Z",
+      "incentives": []
+    },
+    {
+      "api_url": "https://grand-challenge.org/api/v1/challenges/ISLES-26/",
+      "url": "https://isles-26.grand-challenge.org/",
+      "slug": "ISLES-26",
+      "title": "Ischemic Stroke Lesion Segmentation Challenge  2026",
+      "description": "",
+      "public": true,
+      "status": "COMPLETED",
+      "logo": "https://public.grand-challenge-user-content.org/logos/challenge/848/ISLES_LOGO26.png",
+      "submission_types": [
+        "Algorithm"
+      ],
+      "start_date": "2026-09-01T15:00:00Z",
+      "end_date": "2026-09-01T18:00:00Z",
+      "publications": [],
+      "created": "2026-04-10T07:07:05.804293Z",
+      "modified": "2026-08-31T14:45:08.856971Z",
+      "incentives": []
+    },
+    {
+      "api_url": "https://grand-challenge.org/api/v1/challenges/REG2026/",
+      "url": "https://reg2026.grand-challenge.org/",
+      "slug": "REG2026",
+      "title": "Pathologist REasoning-Guided REport Generation Challenge",
+      "description": "Pathologist REasoning-Guided REport Generation Challenge is a medical AI competition where teams build models that generate pathology reports from whole slide images and explain their reasoning while doing it. It builds on last year's REG2025, which focused only on matching reference reports. This time, the bar is higher: models need to show structured diagnostic thinking, the way a pathologist would walk a colleague through their findings. Evaluation now goes beyond surface-level text metrics to assess clinical correctness and reasoning quality. The challenge runs from May through July 2026, with top teams announced at MICCAI 2026 in October.",
+      "public": true,
+      "status": "COMPLETED",
+      "logo": "https://public.grand-challenge-user-content.org/logos/challenge/849/Logo_UqgjNCP.jpeg",
+      "submission_types": [
+        "Algorithm"
+      ],
+      "start_date": "2026-05-11T09:00:00Z",
+      "end_date": "2026-07-20T09:00:00Z",
+      "publications": [],
+      "created": "2026-04-15T08:44:25.344717Z",
+      "modified": "2026-08-17T11:25:21.709584Z",
+      "incentives": []
+    },
+    {
+      "api_url": "https://grand-challenge.org/api/v1/challenges/TopAneu-26/",
+      "url": "https://topaneu-26.grand-challenge.org/",
+      "slug": "TopAneu-26",
+      "title": "TopAneu 2026",
+      "description": "Multimodal Vessel-Specific Intracranial Aneurysm Classification and Segmentation Challenge",
+      "public": true,
+      "status": "COMPLETED",
+      "logo": "https://public.grand-challenge-user-content.org/logos/challenge/850/TopAneu_logo_medium.png",
+      "submission_types": [
+        "Algorithm"
+      ],
+      "start_date": "2026-07-31T22:00:00Z",
+      "end_date": "2026-09-21T21:59:00Z",
+      "publications": [],
+      "created": "2026-04-20T06:40:18.896153Z",
+      "modified": "2026-09-22T11:49:55.121335Z",
+      "incentives": []
+    },
+    {
+      "api_url": "https://grand-challenge.org/api/v1/challenges/COBRA2026/",
+      "url": "https://cobra2026.grand-challenge.org/",
+      "slug": "COBRA2026",
+      "title": "Cone-beam CT reconstruction for radiation therapy challenge",
+      "description": "",
+      "public": true,
+      "status": "OPEN_SOON",
+      "logo": "https://public.grand-challenge-user-content.org/logos/challenge/851/logo.png",
+      "submission_types": [
+        "Algorithm"
+      ],
+      "start_date": "2027-01-15T23:01:00Z",
+      "end_date": "2027-02-15T22:59:00Z",
+      "publications": [
+        "https://arxiv.org/abs/2607.20037"
+      ],
+      "created": "2026-04-23T07:55:12.634684Z",
+      "modified": "2026-09-28T11:22:51.682127Z",
+      "incentives": []
+    },
+    {
+      "api_url": "https://grand-challenge.org/api/v1/challenges/SELMA3D2026/",
+      "url": "https://selma3d2026.grand-challenge.org/",
+      "slug": "SELMA3D2026",
+      "title": "SSL for 3D light-sheet microscopy image segmentation",
+      "description": "",
+      "public": true,
+      "status": "OPEN",
+      "logo": "https://public.grand-challenge-user-content.org/logos/challenge/852/2026_logo.png",
+      "submission_types": [
+        "Algorithm"
+      ],
+      "start_date": "2026-08-10T10:00:00Z",
+      "end_date": "2026-09-30T10:00:00Z",
+      "publications": [],
+      "created": "2026-04-23T11:21:11.258369Z",
+      "modified": "2026-09-26T13:52:33.836596Z",
+      "incentives": []
+    },
+    {
+      "api_url": "https://grand-challenge.org/api/v1/challenges/HEADLINE26/",
+      "url": "https://headline26.grand-challenge.org/",
+      "slug": "HEADLINE26",
+      "title": "HEADLINE: Benchmarking VLMs in Head CT Reporting",
+      "description": "",
+      "public": true,
+      "status": "COMPLETED",
+      "logo": "https://public.grand-challenge-user-content.org/logos/challenge/853/logo-square.jpeg",
+      "submission_types": [
+        "Predictions",
+        "Algorithm"
+      ],
+      "start_date": "2026-06-14T22:01:00Z",
+      "end_date": "2026-07-26T21:59:00Z",
+      "publications": [],
+      "created": "2026-05-11T15:10:25.531083Z",
+      "modified": "2026-08-17T11:25:09.526389Z",
+      "incentives": []
+    },
+    {
+      "api_url": "https://grand-challenge.org/api/v1/challenges/ODIN2026/",
+      "url": "https://odin2026.grand-challenge.org/",
+      "slug": "ODIN2026",
+      "title": "ODIN 2026 Challenges",
+      "description": "ODIN 2026 is a cluster of challenges on multimodal report generation for oral and dental image analysis. It includes ToothFairy4, focused on maxillofacial and surgical report generation from CBCT volumes, and Bite2Text, focused on orthodontic report generation from intraoral 3D scans and photographs. The challenge benchmarks fully automatic systems that transform routine dental imaging into clinically meaningful textual reports, emphasizing clinical correctness, completeness, robustness across centers, and generalization to hidden test data.",
+      "public": true,
+      "status": "COMPLETED",
+      "logo": "https://public.grand-challenge-user-content.org/logos/challenge/855/MICCA-ODIN_logo_E6eNMes.png",
+      "submission_types": [
+        "Algorithm"
+      ],
+      "start_date": "2026-06-30T22:00:00Z",
+      "end_date": "2026-08-18T11:59:00Z",
+      "publications": [],
+      "created": "2026-05-21T08:27:16.221078Z",
+      "modified": "2026-08-20T14:45:20.600977Z",
+      "incentives": []
+    },
+    {
+      "api_url": "https://grand-challenge.org/api/v1/challenges/ATM26/",
+      "url": "https://atm26.grand-challenge.org/",
+      "slug": "ATM26",
+      "title": "Airway Tree Modeling 26",
+      "description": "ATM26 is part of the Sino-European SENSAR Network series. Accurate airway tree modeling supports respiratory assessment and interventions like biopsy navigation. Building on ATM22 (binary segmentation), ATM26 advances to structured airway understanding, including two tracks: binary segmentation and anatomical labeling. The challenge encourages robust, topology-aware methods under diverse CT conditions.",
+      "public": true,
+      "status": "CLOSED",
+      "logo": "https://public.grand-challenge-user-content.org/logos/challenge/857/atm-logo2_HmAO3g5.png",
+      "submission_types": [
+        "Algorithm"
+      ],
+      "start_date": "2026-07-15T04:00:00Z",
+      "end_date": "2026-09-29T16:00:00Z",
+      "publications": [
+        "https://doi.org/10.1016/j.media.2023.102957",
+        "https://doi.org/10.1007/s11548-025-03368-3",
+        "https://arxiv.org/abs/2412.11039"
+      ],
+      "created": "2026-06-11T06:58:47.392723Z",
+      "modified": "2026-08-31T09:52:12.986271Z",
+      "incentives": []
+    },
+    {
+      "api_url": "https://grand-challenge.org/api/v1/challenges/lightmycells2/",
+      "url": "https://lightmycells2.grand-challenge.org/",
+      "slug": "lightmycells2",
+      "title": "Light My Cells 2 : Transmitted Light to Fluorescence Challenge",
+      "description": "",
+      "public": true,
+      "status": "CLOSED",
+      "logo": "https://public.grand-challenge-user-content.org/logos/challenge/858/Logo_Challenge_LMC_2_Version_finale_vertical.png",
+      "submission_types": [
+        "Algorithm"
+      ],
+      "start_date": "2026-09-20T22:00:00Z",
+      "end_date": "2026-11-30T22:59:00Z",
+      "publications": [],
+      "created": "2026-07-19T09:57:57.001001Z",
+      "modified": "2026-09-18T15:01:20.001975Z",
+      "incentives": []
+    },
+    {
+      "api_url": "https://grand-challenge.org/api/v1/challenges/OWL/",
+      "url": "https://owl.grand-challenge.org/",
+      "slug": "OWL",
+      "title": "Observing What Models Learn",
+      "description": "",
+      "public": true,
+      "status": "CLOSED",
+      "logo": "https://public.grand-challenge-user-content.org/logos/challenge/859/ChatGPT_Image_Aug_29_2026_08_01_21_PM.png",
+      "submission_types": [
+        "Algorithm"
+      ],
+      "start_date": null,
+      "end_date": null,
+      "publications": [],
+      "created": "2026-08-27T09:44:39.835666Z",
+      "modified": "2026-09-16T13:46:15.566277Z",
+      "incentives": []
+    }
+  ]
+}

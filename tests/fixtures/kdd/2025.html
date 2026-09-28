@@ -1,0 +1,2375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>AIcrowd | Meta CRAG - MM Challenge 2025 | Challenges</title>
+    <meta name="description" content="Improve RAG with Real-World Benchmarks | KDD Cup 2025">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Facebook Open Graph data -->
+    <meta property="og:title" content="AIcrowd | Meta CRAG - MM Challenge 2025 | Challenges" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.aicrowd.com/challenges/meta-crag-mm-challenge-2025" />
+    <meta property="og:image" content="https://images.aicrowd.com/raw_images/challenges/social_media_image_file/1155/3d44411079169ec5776a.jpg" />
+    <meta property="og:description" content="Improve RAG with Real-World Benchmarks | KDD Cup 2025" />
+    <meta property="og:site_name" content="AIcrowd | Meta CRAG - MM Challenge 2025 | Challenges" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@aicrowdHQ">
+    <meta name="twitter:title" content="AIcrowd | Meta CRAG - MM Challenge 2025 | Challenges">
+    <meta name="twitter:description" content="Improve RAG with Real-World Benchmarks | KDD Cup 2025">
+    <meta name="twitter:creator" content="@aicrowdHQ">
+    <meta name="twitter:image" content="https://images.aicrowd.com/raw_images/challenges/social_media_image_file/1155/3d44411079169ec5776a.jpg">
+
+
+    <link rel="apple-touch-icon" type="image/png" href="https://assets.aicrowd.com/s3backend/57/misc/favicon.png" sizes="57x57" />
+    <link rel="apple-touch-icon" type="image/png" href="https://assets.aicrowd.com/s3backend/60/misc/favicon.png" sizes="60x60" />
+    <link rel="apple-touch-icon" type="image/png" href="https://assets.aicrowd.com/s3backend/72/misc/favicon.png" sizes="72x72" />
+    <link rel="apple-touch-icon" type="image/png" href="https://assets.aicrowd.com/s3backend/76/misc/favicon.png" sizes="76x76" />
+    <link rel="apple-touch-icon" type="image/png" href="https://assets.aicrowd.com/s3backend/114/misc/favicon.png" sizes="114x114" />
+    <link rel="apple-touch-icon" type="image/png" href="https://assets.aicrowd.com/s3backend/120/misc/favicon.png" sizes="120x120" />
+    <link rel="apple-touch-icon" type="image/png" href="https://assets.aicrowd.com/s3backend/144/misc/favicon.png" sizes="144x144" />
+    <link rel="apple-touch-icon" type="image/png" href="https://assets.aicrowd.com/s3backend/152/misc/favicon.png" sizes="152x152" />
+    <link rel="shortcut icon" type="image/png" href="https://assets.aicrowd.com/s3backend/192/misc/favicon.png" sizes="192x192" />
+    <link rel="shortcut icon" type="image/png" href="https://assets.aicrowd.com/s3backend/32/misc/favicon.png" sizes="32x32" />
+    <link rel="shortcut icon" type="image/png" href="https://assets.aicrowd.com/s3backend/96/misc/favicon.png" sizes="96x96" />
+    <link rel="shortcut icon" type="image/png" href="https://assets.aicrowd.com/s3backend/16/misc/favicon.png" sizes="16x16" />
+    <link rel="apple-touch-icon" type="image/png" href="https://assets.aicrowd.com/s3backend/57/misc/favicon.png" sizes="57x57" />
+    <link rel="apple-touch-icon" type="image/png" href="https://assets.aicrowd.com/s3backend/57/misc/favicon.png" sizes="57x57" />
+    <link rel="manifest" href="https://assets.aicrowd.com/assets/favicon/manifest-36e9cca858fd9b82258789bb3f8de560278b761ac586b9c8d882089d39fa2030.json" async>
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="https://assets.aicrowd.com/s3backend/144/misc/favicon.png">
+    <meta name="theme-color" content="#ffffff">
+      <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:400,400i,500,500i,700" rel="stylesheet" async>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300&display=swap" rel="stylesheet" defer>
+    <script src="https://use.fontawesome.com/bee91422da.js" async></script>
+    <link rel="stylesheet"href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" async />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap-reboot.min.css">
+    <script async charset="utf-8" src="//cdn.embedly.com/widgets/platform.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7L4H7S9RG2"></script>
+
+    <link rel="stylesheet" media="all" href="https://assets.aicrowd.com/assets/application-redesign-a66e23a4fced4208d3edc942ddadc8d020d4f9ac57d32f67ce36b10964445771.css" data-turbolinks-track="true" />
+    <script src="https://assets.aicrowd.com/assets/application-557c9697a64c20cd3a01e2df621559fecfc8a5ea6a5e9975d6127c1be44c6756.js" data-turbolinks-track="true" crossorigin="anonymous"></script>
+
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="fn1zfTkpgyH5lK5B2ry2Srxdk8skzJtuFK3rICpiasJOGX8swl82/zTwy3Uwtjq1Pn80a4Qx9vYraTFSxdBaOw==" />
+    <script src="https://assets.aicrowd.com/packs/js/runtime-3626099700a278cbdf16.js" crossorigin="anonymous"></script>
+<script src="https://assets.aicrowd.com/packs/js/268-c63893393418daadfc82.js" crossorigin="anonymous"></script>
+<script src="https://assets.aicrowd.com/packs/js/237-6fcf3b7bf1f7c05aa67f.js" crossorigin="anonymous"></script>
+<script src="https://assets.aicrowd.com/packs/js/333-c926a710481f572889aa.js" crossorigin="anonymous"></script>
+<script src="https://assets.aicrowd.com/packs/js/application-5c18f927575e7ff9cd21.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" media="screen" href="https://assets.aicrowd.com/packs/css/268-e25e1cb5.css" />
+<link rel="stylesheet" media="screen" href="https://assets.aicrowd.com/packs/css/237-c8c446cd.css" />
+<link rel="stylesheet" media="screen" href="https://assets.aicrowd.com/packs/css/333-74fecbb6.css" />
+<link rel="stylesheet" media="screen" href="https://assets.aicrowd.com/packs/css/application-8c5b220b.css" />
+    <script>
+    var mixpanel_initialized = false;
+    var mixpanel_token = "7e0eaec54ab1363887aef8bc1987710b";
+    
+    // Sanitize URL by removing sensitive parameters
+    function getSanitizedURL() {
+        var url = new URL(window.location.href);
+        // Strip credential-bearing params before the URL is sent to Mixpanel.
+        // Originally added for Meta Business Tool Terms; the Pixel is gone
+        // (#367) but this matters just as much for Mixpanel, which still
+        // receives the full page URL.
+        url.searchParams.delete('email_confirmation');
+        url.searchParams.delete('email_token');
+        url.searchParams.delete('reset_password_token');
+        url.searchParams.delete('confirmation_token');
+        url.searchParams.delete('api_key');
+        url.searchParams.delete('preferences_token');
+        // Signed, single-use OAuth re-link token (participants/oauth/confirm_link)
+        url.searchParams.delete('token');
+        return url.toString();
+    }
+    
+    var mixpanel_visit = {
+        "Page Module": "challenges",
+        "Page Action": "show",
+        "Page URL": location.pathname,
+        "Page Full URL": getSanitizedURL(),
+        "Version": "v1",
+        "Logged In": false
+    }
+    mixpanel_visit["Challenge"] = "1155";
+    mixpanel_visit["Challenge Slug"] = "meta-crag-mm-challenge-2025";
+</script>
+
+
+
+
+  </head>
+
+  <body id='' data-turbolinks="false" data-controller="mixpanel">
+    <!-- loader container -->
+<div id='loader-container' class="loader-container"
+  style="position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);"
+>
+
+  <!-- loader -->
+  <div class="loader" title="0">
+  <center>
+    <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+      <path opacity="0.2" fill="#F0514D" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"/>
+      <path fill="#F0514D" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0C22.32,8.481,24.301,9.057,26.013,10.047z">
+      <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 20 20" to="360 20 20" dur="0.5s" repeatCount="indefinite"/>
+      </path>
+    </svg>
+  </center>
+    <span>Loading</span>
+  </div>
+  <!-- loader -->
+
+</div>
+<!-- /loader container -->
+
+
+
+    <div class='content'>
+      
+        <!-- app header -->
+<header class="app-header">
+	<div class="container-fluid">
+
+		<div class="app-header-section">
+			<!-- app brand -->
+			<div class="app-brand">
+				<a class="logo-aicrowd" href="/" data-turbolinks="false">
+					<span>AIcrowd</span>
+				</a>
+      </div>
+
+      <form data-controller="search-form autocomplete" data-action="submit-&gt;search-form#handleSubmit click-&gt;challenge-rounds#toogleSubtab" action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input id="search-form" class="form-control search-input" placeholder="Search..." aria-label="Search" aria-describedby="Search" data-target="search-form.searchQuery autocomplete.field" type="text" name="q" />
+</form>		</div>
+
+
+			<div class="app-header-section">
+
+				<ul class="nav">
+					<li class="nav-item">
+						<a class="nav-link" href="/challenges">Challenges</a>
+					</li>
+					<!-- <li class="nav-item"> -->
+					<!-- </li> -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<svg width="16" height="4" xmlns="http://www.w3.org/2000/svg">
+								<path d="M2 0C.9 0 0 .9 0 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM8 0C6.9 0 6 .9 6 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" fill="#909293" fill-rule="nonzero"/>
+							</svg>
+						</a>
+						<div class="dropdown-menu dropdown-menu-right">
+							<a class="dropdown-item" href="/landing_page/host">Organize a challenge</a>
+							<a class="dropdown-item" href="/faq">FAQ</a>
+							<a class="dropdown-item" href="/contact">Contact</a>
+
+                                                        <div class="dropdown-divider"></div>
+                                                        <span class="dropdown-item-no-click">
+                                                            Follow us on<br>
+							    <a href="https://fb.com/aicrowdHQ" target="_blank"><span class="border btn fa fa-facebook"></span></a>
+                                                            <a href="https://twitter.com/aicrowdHQ" target="_blank"><span class="border btn fa fa-twitter"></span></a>
+                                                            <a href="https://www.linkedin.com/company/aicrowd" target="_blank"><span class="border btn fa fa-linkedin"></span></a>
+                                                        </span>
+						</div>
+					</li>
+				</ul>
+
+				<div class="user-options">
+                                  <a href="/participants/sign_in">
+                                    <button type="button" class="btn btn-secondary">Log In</button>
+</a>                                  <a href="/participants/sign_up">
+                                    <button type="button" class="btn btn-primary">Sign Up</button>
+</a>                                </div>
+
+				<div class="dropdown">
+					<button class="app-header-toggler" type="button" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="app-header-toggler-icon">
+              <svg width="16" height="4" xmlns="http://www.w3.org/2000/svg"><path d="M2 0C.9 0 0 .9 0 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM8 0C6.9 0 6 .9 6 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" fill="#5D5F60" fill-rule="nonzero"/></svg>
+            </span>
+					</button>
+					<div class="dropdown-menu dropdown-menu-right">
+						<a class="dropdown-item" href="/challenges">Challenges</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="/landing_page/host">Organize a challenge</a>
+						<a class="dropdown-item" href="/faq">FAQ</a>
+						<a class="dropdown-item" href="/contact">Contact</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="/participants/sign_in">Log In</a>
+						<a class="dropdown-item" href="/participants/sign_up">Sign Up</a>
+					</div>
+				</div>
+
+			</div>
+	</div>
+</header>
+
+
+      <div id="flash-messages-wrapper">
+        
+        
+      </div>
+
+        <!-- masthead - challenge -->
+    <!--- TODO: move this embeeded css outside -->
+    <style>
+    .masthead-banner {
+      background-image: url('https://images.aicrowd.com/raw_images/challenges/banner_file/1155/8ef6b16b60218806c954.jpg');
+      background-color: #ffffff;
+    }
+    @media (max-width: 768px) {
+      .masthead-banner {
+        background-image: url('https://images.aicrowd.com/raw_images/challenges/banner_mobile_file/1155/04ec92cc9a9ae40e8d2a.jpg');
+        background-size: 100% auto;
+      }
+      .mobile-mt-100 {
+        margin-top: 100px;
+      }
+
+      .mobile-mt-100 .dropdown {
+        display: none;
+      }
+    }
+    </style>
+    <div class="masthead masthead-challenge masthead-banner">
+  <div class="container-fluid" style="position: relative; z-index: 1001;">
+    <div class="row">
+  <div class="col-12">
+          <span class="badge badge-success" data-toggle="tooltip" data-placement="top" title="">
+            <img src="https://assets.aicrowd.com/assets/img/icon-time.svg" />
+            Warm-Up Round: Completed
+          </span>
+          <span class="badge badge-success" data-toggle="tooltip" data-placement="top" title="">
+            <img src="https://assets.aicrowd.com/assets/img/icon-time.svg" />
+            Round 1: Completed
+          </span>
+          <span class="badge badge-success" data-toggle="tooltip" data-placement="top" title="">
+            <img src="https://assets.aicrowd.com/assets/img/icon-time.svg" />
+            Round 2: Completed
+          </span>
+        <a href="/challenges?categories=multi-modal">
+          <span class='badge badge-outline'>#multi_modal</span>
+</a>        <a href="/challenges?categories=multi-turn">
+          <span class='badge badge-outline'>#multi_turn</span>
+</a>  </div>
+</div>
+
+    <div class="row" style="height: 200px"></div>
+
+  <!-- organizer/stats/options -->
+    <div class="row mobile-mt-100 ">
+  <div class="col-12 d-flex align-items-center flex-wrap">
+    <div class="organizer-attribution">
+        <span>By&nbsp;</span>
+        <a href="/organizers/meta">
+          <img src="https://images.aicrowd.com/images/organizers/image_file/315/meta-logo-square.png" />
+</a>        <a href="/organizers/meta">
+          <span>Meta&nbsp;</span>
+</a>    </div>
+
+    <div class="stats-group" style="margin-right: 10px">
+      <div class="stat-item" style="width: 72px">
+        <center>
+        <span data-toggle="tooltip" data-placement="top" title="No. of views">
+          <img src="https://assets.aicrowd.com/assets/img/icon-views.svg" />
+          153.3k
+        </span>
+        </center>
+      </div>
+      <div class="stat-item" style="width: 72px">
+        <center>
+        <span data-toggle="tooltip" data-placement="top" title="No. of users">
+          <img src="https://assets.aicrowd.com/assets/img/icon-users.svg" />
+          1060
+        </span>
+        </center>
+      </div>
+      <div class="stat-item width-72">
+  <center>
+    <span data-toggle="tooltip" data-placement="top" title="No. of teams">
+      <img src="https://assets.aicrowd.com/assets/img/icon-teams.svg" />
+      256
+    </span>
+  </center>
+</div>
+
+      <div class="stat-item" style="width: 72px">
+        <center>
+        <span data-toggle="tooltip" data-placement="top" title="No. of submissions">
+          <img src="https://assets.aicrowd.com/assets/img/icon-submissions.svg" />
+          4927
+        </span>
+        </center>
+      </div>
+    </div>
+    <div class="btn-set" aria-hidden="true">
+        <a href="/participants/sign_in">
+    <button type='button' class='btn btn-secondary btn-sm'>
+      <svg width='12' height='11' xmlns='http://www.w3.org/2000/svg'><path d='M10.8746251 6.14539024L5.97691577 11.0430996 1.07920644 6.14539024C.43154568 5.50196808.03030318 4.61061457.03030318 3.62554576c0-1.96049121 1.58929212-3.54978364 3.54978364-3.54978364.92305599 0 1.76382467.35231416 2.39516959.92980603.63649437-.6044087 1.49691101-.97526512 2.44394586-.97526512 1.96049123 0 3.54978363 1.58929242 3.54978363 3.54978364 0 1.00819292-.4203017 1.91821904-1.0952455 2.56441886z' fill='#F0524D' fill-rule='evenodd'></svg>
+       68
+    </button>
+</a>
+      
+<div id="badges-popup">
+    <div class="modal badges-modal" id="badges-modal" tabindex="-1" role="dialog" aria-labelledby="previewModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content" style="max-width: 404px; margin-top: 150px;">
+          <div data-react-class="molecules/AchievementPopup/index" data-react-props="{&quot;icon&quot;:&quot;/assets/challenge_badges/challenges_Share_Active_first.png&quot;,&quot;title&quot;:&quot;Spread the Word!&quot;,&quot;description&quot;:&quot;Thank You for Making Our Community Grow!&quot;,&quot;url&quot;:&quot;https://www.aicrowd.com//challenges/meta-crag-mm-challenge-2025&quot;,&quot;badgeTitle&quot;:&quot;Spread the Word!&quot;,&quot;socialMessage&quot;:&quot;Meta CRAG - MM Challenge 2025 on @aicrowdHQ\n&quot;}" data-react-cache-id="molecules/AchievementPopup/index-0"></div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<script>
+  function share_challenge() {
+    $("#badges-modal").appendTo("body").modal("show");
+    $.ajax({url: "/challenges/meta-crag-mm-challenge-2025/shared_challenge" })
+  }
+</script>
+<a onclick='share_challenge()' href="#" class="btn btn-secondary btn-sm">Share</a>
+
+    </div>
+
+  </div>
+</div>
+
+      <!-- /organizer/stats/options -->
+  </div>
+</div>
+    
+<!-- /masthead - challenge -->
+
+<!-- sub-nav bar -->
+<div class="sub-nav-bar sticky-top">
+  <div class="container-fluid priority-nav" data-controller="prioritynav">
+    <ul class="nav">
+      <li class="nav-item">
+  <a class="active nav-link" href="/challenges/meta-crag-mm-challenge-2025">Overview</a>
+</li>
+
+        <li class="nav-item">
+  <a class=" nav-link" href="/challenges/meta-crag-mm-challenge-2025/leaderboards">Leaderboard</a>
+</li>
+
+        <li class="nav-item">
+  <a class=" nav-link" href="/challenges/meta-crag-mm-challenge-2025/discussion">Discussion</a>
+</li>
+
+      <li class="nav-item">
+  <a class=" nav-link" href="/challenges/meta-crag-mm-challenge-2025/insights">Insights</a>
+</li>
+
+        <li class="nav-item">
+  <a class=" nav-link" href="/challenges/meta-crag-mm-challenge-2025/challenge_rules">Rules</a>
+</li>
+
+
+     <li class="nav-item dropdown overflow-nav">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">More <svg xmlns="http://www.w3.org/2000/svg" width="10" height="5" viewBox="0 0 10 5"><polygon fill="#5D5F60" points="7 10 12 15 17 10" transform="translate(-7 -10)"/></svg>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right overflow-nav-list">
+        </div>
+    </li>
+    </ul>
+
+      <a class="btn btn-primary btn-sm pull-right" data-controller="mixpanel" data-action="click-&gt;mixpanel#challenge_participation_start" href="/participants/sign_up">Participate</a>
+  </div>
+</div>
+<!-- /sub-nav bar -->
+
+<!-- create team modal -->
+<div class="modal fade" id="create-team-modal" tabindex="-1" role="dialog" aria-labelledby="create-team-modal-label" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <form class="new_team" id="new_team" action="/challenges/meta-crag-mm-challenge-2025/teams" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="ao2qKI5uLAq60ODnGVdFGRiF3iyZiwkdwzUTa1QfbGgtlE4PqsTQ1aSr9j0yMq8fUYNAcwMODh4jKxM6OEzDFw==" />
+        <div class="modal-header">
+          <h4 class="modal-title" id="create-team-modal-label">Create a team for this challenge</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label>Team Name</label>
+            <div class="input-group mb-3">
+              <input class="form-control validated-field" placeholder="Team name" data-auto-focus="true" data-error-description-selector="team-name-error-message" data-validation-type="regex" data-validation-regex-pattern="^[a-zA-Z0-9.\-_{}\[\]]+$" type="text" name="team[name]" id="team_name" />
+              <div id="team-name-error-message" style="display: none; color: red">
+                <small><i>A team name may only contain basic letters, numbers, and any of
+                  <code>-_.{}[]</code></i></small>
+              </div>
+            </div>
+          </div>
+          <div class="btn-set">
+            <input type="submit" name="commit" value="Create" class="btn btn-primary" disabled="disabled" data-disable-with="Create" />
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+</form>    </div>
+  </div>
+</div>
+<!-- /create team modal -->
+
+
+
+<!-- section -->
+<section class="section-p-md">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="row col-lg-10">
+        <header class="section-header">
+          <div>
+            <h4 class="pl-3">Problem Statements</h4>
+          </div>
+        </header>
+        <div class="row pl-3 pr-3">
+              <div class="col-md-4">
+    <div class="card card-challenge">
+      <div class="image-wrapper" style="padding-bottom: 56.2%;position: relative;">
+        <a href="/challenges/meta-crag-mm-challenge-2025/problems/single-source-augmentation">
+          <img class="card-img image_16x9" src="https://images.aicrowd.com/images/challenges/image_file/1160/Link_preview.jpg" />
+</a>        <a class="card-img-overlay" href="/challenges/meta-crag-mm-challenge-2025/problems/single-source-augmentation">
+            <span class="badge badge-gold">Weight: 1.0</span>
+</a>      </div>
+      <!-- card body -->
+      <div class="card-body">
+        <div class="card-intro" style="margin-bottom:10px">
+          <h5 class="card-title"><a href="/challenges/meta-crag-mm-challenge-2025/problems/single-source-augmentation">Single-source Augmentation</a></h5>
+          <p class="card-text">Generating answers using image-linked data</p>
+        </div>
+        <!-- stats group -->
+        <div class="stats-group">
+          <div class="stat-item">
+            <span data-toggle="tooltip" data-placement="top" title="No. of views">
+              <img src="https://assets.aicrowd.com/assets/img/icon-views.svg" />
+              20.1k
+            </span>
+          </div>
+
+
+          <div class="stat-item">
+            <span data-toggle="tooltip" data-placement="top" title="No. of submissions">
+              <img src="https://assets.aicrowd.com/assets/img/icon-submissions.svg" />
+              2573
+            </span>
+          </div>
+        </div>
+        <!-- /stats group -->
+
+        <!-- category group -->
+        <!-- /category group -->
+      </div>
+      <!-- /card body -->
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card card-challenge">
+      <div class="image-wrapper" style="padding-bottom: 56.2%;position: relative;">
+        <a href="/challenges/meta-crag-mm-challenge-2025/problems/multi-turn-qa">
+          <img class="card-img image_16x9" src="https://images.aicrowd.com/images/challenges/image_file/1162/Link_preview.jpg" />
+</a>        <a class="card-img-overlay" href="/challenges/meta-crag-mm-challenge-2025/problems/multi-turn-qa">
+            <span class="badge badge-gold">Weight: 1.0</span>
+</a>      </div>
+      <!-- card body -->
+      <div class="card-body">
+        <div class="card-intro" style="margin-bottom:10px">
+          <h5 class="card-title"><a href="/challenges/meta-crag-mm-challenge-2025/problems/multi-turn-qa">Multi-turn QA</a></h5>
+          <p class="card-text">Contextual answering in multi-turn dialogue</p>
+        </div>
+        <!-- stats group -->
+        <div class="stats-group">
+          <div class="stat-item">
+            <span data-toggle="tooltip" data-placement="top" title="No. of views">
+              <img src="https://assets.aicrowd.com/assets/img/icon-views.svg" />
+              10.6k
+            </span>
+          </div>
+
+
+          <div class="stat-item">
+            <span data-toggle="tooltip" data-placement="top" title="No. of submissions">
+              <img src="https://assets.aicrowd.com/assets/img/icon-submissions.svg" />
+              918
+            </span>
+          </div>
+        </div>
+        <!-- /stats group -->
+
+        <!-- category group -->
+        <!-- /category group -->
+      </div>
+      <!-- /card body -->
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card card-challenge">
+      <div class="image-wrapper" style="padding-bottom: 56.2%;position: relative;">
+        <a href="/challenges/meta-crag-mm-challenge-2025/problems/multi-source-augmentation">
+          <img class="card-img image_16x9" src="https://images.aicrowd.com/images/challenges/image_file/1161/Link_preview.jpg" />
+</a>        <a class="card-img-overlay" href="/challenges/meta-crag-mm-challenge-2025/problems/multi-source-augmentation">
+            <span class="badge badge-gold">Weight: 1.0</span>
+</a>      </div>
+      <!-- card body -->
+      <div class="card-body">
+        <div class="card-intro" style="margin-bottom:10px">
+          <h5 class="card-title"><a href="/challenges/meta-crag-mm-challenge-2025/problems/multi-source-augmentation"> Multi-source Augmentation</a></h5>
+          <p class="card-text">Synthesising answers from image and web sources</p>
+        </div>
+        <!-- stats group -->
+        <div class="stats-group">
+          <div class="stat-item">
+            <span data-toggle="tooltip" data-placement="top" title="No. of views">
+              <img src="https://assets.aicrowd.com/assets/img/icon-views.svg" />
+              12.4k
+            </span>
+          </div>
+
+
+          <div class="stat-item">
+            <span data-toggle="tooltip" data-placement="top" title="No. of submissions">
+              <img src="https://assets.aicrowd.com/assets/img/icon-submissions.svg" />
+              1436
+            </span>
+          </div>
+        </div>
+        <!-- /stats group -->
+
+        <!-- category group -->
+        <!-- /category group -->
+      </div>
+      <!-- /card body -->
+    </div>
+  </div>
+
+        </div>
+        <div class="row pl-3 pr-3">
+          <!-- md content -->
+          <div class="col-md-12" id="description-wrapper">
+            <div class="markdown-wrap">
+              <div class="md-content ck-content challenge-description-md-content" data-controller="challenge-overview">
+                <p>&nbsp;</p>
+
+<p><a href="https://discord.gg/YWDQQa8byx"><img alt="Discord Banner 2" src="https://discord.com/api/guilds/657211973435392011/widget.png?style=banner2"></a></p>
+
+<blockquote>
+<p><strong>‼️</strong><a href="https://forms.gle/51qr1ngiqagKaMQ4A"><strong>Select your final submissions for evaluation by 23 June 2025, 12:00 UTC</strong></a></p>
+</blockquote>
+
+<blockquote>
+<p>‼️&nbsp;👉&nbsp;<a href="https://discourse.aicrowd.com/t/phase-2-now-open-important-updates-and-announcements/17080"><strong>Important Updates and Announcement about Round 2</strong></a>&nbsp;</p>
+
+<p>📹 <a href="https://youtu.be/xGfOcAQ2tV8"><strong>Watch the Office Hour recording here</strong></a>.</p>
+</blockquote>
+
+<p>You’re on vacation, strolling through ancient sites as your smart glasses share their history. Later, at a local restaurant, they translate the menu, helping you order with confidence. As the day winds down, you head back to the parking lot—no searching, no stress—your glasses pull up an image reminder of exactly where you parked. &nbsp;</p>
+
+<p>Wearable devices are revolutionising how we communicate, work, and experience the world. But to be truly valuable in everyday life, they must provide relevant, accurate, and reliable information tailored to users' needs.<br>
+&nbsp;</p>
+
+<blockquote>
+<p><strong>🙋‍♀️ New to the challenge? 🤔 Want to make your first submission?&nbsp;</strong></p>
+
+<p><strong>⚙️&nbsp;<a href="https://gitlab.aicrowd.com/aicrowd/challenges/meta-comprehensive-rag-benchmark-kdd-cup-2025/meta-comprehensive-rag-benchmark-starter-kit">Access the Starter-Kit here</a></strong>&nbsp;<strong>&nbsp;</strong>&nbsp;📚 Check out the <a href="https://discourse.aicrowd.com/t/dataset-release-crag-mm-v0-1-1/16931"><strong>official CRAG-MM v0.1.1 Dataset here</strong>.</a><br>
+<br>
+💬&nbsp;<strong>Join the conversation on <a href="https://discord.gg/YWDQQa8byx">Discord</a> – Connect with other participants and stay updated.</strong> <strong>Jump in and introduce yourself</strong> <strong>👉</strong> <strong><a href="https://discord.gg/YWDQQa8byx">https://discord.gg/YWDQQa8byx</a></strong></p>
+</blockquote>
+
+<h3>🌟 Introducing the Meta CRAG - MM: Comprehensive RAG Benchmark for Multi-modal, Multi-turn Challenge! 🌟</h3>
+
+<h2>💬 Introduction</h2>
+
+<p>Vision Large Language Models (VLLMs) have undergone significant advancements in recent years, empowering multi-modal understanding and visual question-answering (VQA) capabilities behind smart glasses. Despite the progress, VLLMs still face a major challenge: generating hallucinated answers. Studies have shown that VLLMs encounter substantial difficulties in handling queries involving long-tail entities [1]; these models also encounter challenges in handling complex queries that require the integration of different capabilities: recognition, OCR, knowledge, and generation [2].</p>
+
+<p>The Retrieval-Augmented Generation (RAG) paradigm has expanded to accommodate multi-modal (MM) input and demonstrated promise in addressing the knowledge limitation of VLLM. Given an image and a question, an MM-RAG system constructs a search query by synthesizing information from the image and the question, searches external sources to retrieve relevant information, and then provides grounded answers to address the question [3]</p>
+
+<p><img alt="" src="https://images.aicrowd.com/uploads/ckeditor/pictures/1436/content_Screenshot_2025-05-24_at_8.13.06_PM.png" style="height:301px; width:500px"></p>
+
+<p><strong>Figure 1</strong>: MM-RAG</p>
+
+<p>Despite its potential, MM-RAG still faces many challenges, such as recognizing the correct subject and comprehending the visual context in the image to understand the question, performing effective searches to retrieve useful information, synthesizing information from different sources to generate coherent and informative answers, and engaging in smooth multi-turn conversations. A comprehensive benchmark that provides a standardized framework and clear metrics is in pressing need to enable reliable and informative assessment of MM-RAG systems to facilitate and advance innovations.</p>
+
+<hr>
+<h2>💻 What is CRAG - MM: Comprehensive RAG Benchmark for multi-modal multi-turn question answering?</h2>
+
+<p>CRAG-MM is a visual question-answering benchmark that focuses on factual questions, offering a unique collection of image and question-answering sets to enable comprehensive assessment of wearable devices. Specifically, CRAG-MM features a diverse collection of <strong>5k images</strong>, including <strong>3k egocentric ones</strong> captured by <strong>RayBan Meta smart glasses</strong>, covering <strong>13 domains</strong> and reflecting real-world challenges associated with handling egocentric images.</p>
+
+<p>The benchmark includes <strong>4 types of questions</strong>, ranging from simple queries that can be answered by looking at the image only to complex ones that require retrieving information from multiple sources and performing reasoning.</p>
+
+<p>Moreover, CRAG-MM encompasses both <strong>single-turn and multi-turn conversations</strong>, providing a more overarching evaluation of MM-RAG solutions.</p>
+
+<hr>
+<h2>📅 Timeline</h2>
+
+<p>There will be two phases in the challenge. <strong>Phase 1 will be open to all teams who sign up</strong>. All teams that have at least one successful submission in Phase 1 can enter Phase 2.&nbsp;</p>
+
+<p><strong>Phase 1: Open Competition</strong></p>
+
+<ul>
+	<li><strong>Website Open, Sample data available and Registration Begin</strong>: March 6, 2025, 23:55 UTC</li>
+	<li><strong>Data Available</strong>: March 15, 2025, 23:55 UTC</li>
+	<li><strong>Warm-up Round Start Date:&nbsp;</strong>March 24, 2025, 23:55 UTC</li>
+	<li><strong>Phase 1 Submission Start Date</strong>: &nbsp;April 4, 2025, 23:55 UTC</li>
+	<li><strong>Phase 1 Submission End Date</strong>: May 17, 2025, 23:55 UTC</li>
+</ul>
+
+<h3><strong>Phase 2: Competition for Top Teams</strong></h3>
+
+<ul>
+	<li><strong>Phase 2 Start Date</strong>: May 26, 2025, 23:55 UTC</li>
+	<li><strong>Registration and Team Freeze Deadline</strong>: June 1, 2025, 23:55 UTC</li>
+	<li><strong>Phase 2 End Date(Extended)</strong>: Jun 17, 2025, 23:55 UTC</li>
+</ul>
+
+<h3><strong>Winners Announcement</strong></h3>
+
+<ul>
+	<li><strong>Winner Notification</strong>: July 1, 2025 (Tentative)</li>
+	<li><strong>Winner Public Announcement</strong>: August 5, 2025 (At KDD Cup Winners event)</li>
+</ul>
+
+<hr>
+<h2>🏆 Prizes</h2>
+
+<p>The challenge boasts a prize pool of <strong>USD 33,000</strong>. There are prizes for <strong>all three tasks</strong>.</p>
+
+<h3><strong>Grand Prize</strong></h3>
+
+<ul>
+	<li>💎 <strong>The top one team that gains the highest score for egocentric images</strong>: $5000</li>
+</ul>
+
+<h3><strong>For Each Task</strong></h3>
+
+<ul>
+	<li>🥇 <strong>First Place</strong>: $4,000</li>
+	<li>🥈 <strong>Second Place</strong>: $2,500</li>
+	<li>🥉 <strong>Third Place</strong>: $1,500</li>
+</ul>
+
+<h3><strong>Special Awards</strong></h3>
+
+<ul>
+	<li>💐 <strong>First Place for each of the 4 question types</strong>: $1000</li>
+</ul>
+
+<p><strong>The first, second, and third prize winners are not eligible to win prizes for complex question types.</strong></p>
+
+<hr>
+<h2>💻 META CRAG - MM Challenge</h2>
+
+<p>An MM-RAG QA system takes as input an image <strong>𝐼</strong> and a question <strong>𝑄</strong>, and outputs an answer <strong>𝐴</strong>; the answer is generated by MM-LLMs according to information retrieved from external sources, combined with knowledge internalized in the model.&nbsp;A&nbsp;<strong>Multi-turn MM-RAG QA system,</strong>&nbsp;in addition, takes questions and answers from previous turns as context to answer new questions.&nbsp;The answer should provide useful information to answer the question without adding any hallucination.</p>
+
+<p>We first define <strong>four types of questions</strong> in our benchmark:</p>
+
+<ul>
+	<li>
+	<p><strong>Simple questions</strong>: Questions asking for simple facts.</p>
+
+	<ul>
+		<li>
+		<p><strong>Simple recognition</strong>: This can be directly answered from the image (e.g., "What brand is the milk?" or "Who wrote this book?" where the brand name and the book author are shown on the image).</p>
+		</li>
+		<li>
+		<p><strong>Simple knowledge</strong>: Requires external knowledge for the answers (e.g., "What’s the price of this sofa on Amazon?").</p>
+		</li>
+	</ul>
+	</li>
+	<li>
+	<p><strong>Multi-hop questions</strong>: Questions that require <strong>chaining multiple pieces of information</strong> to compose the answer (e.g., "What other movies have the director of this movie directed in the past?").</p>
+	</li>
+	<li>
+	<p><strong>Comparison and Aggregation questions</strong>: Questions requiring&nbsp;<strong>aggregating or comparing multiple pieces of information</strong>&nbsp;(e.g., "Which drinks do not contain added sugar among these?" or "Is this cheaper on Amazon?").</p>
+	</li>
+	<li>
+	<p><strong>Reasoning questions</strong>: Questions about an entity that&nbsp;<strong>cannot be directly looked up</strong>&nbsp;and require&nbsp;<strong>reasoning</strong>&nbsp;to answer (e.g., "Can the dryer be used in Europe?" where the image shows a dryer).</p>
+	</li>
+</ul>
+
+<p>We designed <strong>three competition tasks</strong>. As shown in Figure 2, <strong>Task #1 and Task #2</strong> contain <strong>single-turn questions</strong>, where the former provides <strong>image-KG-based retrieval</strong>, and the latter additionally introduces <strong>web retrieval</strong>; <strong>Task #3 focuses on multi-turn conversations</strong>.</p>
+
+<p>Here, we provide the content that can be leveraged in QA to ensure fair competition. We describe how we generated the data in the next section.</p>
+
+<h3><strong>Task #1: Single-source Augmentation</strong></h3>
+
+<ul>
+	<li><strong>Goal</strong>: To test the&nbsp;<strong>basic answer generation capability</strong> of MM-RAG systems.</li>
+	<li>Provides an <strong>image mock API</strong> to access information from an underlying <strong>image-based mock KG</strong>. The <strong>mock KG</strong> is indexed by the image and stores structured data associated with the image. Answers to the questions <strong>may or may not exist</strong> in the mock KG. The <strong>mock API</strong> takes an image as input and returns similar images from the <strong>mock KG</strong>, along with <strong>structured data</strong> associated with each image to support answer generation.</li>
+</ul>
+
+<h3><strong>Task #2: Multi-source Augmentation</strong></h3>
+
+<ul>
+	<li><strong>Goal</strong>: To test how well the <strong>MM-RAG system synthesizes information</strong> from <strong>different sources</strong>.</li>
+	<li>In addition to <strong>Task #1</strong>, this task provides a <strong>web search mock API</strong> as a <strong>second retrieval source</strong>. The <strong>web pages</strong> may provide <strong>useful information</strong> for answering the question but <strong>also contain noise</strong>.</li>
+</ul>
+
+<h3><strong>Task #3: Multi-turn QA</strong></h3>
+
+<ul>
+	<li><strong>Goal</strong>: To test <strong>context understanding</strong> for <strong>smooth multi-turn conversations</strong>.</li>
+	<li>This task tests the system’s ability to conduct <strong>multi-turn conversations</strong>. Each conversation contains <strong>2–6 turns</strong>. Except for the first turn, <strong>questions in later turns may or may not require the image</strong> for answering.</li>
+</ul>
+
+<p>The three tasks, each building upon the previous one, <strong>guide competition teams to build end-to-end RAG systems</strong> for <strong>multi-modal, multi-turn QA</strong>.</p>
+
+<p><img alt="" src="https://images.aicrowd.com/uploads/ckeditor/pictures/1409/content_task_design.jpeg" style="height:800px; width:573px"><br>
+&nbsp;</p>
+
+<p><strong>Figure 2</strong>: CRAG - MM Tasks</p>
+
+<hr>
+<h2>💯 Evaluation Metrics</h2>
+
+<p>We adopt exactly the <strong>same metrics and methods</strong> used in the <strong>CRAG competition</strong> to assess the performance of <strong>MM-RAG systems</strong>. Below is a brief description of the evaluation criteria.</p>
+
+<h3><strong>Single-turn QA</strong></h3>
+
+<ul>
+	<li>For each question in the evaluation set, the answer is scored as:</li>
+	<li>✅ <strong>Perfect</strong> (fully correct) → <strong>Score: 1.0</strong></li>
+	<li>⚠️ <strong>Acceptable</strong> (useful but with minor non-harmful errors) → <strong>Score: 0.5</strong></li>
+	<li>❓ <strong>Missing</strong> (e.g., “I don’t know”, “I’m sorry I can’t find …”) → <strong>Score: 0.0</strong></li>
+	<li>❌ <strong>Incorrect</strong> (wrong or irrelevant answer) → <strong>Score: -1.0</strong></li>
+	<li><strong>Truthfulness Score</strong>: The <strong>average score</strong> across all examples in the evaluation set for a given MM-RAG system.</li>
+</ul>
+
+<h3><strong>Multi-turn QA</strong></h3>
+
+<p>There is not a dominant way to evaluate answer quality for multi-turn conversations. We adapt the method in [5], which is closest to the information-seeking flavor of conversations (in contrast to task fulfilling). In particular, we stop a conversation when the answers in two consecutive turns are wrong and consider answers to all remaining questions in the same conversation as missing–mimicking the behavior of real users when they lose trust or feel frustrated after repeated failures. We then take the average score of all multi-turn conversations.</p>
+
+<hr>
+<h2>🖊 Evaluation Techniques</h2>
+
+<ul>
+	<li><strong>Auto-evaluation</strong> is used to display scores on the <strong>leaderboard</strong>.</li>
+	<li>In the <strong>final round</strong>, the <strong>top-10 teams</strong> are selected via auto-evaluation.</li>
+	<li><strong>Manual annotations</strong> determine the <strong>final top teams</strong> for each task.</li>
+</ul>
+
+<p><strong>Performance Constraints:</strong></p>
+
+<ul>
+	<li><strong>Only answer texts generated within 30 seconds are considered</strong>.</li>
+	<li><strong>10-second timeout per turn</strong> is strictly enforced.</li>
+	<li><strong>Human evaluation reviews</strong> the full response for validity and hallucination.</li>
+	<li><strong>Automatic evaluation</strong> scores only the <strong>first 75 BPE tokens</strong>.</li>
+	<li><strong>Full responses</strong> are checked manually for <strong>hallucination</strong>.</li>
+</ul>
+
+<blockquote>
+<p><strong>For the final winner selection, we’ll apply a constraint on the missing/refusal rate. Solutions with high missing rates may be disqualified, even if other metrics are strong.</strong></p>
+</blockquote>
+
+<hr>
+<h2>📙 Evaluation Details</h2>
+
+<ul>
+	<li><strong>All missing answers</strong> should return a standard response:&nbsp;<code>"I don't know."</code></li>
+	<li>Every query is associated with a <strong>query time</strong> (when the query was made).</li>
+	<li><strong>Dynamic questions</strong> may have different correct answers depending on query time.</li>
+	<li><strong>Ground truth answers</strong> are correct at the time the data was collected.</li>
+</ul>
+
+<hr>
+<h2>📊 CRAG-MM Dataset Description</h2>
+
+<p>CRAG-MM contains <strong>three parts</strong>:</p>
+
+<ul>
+	<li><strong>The Image Set</strong></li>
+	<li><strong>The QA Set</strong></li>
+	<li><strong>Retrieval Contents</strong></li>
+</ul>
+
+<h3>🖼️ <strong>Image Set</strong></h3>
+
+<ul>
+	<li>CRAG-MM contains <strong>two types of images</strong>:
+
+	<ul>
+		<li><strong>Egocentric images</strong>: Captured using <strong>Ray-Ban Meta Smart Glasses</strong>.</li>
+		<li><strong>Normal images</strong>: Collected from <strong>public sources</strong>.</li>
+	</ul>
+	</li>
+</ul>
+
+<h3>📝 <strong>Question Answer Pairs</strong></h3>
+
+<ul>
+	<li>Covers <strong>13&nbsp;domains</strong>, including&nbsp;<strong>Books, Food, Math &amp; Science, Shopping, Animal, Vehicles, and more</strong>.</li>
+	<li>Includes <strong>4 types of questions:&nbsp;Simple-recognition and Simple-knowledge, Multi-hop, Comparison and Aggregation, Reasoning</strong>.</li>
+	<li>Contains <strong>both single-turn and multi-turn conversations</strong>.</li>
+</ul>
+
+<h3>📁 <strong>Retrieval Contents</strong></h3>
+
+<p><strong>Image Search</strong></p>
+
+<ul>
+	<li>A <strong>mock image search API</strong> takes an image as input.</li>
+	<li>Returns <strong>similar images with structured metadata</strong> from a <strong>mock KG</strong>.</li>
+	<li>Example: Querying with a <strong>landmark image</strong> returns similar images <strong>with metadata</strong>.</li>
+</ul>
+
+<p><strong>Text-Based Web Search</strong></p>
+
+<ul>
+	<li>A <strong>text search API</strong> takes a text query as input.</li>
+	<li>Returns <strong>relevant web pages</strong> (URLs, page titles, snippets, last updated time).</li>
+</ul>
+
+<p>Both APIs include <strong>hard negative data</strong> to <strong>simulate real-world challenges</strong>.</p>
+
+<hr>
+<h2>📘 Submission and Participation</h2>
+
+<p>Participants must submit their code and model weights to run on the host's server for evaluation.</p>
+
+<h3>🧭 <strong>Model</strong></h3>
+
+<p>This KDD Cup requires participants to use Llama models to build their RAG solution. Especially, participants can use or fine-tune the following Llama 3 models from https://llama.meta.com/llama-downloads:</p>
+
+<ul>
+	<li>Llama 3.2 11B</li>
+	<li>Llama 3.2 90B</li>
+</ul>
+
+<p>Any other non-llama models used need to be under 1.5b parameter size limit.</p>
+
+<h3>🔨 <strong>Hardware and system configuration</strong></h3>
+
+<p>We set a limit on the hardware available to each participant to run their solution. Specifically,</p>
+
+<p>All submissions will be run on a single G6e instance with a NVIDIA L40s GPU with 48GB of GPU memory on AWS. Please note that</p>
+
+<ul>
+	<li>Llama 3.2 11B in full precision can run directly.</li>
+	<li>Llama 3.2 90B in full precision cannot be directly run on this GPU instance. Quantization or other techniques need to be applied to make the model runnable.</li>
+	<li>NVIDIA L40s is not using the latest architectures and hence might not be compatible with certain acceleration toolkits, so please make sure the submitted solution is compatible with the configuration.</li>
+</ul>
+
+<p>Moreover, the following restrictions will also be imposed.</p>
+
+<ul>
+	<li>The network connection will be disabled.</li>
+	<li>Each turn in a submission has a strict 10-second timeout. If the model times out during any turn, the entire submission will be considered failed. For submissions made via the batch generation interface, the permitted time is calculated as batch size multiplied by 10 seconds per batch.</li>
+	<li>In human evaluation, graders will assess the entire response to determine both answer validity and hallucination. In automatic evaluation, responses will be truncated to the first 75 BPE tokens for scoring purposes.</li>
+</ul>
+
+<p>Phase 2 submissions will be evaluated on low-resolution (960 width, 1280 height) egocentric images to mimic a real-world challenge. Resolution of normal images remains unchanged.</p>
+
+<p>To accommodate the expanded test set in Round 2, the maximum allowed evaluation time per submission has been increased from 4 hours to 7.5 hours. Submissions exceeding this limit will be terminated automatically.</p>
+
+<h3>🤝 <strong>Use of external resources</strong></h3>
+
+<p>By only providing a small development set, we encourage participants to exploit public resources to build their solutions. However, participants should ensure that the used datasets or models are publicly available and equally accessible to use by all participants. Such a constraint rules out proprietary datasets and models by large corporations. Participants are allowed to re-formulate existing datasets (e.g., adding additional data/labels manually or with Llama models), but award winners are required to make them publicly available after the competition.</p>
+
+<h3>🔑 <strong>Baseline implementation</strong></h3>
+
+<p>We provide baseline RAG implementations based on the Llama 3.2 11B model to help participants onboard quickly.</p>
+
+<h2>📘 Participation and Submission</h2>
+
+<h3>🔑 <strong>Registration</strong></h3>
+
+<ul>
+	<li><strong>Teams of 1–5 participants</strong> can register on this page before submitting solutions.</li>
+	<li><strong>Team freeze deadline: June 1, 2025.</strong></li>
+</ul>
+
+<h3>🤝 <strong>Solution Submission</strong></h3>
+
+<ul>
+	<li><strong>Phase I</strong>: Each team can make <strong>6 submissions per week</strong> across <strong>all three tracks</strong>.&nbsp;</li>
+	<li><strong>Phase II</strong>: Each team can make <strong>10</strong>&nbsp;<strong>total submissions</strong> across each track per week.&nbsp;</li>
+</ul>
+
+<h3>💻 <strong>Technical Report Submission</strong></h3>
+
+<ul>
+	<li>Potential winners must submit a <strong>technical report</strong>.</li>
+	<li>The report includes a <strong>solution description</strong> + <strong>code for reproducibility</strong>.</li>
+	<li><strong>Compliance with challenge rules is required for winning teams</strong>.</li>
+</ul>
+
+<hr>
+<h2>🏛️ KDD Cup Workshop</h2>
+
+<p>The <strong>KDD Cup</strong> is an annual <strong>data mining and knowledge discovery competition</strong> organized by <strong>ACM SIGKDD</strong>.</p>
+
+<ul>
+	<li><strong>KDD Cup 2025</strong> will be held in <strong>Toronto, Canada</strong>.</li>
+	<li><strong>Dates</strong>: August 3–7, 2025.</li>
+</ul>
+
+<hr>
+<h2>⛰ What Makes CRAG-MM Standout?</h2>
+
+<ul>
+	<li><strong>The first publicly released wearable benchmarks</strong></li>
+	<li>Includes <strong>real-world</strong> challenges from <strong>wearable device QA</strong>.</li>
+	<li><strong>Rich and insightful benchmark</strong></li>
+	<li>Covers <strong>diverse</strong> images and questions (e.g., <strong>low-quality images, long-tail entities</strong>).</li>
+	<li><strong>Reliable and fair evaluation</strong></li>
+	<li>Equal access to <strong>retrieval resources</strong> (image KG + web corpus).</li>
+</ul>
+
+<hr>
+<h2>🗂️ Related Work</h2>
+
+<p>To the best of our knowledge, the Meta CRAG-MM challenge is the first MM-RAG challenge for KDD Cups and broadly. CRAG-MM uniquely features natural uses cases for wearable devices based on egocentric images. Moreover, it encompasses a variety of domains and question types, effectively evaluating different capabilities of MM-RAG systems: entity recognition, OCR, query rewrite, answer generation, and so on. Furthermore, CRAG-MM extends beyond single-turn QA by including multi-turn conversations, a common and critical use case for smart assistant.</p>
+
+<p><img alt="" src="https://images.aicrowd.com/uploads/ckeditor/pictures/1407/content_compare_crag_mm_w_related_work.png" style="height:131px; width:600px"></p>
+
+<hr>
+<h2>📱 Contact</h2>
+
+<p>For inquiries, contact:<br>
+📧 <strong>crag-kddcup-2025@meta.com</strong></p>
+
+<p>Organizers of this KDD Cup consists of scientists and engineers from <strong>Meta Reality Labs</strong> and <strong>Meta GenAI</strong>. They are:</p>
+
+<p>• Xiao Yang • Jiaqi Wang • Shervin Ghasemlou • Parth Suresh • Adam Czyzewski • Sanat Sharma • Surya Appini • Haidar Khan • Roy Luo • Ziqiang Guan • Juheon Lee • Prashan Wanigasekara • Lingkun Kong • Sajal Choudhary • Tammy Stark • Chen Zhou • Kai Sun • Shane Moon • Nicolas Scheffer • Zhaleh Feizollahi • Mangesh Pujari&nbsp;• Andrea Jessee • Rakesh Wanga • Rohit Patel • Anuj Kumar • Xin Luna Dong</p>
+
+<p><strong>Competition rules:</strong> https://www.aicrowd.com/challenges/meta-crag-mm-challenge-2025/challenge_rules</p>
+
+<hr>
+<h2>📕 References</h2>
+
+<p>[1] Qiu et al., "SnapNTell: Enhancing Entity-Centric Visual Question Answering with Retrieval Augmented Multimodal LLM". Available at: https://aclanthology.org/2024.findings-emnlp.14/</p>
+
+<p>[2] Yu et al., "MM-Vet: Evaluating Large Multimodal Models for Integrated Capabilities". Available at: https://arxiv.org/abs/2308.02490</p>
+
+<p>[3] Gao et al., "Retrieval-Augmented Generation for Large Language Models: A Survey". Available at: https://arxiv.org/abs/2312.10997</p>
+
+<p>[4] Yang et al., "CRAG - Comprehensive RAG Benchmark". Available at: https://proceedings.neurips.cc/paper_files/paper/2024/hash/1435d2d0fca85a84d83ddcb754f58c29-Abstract-Datasets_and_Benchmarks_Track.html</p>
+
+<p>[5] Bai et al., "MT-Bench-101: A Fine-Grained Benchmark for Evaluating Large Language Models in Multi-Turn Dialogues". Available at: https://aclanthology.org/2024.acl-long.401/</p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-contributors-container col-sm-12 col-md-4 col-lg-2">
+          <header class="section-header mb-0">
+    <div>
+      <h4>Participants</h4>
+    </div>
+  </header>
+  <div>
+      <div class="participants floating-button">
+        <a data-controller="mixpanel" data-action="click-&gt;mixpanel#challenge_participation_start" href="/participants/sign_up">
+          <button type="button" class="btn btn-primary btn-block" data-toggle="Click to register for challenge">🔓 Participate</button>
+</a>      </div>
+      <div class="row avatar-group p-3 participants floating-base">
+        <span>
+          
+  <span id="participant_8953_320736">
+    <span data-controller="participants"
+          data-participants-participant="320736"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_8953_320736"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/320736/25343084.jpeg" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_b55d_345448">
+    <span data-controller="participants"
+          data-participants-participant="345448"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_b55d_345448"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/345448/unnamed.jpg" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_3928_343169">
+    <span data-controller="participants"
+          data-participants-participant="343169"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_3928_343169"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/343169/unnamed.jpg" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_8986_304886">
+    <span data-controller="participants"
+          data-participants-participant="304886"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_8986_304886"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/304886/unnamed.png" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_fc6a_180611">
+    <span data-controller="participants"
+          data-participants-participant="180611"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_fc6a_180611"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/180611/83609404.png" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_f739_333653">
+    <span data-controller="participants"
+          data-participants-participant="333653"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_f739_333653"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/333653/unnamed.jpg" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_fcc6_190059">
+    <span data-controller="participants"
+          data-participants-participant="190059"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_fcc6_190059"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/default/4.png" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_3d9c_13403">
+    <span data-controller="participants"
+          data-participants-participant="13403"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_3d9c_13403"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/default/3.png" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_72d3_318449">
+    <span data-controller="participants"
+          data-participants-participant="318449"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_72d3_318449"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/default/4.png" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_4196_316449">
+    <span data-controller="participants"
+          data-participants-participant="316449"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_4196_316449"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/316449/unnamed.png" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_72c1_317424">
+    <span data-controller="participants"
+          data-participants-participant="317424"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_72c1_317424"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/317424/unnamed.png" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_2600_303336">
+    <span data-controller="participants"
+          data-participants-participant="303336"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_2600_303336"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/303336/unnamed.png" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_8ffd_320495">
+    <span data-controller="participants"
+          data-participants-participant="320495"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_8ffd_320495"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/320495/107822540.jpeg" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_5cdb_352845">
+    <span data-controller="participants"
+          data-participants-participant="352845"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_5cdb_352845"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/default/0.png" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_a5c2_346079">
+    <span data-controller="participants"
+          data-participants-participant="346079"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_a5c2_346079"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/346079/unnamed.png" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_d860_333769">
+    <span data-controller="participants"
+          data-participants-participant="333769"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_d860_333769"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/333769/70978726.jpeg" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_e4fc_63221">
+    <span data-controller="participants"
+          data-participants-participant="63221"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_e4fc_63221"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/default/1.png" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_6bc3_67624">
+    <span data-controller="participants"
+          data-participants-participant="67624"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_6bc3_67624"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/default/4.png" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_17e9_508846">
+    <span data-controller="participants"
+          data-participants-participant="508846"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_17e9_508846"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/508846/218471977.png" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_46c3_366649">
+    <span data-controller="participants"
+          data-participants-participant="366649"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_46c3_366649"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/366649/unnamed.jpg" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_c412_330084">
+    <span data-controller="participants"
+          data-participants-participant="330084"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_c412_330084"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/default/4.png" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_18c0_327188">
+    <span data-controller="participants"
+          data-participants-participant="327188"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_18c0_327188"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/327188/56944029.jpeg" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_c57c_330947">
+    <span data-controller="participants"
+          data-participants-participant="330947"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_c57c_330947"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/330947/unnamed.png" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_33e8_337769">
+    <span data-controller="participants"
+          data-participants-participant="337769"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_33e8_337769"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/337769/211652632.png" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_7442_79429">
+    <span data-controller="participants"
+          data-participants-participant="79429"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_7442_79429"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/79429/67851367.png" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_1161_313448">
+    <span data-controller="participants"
+          data-participants-participant="313448"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_1161_313448"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/313448/unnamed.png" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_1dc8_316303">
+    <span data-controller="participants"
+          data-participants-participant="316303"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_1dc8_316303"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/316303/147686458.png" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_4a29_333185">
+    <span data-controller="participants"
+          data-participants-participant="333185"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_4a29_333185"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/333185/unnamed.png" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_77d6_196983">
+    <span data-controller="participants"
+          data-participants-participant="196983"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_77d6_196983"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/196983/4794839.png" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_5bdd_355057">
+    <span data-controller="participants"
+          data-participants-participant="355057"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_5bdd_355057"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/355057/unnamed.png" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_105d_13256">
+    <span data-controller="participants"
+          data-participants-participant="13256"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_105d_13256"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/13256/IMG_6929__1_.JPG" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_4b37_316731">
+    <span data-controller="participants"
+          data-participants-participant="316731"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_4b37_316731"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/default/1.png" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_2d1f_57110">
+    <span data-controller="participants"
+          data-participants-participant="57110"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_2d1f_57110"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/57110/unnamed.png" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_335b_324696">
+    <span data-controller="participants"
+          data-participants-participant="324696"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_335b_324696"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/324696/unnamed.png" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_cf81_185297">
+    <span data-controller="participants"
+          data-participants-participant="185297"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_cf81_185297"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/185297/unnamed.jpg" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_bb64_75748">
+    <span data-controller="participants"
+          data-participants-participant="75748"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_bb64_75748"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/75748/unnamed.png" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_7b73_68696">
+    <span data-controller="participants"
+          data-participants-participant="68696"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_7b73_68696"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/68696/unnamed.png" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_0c52_316589">
+    <span data-controller="participants"
+          data-participants-participant="316589"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_0c52_316589"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/316589/102523702.jpeg" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_2e70_332500">
+    <span data-controller="participants"
+          data-participants-participant="332500"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_2e70_332500"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/332500/unnamed.jpg" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_8bda_288630">
+    <span data-controller="participants"
+          data-participants-participant="288630"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_8bda_288630"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/288630/unnamed.jpg" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_bff2_331994">
+    <span data-controller="participants"
+          data-participants-participant="331994"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_bff2_331994"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/331994/unnamed.jpg" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_2902_334888">
+    <span data-controller="participants"
+          data-participants-participant="334888"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_2902_334888"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/334888/colorbar.png" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_3087_336030">
+    <span data-controller="participants"
+          data-participants-participant="336030"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_3087_336030"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/336030/unnamed.png" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_0c1e_371466">
+    <span data-controller="participants"
+          data-participants-participant="371466"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_0c1e_371466"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/371466/125369408.jpeg" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_a961_43402">
+    <span data-controller="participants"
+          data-participants-participant="43402"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_a961_43402"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/43402/unnamed.jpg" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_3f81_397533">
+    <span data-controller="participants"
+          data-participants-participant="397533"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_3f81_397533"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/397533/unnamed.png" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_7d12_328313">
+    <span data-controller="participants"
+          data-participants-participant="328313"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_7d12_328313"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/default/3.png" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_989c_67288">
+    <span data-controller="participants"
+          data-participants-participant="67288"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_989c_67288"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/67288/101804962.png" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_1da4_325324">
+    <span data-controller="participants"
+          data-participants-participant="325324"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_1da4_325324"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/325324/unnamed.jpg" />
+
+    </span>
+  </span>
+
+        </span>
+        <span>
+          
+  <span id="participant_9a6e_44069">
+    <span data-controller="participants"
+          data-participants-participant="44069"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_9a6e_44069"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/44069/39671154.png" />
+
+    </span>
+  </span>
+
+        </span>
+      <span class="avatar user-rating-0 text-center" data-toggle="tooltip" title="1010 more participants">
+        <span class="fa fa-ellipsis-h align-bottom"></span>
+      </span>
+    </div>
+  </div>
+  <header class="section-header mt-4">
+  <div>
+    <h4>Leaderboard</h4>
+  </div>
+  <form class="button_to" method="get" action="/challenges/meta-crag-mm-challenge-2025/leaderboards"><input class="btn btn-secondary btn-sm" type="submit" value="See all" /></form>
+</header>
+<table class="table table-responsive-md side-border">
+  <tbody>
+
+      <tr>
+        <td><strong>01</strong></td>
+        <td>
+
+              <div>
+                <span class="fa fa-users" data-toggle="tooltip" fa="" title="Team Participation">&nbsp;</span>
+                <span class="reputation-score truncate"> <a href="/challenges/meta-crag-mm-challenge-2025/teams/db3">db3</a></span>
+              </div>
+              <div class="avatar-group">
+                  
+  <span id="participant_2029_179629">
+    <span data-controller="participants"
+          data-participants-participant="179629"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_2029_179629"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/179629/108877424.png" />
+
+    </span>
+  </span>
+
+                  
+  <span id="participant_aa04_313130">
+    <span data-controller="participants"
+          data-participants-participant="313130"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_aa04_313130"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/313130/107069375.jpeg" />
+
+    </span>
+  </span>
+
+                  
+  <span id="participant_13c5_179604">
+    <span data-controller="participants"
+          data-participants-participant="179604"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_13c5_179604"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/179604/unnamed.png" />
+
+    </span>
+  </span>
+
+                  
+  <span id="participant_cfa4_226204">
+    <span data-controller="participants"
+          data-participants-participant="226204"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_cfa4_226204"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/default/4.png" />
+
+    </span>
+  </span>
+
+              </div>
+        </td>
+        <td><strong>5.000</strong></td>
+      </tr>
+
+      <tr>
+        <td><strong>02</strong></td>
+        <td>
+
+              <div>
+                <span class="fa fa-users" data-toggle="tooltip" fa="" title="Team Participation">&nbsp;</span>
+                <span class="reputation-score truncate"> <a href="/challenges/meta-crag-mm-challenge-2025/teams/Dianping-Trust-Safety">Dianping-Trust-Safety</a></span>
+              </div>
+              <div class="avatar-group">
+                  
+  <span id="participant_603e_337697">
+    <span data-controller="participants"
+          data-participants-participant="337697"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_603e_337697"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/default/2.png" />
+
+    </span>
+  </span>
+
+                  
+  <span id="participant_f01c_329113">
+    <span data-controller="participants"
+          data-participants-participant="329113"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_f01c_329113"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/329113/91180472.png" />
+
+    </span>
+  </span>
+
+                  
+  <span id="participant_384c_76989">
+    <span data-controller="participants"
+          data-participants-participant="76989"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_384c_76989"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/76989/unnamed.png" />
+
+    </span>
+  </span>
+
+                  
+  <span id="participant_4a0f_337698">
+    <span data-controller="participants"
+          data-participants-participant="337698"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_4a0f_337698"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/default/3.png" />
+
+    </span>
+  </span>
+
+              </div>
+        </td>
+        <td><strong>6.000</strong></td>
+      </tr>
+
+      <tr>
+        <td><strong>03</strong></td>
+        <td>
+
+              <div>
+                <span class="fa fa-users" data-toggle="tooltip" fa="" title="Team Participation">&nbsp;</span>
+                <span class="reputation-score truncate"> <a href="/challenges/meta-crag-mm-challenge-2025/teams/BlackPearl">BlackPearl</a></span>
+              </div>
+              <div class="avatar-group">
+                  
+  <span id="participant_9cc9_333393">
+    <span data-controller="participants"
+          data-participants-participant="333393"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_9cc9_333393"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/333393/%E5%A4%B4%E5%83%8F.png" />
+
+    </span>
+  </span>
+
+                  
+  <span id="participant_95d6_307181">
+    <span data-controller="participants"
+          data-participants-participant="307181"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_95d6_307181"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/307181/WechatIMG31.jpg" />
+
+    </span>
+  </span>
+
+                  
+  <span id="participant_a0c9_334888">
+    <span data-controller="participants"
+          data-participants-participant="334888"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_a0c9_334888"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/334888/colorbar.png" />
+
+    </span>
+  </span>
+
+                  
+  <span id="participant_88cf_307593">
+    <span data-controller="participants"
+          data-participants-participant="307593"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_88cf_307593"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/307593/bit.jpg.jpeg" />
+
+    </span>
+  </span>
+
+              </div>
+        </td>
+        <td><strong>7.000</strong></td>
+      </tr>
+
+      <tr>
+        <td><strong>04</strong></td>
+        <td>
+
+              <div>
+                <span class="fa fa-users" data-toggle="tooltip" fa="" title="Team Participation">&nbsp;</span>
+                <span class="reputation-score truncate"> <a href="/challenges/meta-crag-mm-challenge-2025/teams/Team_NVIDIA">Team_NVIDIA</a></span>
+              </div>
+              <div class="avatar-group">
+                  
+  <span id="participant_7b1a_24228">
+    <span data-controller="participants"
+          data-participants-participant="24228"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_7b1a_24228"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/24228/471945-kg__1_.png" />
+
+    </span>
+  </span>
+
+                  
+  <span id="participant_0e7f_67776">
+    <span data-controller="participants"
+          data-participants-participant="67776"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_0e7f_67776"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/67776/Chris2.jpg" />
+
+    </span>
+  </span>
+
+                  
+  <span id="participant_d2f8_16183">
+    <span data-controller="participants"
+          data-participants-participant="16183"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_d2f8_16183"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/16183/GIBA.JPG" />
+
+    </span>
+  </span>
+
+                  
+  <span id="participant_3d7a_24179">
+    <span data-controller="participants"
+          data-participants-participant="24179"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_3d7a_24179"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/24179/unnamed.jpg" />
+
+    </span>
+  </span>
+
+              </div>
+        </td>
+        <td><strong>14.000</strong></td>
+      </tr>
+
+      <tr>
+        <td><strong>05</strong></td>
+        <td>
+
+              <div>
+                <span class="fa fa-users" data-toggle="tooltip" fa="" title="Team Participation">&nbsp;</span>
+                <span class="reputation-score truncate"> <a href="/challenges/meta-crag-mm-challenge-2025/teams/y3h2">y3h2</a></span>
+              </div>
+              <div class="avatar-group">
+                  
+  <span id="participant_3c70_324437">
+    <span data-controller="participants"
+          data-participants-participant="324437"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_3c70_324437"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/324437/72649097.jpeg" />
+
+    </span>
+  </span>
+
+                  
+  <span id="participant_5993_324491">
+    <span data-controller="participants"
+          data-participants-participant="324491"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_5993_324491"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/324491/172238637.png" />
+
+    </span>
+  </span>
+
+                  
+  <span id="participant_8046_324439">
+    <span data-controller="participants"
+          data-participants-participant="324439"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_8046_324439"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/324439/106504842.png" />
+
+    </span>
+  </span>
+
+                  
+  <span id="participant_cb29_324478">
+    <span data-controller="participants"
+          data-participants-participant="324478"
+          data-participants-username="false"
+          data-participants-avatar="true"
+          data-participants-truncate="false"
+          data-participants-location="participant_cb29_324478"
+          data-action="mouseenter->participants#getUserProfile">
+          <img class="avatar" loading="lazy" src="https://assets.aicrowd.com/s3backend/100x100/images/participants/image_file/324478/82637018.png" />
+
+    </span>
+  </span>
+
+              </div>
+        </td>
+        <td><strong>18.000</strong></td>
+      </tr>
+  </tbody>
+</table>
+
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /section -->
+
+    </div>
+    	<!-- cookie consent pop-up -->
+	<div class="alert alert-cookie alert-dismissible fade show" role="alert">
+		Cookies help us deliver our services. By using our services, you agree to our use of cookies.
+		<div class="btn-set" aria-hidden="true">
+			<button type="button" class="btn btn-primary btn-sm cookies-set-accept" data-dismiss="alert" aria-label="Close">Accept</button>
+			<form class="button_to" method="get" action="/cookies"><input class="btn btn-secondary btn-sm" type="submit" value="Learn more" /></form>
+		</div>
+	</div>
+	<!-- /cookie consent pop-up -->
+
+<!-- app footer -->
+<footer class="app-footer">
+	<div class="container-fluid">
+		<div class="row">
+
+			<!-- app brand -->
+			<div class="app-brand col-3 col-lg-4">
+				<div class="app-brand">
+					<a class="logo-aicrowd-light" href="/">
+						<span>AIcrowd</span>
+					</a>
+				</div>
+			</div>
+			<!-- /app brand -->
+
+			<!-- platform -->
+			<div class="col-6 col-sm-4 col-md-3 col-lg-2">
+				<h4>Platform</h4>
+				<ul class="nav flex-column">
+					<li class="nav-item">
+						<a class="nav-link" href="/challenges">Challenges</a>
+					</li>
+                                        <li class="nav-item">
+                                                <a class="nav-link" href="/research">AIcrowd Research</a>
+                                        </li>
+					<li class="nav-item">
+						<a class="nav-link" href="/landing_page/host">Organize a Challenge</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/faq">FAQ</a>
+					</li>
+				</ul>
+			</div>
+			<!-- /platform -->
+
+			<!-- connect -->
+			<div class="col-6 col-sm-4 col-md-3 col-lg-2">
+				<h4>Connect</h4>
+				<ul class="nav flex-column">
+					<li class="nav-item">
+						<a class="nav-link" href="https://blog.aicrowd.com/">Blog</a>
+					</li>
+                                        <li class="nav-item">
+                                                <a class="nav-link" href="https://discourse.aicrowd.com">Forums</a>
+                                        </li>
+					<li class="nav-item">
+						<a class="nav-link" href="/contact">Contact</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="http://gitlab.aicrowd.com/">GitLab<img alt="GitLab" src="https://assets.aicrowd.com/assets/img/icon-external-link-58b07c56ee994c2de8f783c0a7eabf14d19bb83560420af768297b3d1f7f39a9.svg" /></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="https://twitter.com/AIcrowdHQ">Twitter<img alt="Twitter" src="https://assets.aicrowd.com/assets/img/icon-external-link-58b07c56ee994c2de8f783c0a7eabf14d19bb83560420af768297b3d1f7f39a9.svg" /></a>
+					</li>
+                                        <li class="nav-item">
+                                                <a class="nav-link" href="https://discord.gg/uhNK5gzjSS">Discord<img alt="Discord" src="https://assets.aicrowd.com/assets/img/icon-external-link-58b07c56ee994c2de8f783c0a7eabf14d19bb83560420af768297b3d1f7f39a9.svg" /></a>
+                                        </li>
+				</ul>
+			</div>
+			<!-- /connect -->
+
+			<!-- legal -->
+			<div class="section-legal col-12 col-sm-4 col-md-3 col-lg-4">
+				<h4>Legal</h4>
+				<ul class="nav flex-column">
+					<li class="nav-item">
+						<a class="nav-link" href="/cookies">Cookie consent</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/terms">Terms of Use</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/participation_terms">Participation Terms</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/privacy">Privacy</a>
+					</li>
+          <li class="nav-item">
+            <a class="nav-link" href="/community_guidelines">Community Guidelines</a>
+          </li>
+		  <li class="nav-item">
+            <a class="nav-link" href="/ai_ethics">AI &amp; Ethics</a>
+          </li>
+				</ul>
+				<p>&#169; 2026 AIcrowd. All rights reserved.</p>
+			</div>
+			<!-- /legal -->
+
+		</div>
+	</div>
+</footer>
+	<style>
+	.md-content a {
+		text-decoration: underline;
+	}
+	.country-flag {
+		height: 20px !important;
+	}
+	.blinking {
+		-webkit-animation: 1s blink ease infinite;
+		animation: 1s blink ease infinite;
+	}
+	@-webkit-keyframes "blink" {
+		from, to {
+			opacity: 0;
+		}
+		50% {
+			opacity: 1;
+		}
+	}
+	.alert-flash {
+		border-bottom: 1px solid #F0524D;
+	}
+	.tooltip-inner-top .reputation-info {
+		display: none;
+	}
+	.reputation-info .reputation-score {
+		display: none;
+	}
+	.btn-primary {
+		color: #fff !important;
+	}
+	.btn-google {
+		border: 1px solid #b3b3b3;
+	}
+	@media(max-width: 991.98px) {
+		.sub-nav-bar .btn {
+			display: block !important;
+		}
+		.feedback-button {
+			display: none;
+		}
+	}
+	.table-leaderboard .btn-sm {
+		padding: 0.25rem 0.875rem;
+		border-radius: 1.5rem;
+	}
+	.card-challenge .card-footer a {
+		display: unset;
+	}
+	.contribution-details .image-link img {
+		height: 80px;
+		width: 80px;
+	}
+	.output_wrapper {
+		max-height: 300px;
+		overflow: scroll;
+	}
+	.ipynb-notebook-container div.input_area {
+		border: 1px solid #efefef;
+		padding: 5px 9px;
+	}
+	.ipynb-notebook-container div.input_area>div.highlight>pre {
+		line-height: 1.5em;
+	}
+	.ipynb-notebook-container div.output_area pre {
+		line-height: 1.4em;
+	}
+	.md-content p, .md-content ol>li, .md-content ul, .md-content ol {
+		font-size: 1.1rem;
+	}
+	.md-content table {
+		max-width: 640px;
+	}
+	.mvcss {
+		cursor: pointer;
+		width: 100px;
+		filter: brightness(0.5);
+		left: 0;
+		right: 0;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.mvcss2 {
+		display: none;
+		filter: grayscale(0.5);
+		position: absolute;
+		width: 40px;
+		left: 0;
+		right: 0;
+		margin-left: auto;
+		margin-right: auto;
+	}
+</style>
+
+<!-- /app footer -->
+
+      <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    // Configure Google Analytics to exclude sensitive URL parameters
+    gtag('config', 'G-7L4H7S9RG2', {
+      'page_location': (function() {
+        var url = new URL(window.location.href);
+        // Remove sensitive parameters to comply with Meta Business Tool Terms
+        // and protect user privacy
+        url.searchParams.delete('email_confirmation');
+        url.searchParams.delete('email_token');
+        url.searchParams.delete('reset_password_token');
+        url.searchParams.delete('confirmation_token');
+        url.searchParams.delete('api_key');
+        url.searchParams.delete('preferences_token');
+        // Signed, single-use OAuth re-link token (participants/oauth/confirm_link)
+        url.searchParams.delete('token');
+        return url.toString();
+      })()
+    });
+  </script>
+
+
+
+    
+    
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async="async" defer="defer"></script>
+  </body>
+</html>

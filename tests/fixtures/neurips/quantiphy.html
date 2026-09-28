@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuantiPhy Challenge — NeurIPS 2026 Competition</title>
+  <meta name="description" content="The QuantiPhy Challenge: a NeurIPS 2026 competition benchmarking the quantitative physical reasoning of vision–language models across two tracks." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a href="#main" class="skip">Skip to content</a>
+
+  <!-- Decorative scroll ruler (desktop only) -->
+  <div class="ruler" aria-hidden="true"><div class="ruler__progress"></div></div>
+
+  <!-- ============== NAV ============== -->
+  <header class="nav">
+    <div class="wrap nav__inner">
+      <a href="#top" class="nav__brand">
+        <span class="dot" aria-hidden="true"></span>
+        QuantiPhy<small>Challenge 2026</small>
+      </a>
+      <nav class="nav__list" aria-label="Primary">
+        <a href="#overview">Overview</a>
+        <a href="#tracks">Tracks</a>
+        <a href="#dataset">Dataset</a>
+        <a href="#evaluation">Evaluation</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#starter">Participate</a>
+        <a href="#organizers">Organizers</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav__account">
+        <a href="auth/login.html" class="nav__signin">Sign in</a>
+        <a href="auth/register.html" class="nav__cta">Register</a>
+      </div>
+      <button class="nav__toggle" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav id="drawer" class="nav__drawer" aria-label="Mobile">
+      <a href="#overview">Overview</a>
+      <a href="#tracks">Tracks</a>
+      <a href="#dataset">Dataset</a>
+      <a href="#evaluation">Evaluation</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#starter">Participate</a>
+      <a href="#prizes">Prizes</a>
+      <a href="#organizers">Organizers</a>
+      <a href="#faq">FAQ</a>
+      <a href="auth/login.html">Sign in</a>
+      <a href="auth/register.html">Register</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <div class="wrap template-notice-wrap">
+    <details class="template-notice">
+      <summary><span class="notice-dot" aria-hidden="true"></span><strong>Registration deadline: October 9, 2026 · 23:59 AoE</strong><span class="template-notice__hint">New teams and team edits close · Details</span></summary>
+      <div class="template-notice__body">
+        <p>Team registration and edits to existing teams close on <strong><time datetime="2026-10-09T23:59:00-12:00">October 9, 2026 at 23:59 Anywhere on Earth (AoE)</time></strong>.</p>
+        <p><strong>After this deadline, no new teams will be allowed, and edits to existing teams will not be permitted.</strong> Please register your team and finalize all team details before the deadline.</p>
+        <p>The final submission deadline remains <strong><time datetime="2026-10-23T23:59:00-12:00">October 23, 2026 at 23:59 AoE</time></strong>.</p>
+      </div>
+    </details>
+    <details class="template-notice">
+      <summary><span class="notice-dot" aria-hidden="true"></span><strong>Deadline updated: October 23, 2026 · 23:59 AoE</strong><span class="template-notice__hint">Details</span></summary>
+      <div class="template-notice__body">
+        <p>Final submissions now close <strong><time datetime="2026-10-23T23:59:00-12:00">October 23, 2026 at 23:59 Anywhere on Earth (AoE)</time></strong>. Please submit your team’s final predictions by this deadline.</p>
+        <p><a class="link" href="#timeline">View the competition timeline</a>.</p>
+      </div>
+    </details>
+    <details class="template-notice">
+      <summary><span class="notice-dot" aria-hidden="true"></span><strong>Template updated · September 14, 2026</strong><span class="template-notice__hint">32 IDs corrected · Details &amp; download</span></summary>
+      <div class="template-notice__body">
+        <p>Dear QuantiPhy participants,</p>
+        <p>A participant reported that the wording of several questions in the official submission template stated a missing or dimensionally inconsistent output unit. We have verified the report, audited all 3,289 questions, and corrected the affected question text. No ground-truth values, IDs, or row order have changed. The affected rows are identified by the template’s <code>id</code> column (not row numbers).</p>
+        <h2>Corrected target units (32 IDs)</h2>
+        <table>
+          <thead><tr><th scope="col">Correction</th><th scope="col">IDs</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Speed — in meters → in m/s</th><td>23, 1131, 1225, 1631, 1665, 1668</td></tr>
+            <tr><th scope="row">Acceleration — in m/s → in m/s<sup>2</sup></th><td>1385, 1525, 2195, 2196, 2201, 2202, 2207, 2208</td></tr>
+            <tr><th scope="row">Acceleration — in cm/s → in cm/s<sup>2</sup></th><td>3274</td></tr>
+            <tr><th scope="row">Displacement — in cm/s → in cm</th><td>2668, 2673, 2678</td></tr>
+            <tr><th scope="row">Velocity — in m/s<sup>2</sup> → in m/s</th><td>3082, 3083</td></tr>
+            <tr><th scope="row">Distance — in m/s → in meters</th><td>3204</td></tr>
+            <tr><th scope="row">Velocity — unit added: in cm/s</th><td>2303, 2304, 2305, 2322, 2323, 2324, 2341, 2342, 2343</td></tr>
+            <tr><th scope="row">Distance — unit added: in meters</th><td>1505</td></tr>
+            <tr><th scope="row">Velocity — unit added: in m/s</th><td>3263</td></tr>
+          </tbody>
+        </table>
+        <p>In addition, we normalized minor punctuation and wording (full-width question marks, double <code>??</code>, a missing “in” before a unit, and one missing space). These changes do not alter the meaning of any question.</p>
+        <h2>What you need to do</h2>
+        <ol>
+          <li><a class="link" href="eval/quantiphy_submission_template.csv" download>Download the corrected template</a>.</li>
+          <li>If you have already prepared or submitted a CSV, no re-formatting is needed — the <code>id</code> column and row order are identical. Please only check that your <code>parsed_value</code> for the 32 IDs above is expressed in the corrected unit, and resubmit if you change anything.</li>
+        </ol>
+        <p>We thank the participant who reported this, and apologize for the inconvenience.</p>
+        <p>— The QuantiPhy organizers, <time datetime="2026-09-14">September 14, 2026</time></p>
+      </div>
+    </details>
+    </div>
+    <!-- ============== HERO ============== -->
+    <section class="hero sec--paper" id="top">
+      <div class="wrap">
+        <div class="hero__meta reveal">
+          <span class="badge badge--live"><span class="badge__pulse" aria-hidden="true"></span>Registration open</span>
+          <span class="badge badge--accent">NeurIPS 2026 · Competition Track</span>
+          <a href="https://quantiphy.stanford.edu/" target="_blank" rel="noopener" class="badge badge--link">CVPR 2026 Project<span class="arrow">↗</span></a>
+        </div>
+
+        <h1 class="hero__title reveal">
+          How well can vision&#8211;language models <em>do physics</em>, with numerical accuracy?
+        </h1>
+
+        <div class="hero__intro reveal">
+        <p class="hero__subtitle">
+          The <span class="highlight">QuantiPhy Challenge</span> — a&nbsp;NeurIPS&nbsp;2026 Competition on Quantitative Physical Reasoning in Vision–Language Models.
+        </p>
+
+        <div class="hero__sponsors" aria-label="Sponsors: GenRobot and UST">
+          <div class="hero__sponsor-logos">
+            <a class="hero__sponsor-card hero__sponsor-card--genrobot" href="https://www.genrobot.ai/" target="_blank" rel="noopener noreferrer">
+              <img class="hero__sponsor-genrobot" src="assets/genrobot2.png" alt="GenRobot.AI" width="2161" height="311" />
+            </a>
+            <div class="hero__sponsor-card hero__sponsor-card--ust">
+              <img class="hero__sponsor-ust" src="assets/ust_logo.svg" alt="UST" width="75" height="75" />
+            </div>
+          </div>
+        </div>
+
+        </div>
+        <div class="hero__body reveal">
+          <div class="hero__left">
+            <p class="hero__lede">
+              QuantiPhy asks competitors to build VLMs that estimate sizes, velocities,
+              and accelerations directly from video — across microscopic, macroscopic,
+              and astronomical scales — and quantifies how faithfully their predictions
+              are grounded in what the model actually sees.
+            </p>
+
+            <div class="hero__ctas">
+              <a href="auth/register.html" class="btn">Register your team <span class="arrow" aria-hidden="true">→</span></a>
+              <a href="https://github.com/Paulineli/QuantiPhy" class="btn btn--ghost" target="_blank" rel="noopener">Starter Kit</a>
+              <a href="https://huggingface.co/datasets/PaulineLi/QuantiPhy" class="btn btn--ghost" target="_blank" rel="noopener">Dataset</a>
+            </div>
+
+            <div class="countdown" aria-live="polite">
+              <div class="countdown__label">
+                Registration&nbsp;closes
+                <br/><strong class="countdown__deadline deadline-highlight"><time datetime="2026-10-09T23:59:00-12:00">October&nbsp;9, 2026 · 23:59 AoE</time></strong>
+              </div>
+              <ol class="countdown__cells" id="registration-countdown">
+                <li class="countdown__cell"><span class="n" data-cd="d">–</span><span class="u">Days</span></li>
+                <li class="countdown__cell"><span class="n" data-cd="h">–</span><span class="u">Hrs</span></li>
+                <li class="countdown__cell"><span class="n" data-cd="m">–</span><span class="u">Min</span></li>
+                <li class="countdown__cell"><span class="n" data-cd="s">–</span><span class="u">Sec</span></li>
+              </ol>
+            </div>
+            <div class="countdown" aria-live="polite">
+              <div class="countdown__label">
+                Submission&nbsp;closes
+                <br/><strong class="countdown__deadline deadline-highlight"><time datetime="2026-10-23T23:59:00-12:00">October&nbsp;23, 2026 · 23:59 AoE</time></strong>
+              </div>
+              <ol class="countdown__cells" id="countdown">
+                <li class="countdown__cell"><span class="n" data-cd="d">–</span><span class="u">Days</span></li>
+                <li class="countdown__cell"><span class="n" data-cd="h">–</span><span class="u">Hrs</span></li>
+                <li class="countdown__cell"><span class="n" data-cd="m">–</span><span class="u">Min</span></li>
+                <li class="countdown__cell"><span class="n" data-cd="s">–</span><span class="u">Sec</span></li>
+              </ol>
+            </div>
+          </div>
+
+          <!-- Specimen panel -->
+          <aside class="specimen" aria-label="Reference performance">
+            <div class="specimen__row">
+              <span class="k">Human baseline</span>
+              <span class="bar" style="--rest: 44.4%"></span>
+              <span class="v">55.6</span>
+            </div>
+            <div class="specimen__row">
+              <span class="k">ChatGPT-5.1</span>
+              <span class="bar" style="--rest: 46.9%"></span>
+              <span class="v">53.1</span>
+            </div>
+            <div class="specimen__row">
+              <span class="k">Gemini-2.5 Pro</span>
+              <span class="bar" style="--rest: 50.4%"></span>
+              <span class="v">49.6</span>
+            </div>
+            <div class="specimen__row">
+              <span class="k">Qwen3-VL-32B</span>
+              <span class="bar" style="--rest: 54.0%"></span>
+              <span class="v">46.0</span>
+            </div>
+            <div class="specimen__row">
+              <span class="k">InternVL-3.5-30B</span>
+              <span class="bar" style="--rest: 59.3%"></span>
+              <span class="v">40.7</span>
+            </div>
+            <p class="specimen__footnote">
+              Mean Relative Accuracy (MRA) on the QuantiPhy test split.
+              All frontier VLMs trail the human baseline — and the gap to
+              <em>faithful</em> physical reasoning is wider still.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== OVERVIEW ============== -->
+    <section id="overview" class="sec--tint">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <div class="section-head__num">§ 01 &nbsp;Overview</div>
+          <div>
+            <h2>A benchmark for physics, not plausibility.</h2>
+            <p class="section-head__deck">
+              Plausible-sounding answers are not the same as numerically correct ones.
+              QuantiPhy probes whether a VLM is <em>measuring</em> or merely <em>guessing</em>.
+            </p>
+          </div>
+        </header>
+
+        <div class="overview-grid reveal">
+          <div>
+            <p class="dropcap">
+              Vision–language models are increasingly asked to reason about the physical world —
+              estimating the speed of a falling object, the diameter of a cell, or the
+              acceleration of a galaxy cluster. Yet recent results show that contemporary VLMs
+              rely heavily on <em>memorized world knowledge</em> rather than on the actual
+              video and text presented to them.
+            </p>
+            <p>
+              The QuantiPhy benchmark, introduced at CVPR 2026 and re-released here as a
+              NeurIPS competition, exposes this gap. Across <strong>3,289 video&ndash;question
+              pairs</strong> drawn from simulation, laboratory, and in-the-wild sources, the
+              top frontier model trails the human baseline by more than two points — and
+              collapses entirely under counterfactual prompts.
+            </p>
+            <p>
+              The QuantiPhy Challenge invites the community to close that gap, not only on
+              raw accuracy but on the harder question that this benchmark was built to ask:
+              are model predictions <em>faithful</em> to what the model actually sees?
+            </p>
+          </div>
+
+          <ol class="objectives">
+            <li class="objective">
+              <span class="objective__num">O.01</span>
+              <div>
+                <h4>Improve numerical accuracy on quantitative physics tasks</h4>
+                <p>Push Mean Relative Accuracy on size, velocity, and acceleration estimation toward the human ceiling.</p>
+              </div>
+            </li>
+            <li class="objective">
+              <span class="objective__num">O.02</span>
+              <div>
+                <h4>Reward open, reproducible solutions</h4>
+                <p>A dedicated Open-Weight Track ensures the strongest methods remain reproducible and accessible to the broader community.</p>
+              </div>
+            </li>
+            <li class="objective">
+              <span class="objective__num">O.03</span>
+              <div>
+                <h4>Generalize across scale</h4>
+                <p>Solutions must hold from microscopic to astronomical regimes — the same physical relationships, observed at vastly different magnitudes.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== TRACKS ============== -->
+    <section id="tracks" class="sec--deep">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <div class="section-head__num">§ 02 &nbsp;Tracks</div>
+          <div>
+            <h2>Two tracks, one benchmark.</h2>
+            <p class="section-head__deck">
+              Competitors may enter either or both tracks. Each track has its own
+              leaderboard, evaluation protocol, and awards.
+            </p>
+          </div>
+        </header>
+
+        <div class="tracks reveal">
+          <!-- Track 1 -->
+          <article class="track-card">
+            <div class="track-card__head">
+              <span class="track-card__id">Track A</span>
+              <span class="track-card__chip">MRA · Open</span>
+            </div>
+            <h3>Main Track</h3>
+            <p class="track-card__desc">
+              The headline competition. Any model is permitted — proprietary, open-weight,
+              or hybrid — and the only objective is raw numerical accuracy on the original
+              QuantiPhy test set.
+            </p>
+            <ul class="track-card__meta">
+              <li><span>Metric</span><strong>Mean Relative Accuracy</strong></li>
+              <li><span>Models allowed</span><strong>Any</strong></li>
+              <li><span>Code disclosure</span><strong>Top-3 only</strong></li>
+            </ul>
+          </article>
+
+          <!-- Track 2 -->
+          <article class="track-card">
+            <div class="track-card__head">
+              <span class="track-card__id">Track B</span>
+              <span class="track-card__chip">MRA · Open-weight</span>
+            </div>
+            <h3>Open-Weight Track</h3>
+            <p class="track-card__desc">
+              Same scoring rule as the Main Track, but submissions must be based
+              on publicly available model weights and tools — supporting reproducible,
+              community-accessible research on quantitative physical reasoning.
+            </p>
+            <ul class="track-card__meta">
+              <li><span>Metric</span><strong>Mean Relative Accuracy</strong></li>
+              <li><span>Models allowed</span><strong>Publicly available weights</strong></li>
+              <li><span>Code disclosure</span><strong>All entries</strong></li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== DATASET ============== -->
+    <section id="dataset" class="sec--paper">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <div class="section-head__num">§ 03 &nbsp;Dataset</div>
+          <div>
+            <h2>3,289 questions. Three observation regimes. Three scales.</h2>
+            <p class="section-head__deck">
+              QuantiPhy is grounded in a multi-source video corpus designed to
+              isolate what a model knows from what a model sees.
+            </p>
+          </div>
+        </header>
+
+        <div class="dataset reveal">
+          <div>
+            <ul class="stats">
+              <li class="stat">
+                <span class="v">3,289<sup>★</sup></span>
+                <span class="k">Video–question pairs</span>
+              </li>
+              <li class="stat">
+                <span class="v">568</span>
+                <span class="k">Unique source videos</span>
+              </li>
+              <li class="stat">
+                <span class="v">3</span>
+                <span class="k">Observation regimes</span>
+              </li>
+              <li class="stat">
+                <span class="v">10<sup>±25</sup></span>
+                <span class="k">Decades of physical scale</span>
+              </li>
+            </ul>
+
+            <div class="sources">
+              <div class="source source--sim">
+                <span class="source__mark" aria-hidden="true"></span>
+                <div>
+                  <h4>Simulation (Blender)</h4>
+                  <p>Fully controlled scenes with exact ground-truth annotations for position, velocity, and acceleration — the cleanest signal for diagnostic evaluation.</p>
+                </div>
+              </div>
+              <div class="source source--lab">
+                <span class="source__mark" aria-hidden="true"></span>
+                <div>
+                  <h4>Laboratory</h4>
+                  <p>Multi-camera, calibrated recordings of real-world physical setups — controlled enough for ground truth, real enough to expose perception failure modes.</p>
+                </div>
+              </div>
+              <div class="source source--wild">
+                <span class="source__mark" aria-hidden="true"></span>
+                <div>
+                  <h4>Internet (In-the-Wild)</h4>
+                  <p>Curated real-world videos with expert annotations, including footage from natural phenomena, sports, microscopy, and astronomical observation.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right column: axis figure -->
+          <figure class="axis-figure">
+            <div class="axis">
+              <div class="axis__corner"></div>
+              <div class="axis__col">2D · planar</div>
+              <div class="axis__col">3D · depth</div>
+
+              <div class="axis__row">Static<br/><span style="font-family:inherit;color:var(--ink-faint);text-transform:none;letter-spacing:0;font-size:.7em">static prior</span></div>
+              <div class="axis__cell">
+                <strong>2S</strong>
+                <span>static · 2D</span>
+              </div>
+              <div class="axis__cell">
+                <strong>3S</strong>
+                <span>static · 3D</span>
+              </div>
+
+              <div class="axis__row">Dynamic<br/><span style="font-family:inherit;color:var(--ink-faint);text-transform:none;letter-spacing:0;font-size:.7em">dynamic prior</span></div>
+              <div class="axis__cell">
+                <strong>2D</strong>
+                <span>dynamic · 2D</span>
+              </div>
+              <div class="axis__cell">
+                <strong>3D</strong>
+                <span>dynamic · 3D</span>
+              </div>
+            </div>
+            <p style="margin-top:1rem;font-size:.86rem;color:var(--ink-muted);font-style:italic;">
+              Four diagnostic categories (2S, 2D, 3S, 3D). Across all of them, the target
+              quantities are size, velocity, and acceleration. Final scores are
+              macro-averaged over the four categories.
+            </p>
+          </figure>
+        </div>
+
+        <p style="margin-top:2.5rem;font-family:var(--font-mono);font-size:.84rem;color:var(--ink-muted);">
+          ★ Dataset, validation split, and a CC-licensed starter sample available on
+          <a href="https://huggingface.co/datasets/PaulineLi/QuantiPhy" target="_blank" rel="noopener" class="link">Hugging&nbsp;Face</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============== EVALUATION ============== -->
+    <section id="evaluation" class="sec--tint">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <div class="section-head__num">§ 04 &nbsp;Evaluation</div>
+          <div>
+            <h2>Mean Relative Accuracy.</h2>
+            <p class="section-head__deck">
+              Both tracks share the original QuantiPhy metric — a threshold-averaged
+              measure that rewards approximate correctness rather than exact matches.
+            </p>
+          </div>
+        </header>
+
+        <div class="eval-grid reveal">
+          <div class="eval-formula">
+            <p class="eval-formula__lede">
+              A prediction&nbsp;<i class="mvar">ŷ</i> for ground truth&nbsp;<i class="mvar">y</i>
+              is judged correct at confidence threshold&nbsp;<i class="mvar">θ</i> when:
+            </p>
+
+            <div class="math math--display" role="math" aria-label="Absolute value of y-hat minus y, divided by absolute value of y, is less than one minus theta.">
+              <span class="math__frac">
+                <span class="math__num">
+                  <span class="math__bar">∣</span><i class="mvar">ŷ</i><span class="math__op"> − </span><i class="mvar">y</i><span class="math__bar">∣</span>
+                </span>
+                <span class="math__denom">
+                  <span class="math__bar">∣</span><i class="mvar">y</i><span class="math__bar">∣</span>
+                </span>
+              </span>
+              <span class="math__rel">&lt;</span>
+              <span class="math__rhs">1<span class="math__op"> − </span><i class="mvar">θ</i></span>
+              <span class="math__tag" aria-hidden="true">(1)</span>
+            </div>
+
+            <p class="eval-formula__note">
+              MRA averages the indicator over a set of
+              <span class="math__inline"><i class="mvar">D</i></span>
+              instances and a set of thresholds
+              <span class="math__inline"><i class="mvar">C</i>&nbsp;=&nbsp;{0.10, 0.20, …, 0.90, 0.95}</span>:
+            </p>
+
+            <div class="math math--display" role="math" aria-label="MRA of D equals one over D times C, double sum over i in D and theta in C, of the indicator that the relative error of prediction i is less than one minus theta.">
+              <span class="math__rhs"><span class="math__op-name">MRA</span><span class="math__bracket">(</span><i class="mvar">D</i><span class="math__bracket">)</span></span>
+              <span class="math__rel">=</span>
+              <span class="math__frac">
+                <span class="math__num">1</span>
+                <span class="math__denom"><span class="math__bar">∣</span><i class="mvar">D</i><span class="math__bar">∣</span><span class="math__op">·</span><span class="math__bar">∣</span><i class="mvar">C</i><span class="math__bar">∣</span></span>
+              </span>
+              <span class="math__bigop">
+                <span class="math__bigop-glyph">∑</span>
+                <span class="math__bigop-sub"><i class="mvar">i</i>∈<i class="mvar">D</i></span>
+              </span>
+              <span class="math__bigop">
+                <span class="math__bigop-glyph">∑</span>
+                <span class="math__bigop-sub"><i class="mvar">θ</i>∈<i class="mvar">C</i></span>
+              </span>
+              <span class="math__rhs">
+                𝟙<span class="math__bracket">(</span>
+                <span class="math__frac math__frac--inline">
+                  <span class="math__num"><span class="math__bar">∣</span><i class="mvar">ŷ</i><sub class="msub"><i class="mvar">i</i></sub><span class="math__op"> − </span><i class="mvar">y</i><sub class="msub"><i class="mvar">i</i></sub><span class="math__bar">∣</span></span>
+                  <span class="math__denom"><span class="math__bar">∣</span><i class="mvar">y</i><sub class="msub"><i class="mvar">i</i></sub><span class="math__bar">∣</span></span>
+                </span>
+                <span class="math__op math__op--lt"> &lt; </span>1<span class="math__op"> − </span><i class="mvar">θ</i><span class="math__bracket">)</span>
+              </span>
+              <span class="math__tag" aria-hidden="true">(2)</span>
+            </div>
+
+            <p class="eval-formula__note">
+              The final track score is the macro-average of MRA across the four
+              QuantiPhy categories — <span class="math__inline"><i class="mvar">c</i>&nbsp;∈&nbsp;{2S, 2D, 3S, 3D}</span> —
+              giving equal weight to each prior&times;dimensionality setting:
+            </p>
+
+            <div class="math math--display" role="math" aria-label="Score equals one fourth times the sum over c of MRA of D sub c.">
+              <span class="math__rhs"><span class="math__op-name">Score</span></span>
+              <span class="math__rel">=</span>
+              <span class="math__frac">
+                <span class="math__num">1</span>
+                <span class="math__denom">4</span>
+              </span>
+              <span class="math__bigop">
+                <span class="math__bigop-glyph">∑</span>
+                <span class="math__bigop-sub"><i class="mvar">c</i></span>
+              </span>
+              <span class="math__rhs"><span class="math__op-name">MRA</span><span class="math__bracket">(</span><i class="mvar">D</i><sub class="msub"><i class="mvar">c</i></sub><span class="math__bracket">)</span></span>
+              <span class="math__tag" aria-hidden="true">(3)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== TIMELINE ============== -->
+    <section id="timeline" class="sec--deep">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <div class="section-head__num">§ 05 &nbsp;Timeline</div>
+          <div>
+            <h2>Important dates.</h2>
+            <p class="section-head__deck">
+              All deadlines are 23:59 anywhere-on-Earth (AOE). Subject to
+              ratification by the NeurIPS 2026 competition chairs.
+            </p>
+          </div>
+        </header>
+
+        <ol class="timeline reveal">
+          <li class="timeline__row">
+            <span class="timeline__date">June&nbsp;15–30, 2026</span>
+            <div class="timeline__body">
+              <span class="timeline__phase">Website, platform, and dry run</span>
+              <p class="timeline__desc">Launch the official challenge website, publish rules and documentation, release the validation set with ground-truth answers, test the CSV evaluator, and conduct an internal dry run of the real-time leaderboard.</p>
+            </div>
+          </li>
+          <li class="timeline__row">
+            <span class="timeline__date">Late June 2026</span>
+            <div class="timeline__body">
+              <span class="timeline__phase">Official launch</span>
+              <p class="timeline__desc">Open registration and public submissions. Release the starting kit, baseline scripts, example CSV files, evaluation code for the validation set, and documentation.</p>
+            </div>
+          </li>
+          <li class="timeline__row">
+            <span class="timeline__date">July–September 2026</span>
+            <div class="timeline__body">
+              <span class="timeline__phase">Development phase</span>
+              <p class="timeline__desc">Participants submit CSV predictions to the online leaderboard and receive real-time scores. Organizers maintain the website, answer questions, update FAQs, and monitor submission integrity.</p>
+            </div>
+          </li>
+          <li class="timeline__row timeline__row--deadline">
+            <span class="timeline__date"><strong class="deadline-highlight"><time datetime="2026-10-09T23:59:00-12:00">October&nbsp;9, 2026 · 23:59 AoE</time></strong></span>
+            <div class="timeline__body">
+              <span class="timeline__phase"><strong>Registration deadline</strong></span>
+              <p class="timeline__desc">Register your team and finalize all team details by <strong>23:59 anywhere-on-Earth (AoE)</strong>. After this deadline, no new teams will be allowed, and edits to existing teams will not be permitted.</p>
+            </div>
+          </li>
+          <li class="timeline__row timeline__row--deadline">
+            <span class="timeline__date"><strong class="deadline-highlight"><time datetime="2026-10-23T23:59:00-12:00">October&nbsp;23, 2026 · 23:59 AoE</time></strong></span>
+            <div class="timeline__body">
+              <span class="timeline__phase"><strong>Final submission deadline</strong></span>
+              <p class="timeline__desc">Final CSV predictions must be submitted by <strong>23:59 anywhere-on-Earth (AoE)</strong>. Top teams are then asked to provide code or Docker containers for reproducibility verification.</p>
+            </div>
+          </li>
+          <li class="timeline__row">
+            <span class="timeline__date">Late October 2026</span>
+            <div class="timeline__body">
+              <span class="timeline__phase">Verification and final ranking</span>
+              <p class="timeline__desc">Organizers verify top submissions, run reproducibility checks when applicable, compute final scores and bootstrap confidence intervals, and finalize rankings.</p>
+            </div>
+          </li>
+          <li class="timeline__row">
+            <span class="timeline__date">November 2026</span>
+            <div class="timeline__body">
+              <span class="timeline__phase">Result analysis and workshop preparation</span>
+              <p class="timeline__desc">Prepare the competition report, invite top teams to submit short technical summaries, finalize workshop talks/posters, and publish final leaderboard analysis.</p>
+            </div>
+          </li>
+          <li class="timeline__row">
+            <span class="timeline__date">December 11–12, 2026</span>
+            <div class="timeline__body">
+              <span class="timeline__phase">NeurIPS Competition Track workshop</span>
+              <p class="timeline__desc">Present challenge design, final results, analysis of model performance, and selected participant methods at the in-person NeurIPS Competition Track workshop.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============== RULES & STARTER ============== -->
+    <section id="starter" class="sec--paper">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <div class="section-head__num">§ 06 &nbsp;Participation</div>
+          <div>
+            <h2>How to compete.</h2>
+          </div>
+        </header>
+
+        <!-- Steps -->
+        <div class="reveal">
+          <h3 class="col-eyebrow">Steps</h3>
+          <ol class="rule-list">
+            <li><a href="auth/register.html" class="link">Register your team</a> (up to five members).</li>
+            <li>Review the <a href="https://huggingface.co/datasets/PaulineLi/QuantiPhy" target="_blank" rel="noopener" class="link">QuantiPhy dataset</a> and the <a href="https://github.com/Paulineli/QuantiPhy" target="_blank" rel="noopener" class="link">starter kit</a>.</li>
+            <li>Prepare a single <code>.csv</code> file matching the <a href="eval/quantiphy_submission_template.csv" class="link">reference submission template</a>.</li>
+            <li><a href="auth/login.html" class="link">Sign in</a> and upload your <code>.csv</code> in the submission portal — scored against the hidden test set on upload (up to 3 scored submissions per day).</li>
+          </ol>
+        </div>
+
+        <!-- Rules subsection -->
+        <div class="compete-rules reveal">
+          <h3 class="col-eyebrow">Rules</h3>
+          <ul class="rule-list">
+            <li>Teams of up to <strong>five</strong>. One team per person, per track.</li>
+            <li>Submissions are made through the official evaluation server. The test split is hidden.</li>
+            <li>Track&nbsp;B (Open-Weight): submissions must be based on <strong>publicly available model weights and tools</strong>.</li>
+            <li>Top-3 entries publish a reproducibility package within 14 days of notification.</li>
+            <li>Organizers and direct collaborators are not eligible for prizes.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== PRIZES ============== -->
+    <section id="prizes" class="sec--tint">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <div class="section-head__num">§ 07 &nbsp;Awards</div>
+          <div>
+            <h2>Prizes</h2>
+          </div>
+        </header>
+
+        <div class="prizes-wrap reveal">
+          <div class="prizes">
+            <div class="prize prize--gold">
+              <span class="prize__rank">1st · per track</span>
+              <span class="prize__amount"><sup>$</sup>1,000</span>
+              <p class="prize__detail">Track winners will be invited to a 10-minute oral presentation at the live workshop.</p>
+            </div>
+            <div class="prize">
+              <span class="prize__rank">2nd · per track</span>
+              <span class="prize__amount"><sup>$</sup>500</span>
+              <p class="prize__detail">Track winners will be invited to a 5-minute oral presentation at the live workshop.</p>
+            </div>
+            <div class="prize">
+              <span class="prize__rank">3rd · per track</span>
+              <span class="prize__amount"><sup>$</sup>250</span>
+              <p class="prize__detail">Track winners will be invited to a 5-minute oral presentation at the live workshop.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== ORGANIZERS ============== -->
+    <section id="organizers" class="sec--deep">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <div class="section-head__num">§ 08 &nbsp;Organizers</div>
+          <div>
+            <h2>The QuantiPhy Team</h2>
+          </div>
+        </header>
+
+        <div class="reveal">
+          <section class="org-section">
+            <h3>Core organizers</h3>
+            <div class="org-grid">
+              <article class="org">
+                <a href="https://paulineli.github.io/" target="_blank" rel="noopener" class="org__avatar"><img src="organizers2/puyin.png" alt="Puyin Li" loading="lazy"></a>
+                <a href="https://paulineli.github.io/" target="_blank" rel="noopener" class="org__name">Puyin Li</a>
+                <span class="org__affil">Stanford University</span>
+              </article>
+              <article class="org">
+                <a href="https://ai.stanford.edu/~xtiange/" target="_blank" rel="noopener" class="org__avatar"><img src="organizers2/tiange.jpg?v=2" alt="Tiange Xiang" loading="lazy"></a>
+                <a href="https://ai.stanford.edu/~xtiange/" target="_blank" rel="noopener" class="org__name">Tiange Xiang</a>
+                <span class="org__affil">Stanford University</span>
+              </article>
+              <article class="org">
+                <a href="https://www.gsb.stanford.edu/programs/phd/academic-experience/students/ella-mao" target="_blank" rel="noopener" class="org__avatar"><img src="organizers2/ella.jpg" alt="Ella Mao" loading="lazy"></a>
+                <a href="https://www.gsb.stanford.edu/programs/phd/academic-experience/students/ella-mao" target="_blank" rel="noopener" class="org__name">Ella Mao</a>
+                <span class="org__affil">Stanford University</span>
+              </article>
+              <article class="org">
+                <a href="https://www.linkedin.com/in/shirley-jinshan-wei-611545328" target="_blank" rel="noopener" class="org__avatar"><img src="organizers2/shirley.jpg" alt="Shirley Wei" loading="lazy"></a>
+                <a href="https://www.linkedin.com/in/shirley-jinshan-wei-611545328" target="_blank" rel="noopener" class="org__name">Shirley Wei</a>
+                <span class="org__affil">Stanford University</span>
+              </article>
+              <article class="org">
+                <a href="https://paprikachen.github.io/" target="_blank" rel="noopener" class="org__avatar"><img src="organizers2/xinye.jpg" alt="Xinye Chen" loading="lazy"></a>
+                <a href="https://paprikachen.github.io/" target="_blank" rel="noopener" class="org__name">Paprika (Xinye) Chen</a>
+                <span class="org__affil">Stanford University</span>
+              </article>
+              <article class="org">
+                <a href="https://carlrocks.com/" target="_blank" rel="noopener" class="org__avatar"><img src="organizers2/carl.png" alt="Shikang Liu" loading="lazy"></a>
+                <a href="https://carlrocks.com/" target="_blank" rel="noopener" class="org__name">Shikang Liu</a>
+                <span class="org__affil">Stanford University</span>
+              </article>
+            </div>
+          </section>
+
+          <section class="org-section">
+            <h3>Faculty advisors</h3>
+            <div class="org-grid">
+              <article class="org">
+                <a href="https://profiles.stanford.edu/fei-fei-li" target="_blank" rel="noopener" class="org__avatar"><img src="organizers2/feifei.jpg" alt="Fei-Fei Li" loading="lazy"></a>
+                <a href="https://profiles.stanford.edu/fei-fei-li" target="_blank" rel="noopener" class="org__name">Fei-Fei Li</a>
+                <span class="org__affil">Stanford University</span>
+              </article>
+              <article class="org">
+                <a href="https://stanford.edu/~eadeli/" target="_blank" rel="noopener" class="org__avatar"><img src="organizers2/ehsan.jpg" alt="Ehsan Adeli" loading="lazy"></a>
+                <a href="https://stanford.edu/~eadeli/" target="_blank" rel="noopener" class="org__name">Ehsan Adeli</a>
+                <span class="org__affil">Stanford University</span>
+              </article>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== FAQ ============== -->
+    <section id="faq" class="sec--tint">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <div class="section-head__num">§ 09 &nbsp;FAQ</div>
+          <div>
+            <h2>Frequently asked.</h2>
+            <p class="section-head__deck">
+              Don't see your question? Email <a href="mailto:quantiphybench@gmail.com" class="link">quantiphybench@gmail.com</a>.
+            </p>
+          </div>
+        </header>
+
+        <div class="faq reveal">
+          <details open>
+            <summary>Can I enter both tracks?</summary>
+            <p>Yes. The two tracks share a registration but maintain independent leaderboards. A single submission file template covers both; you opt in to each track per upload.</p>
+          </details>
+          <details>
+            <summary>Does the Open-Weight Track allow proprietary APIs as part of a pipeline?</summary>
+            <p>No. Every model invoked at inference time must be based on publicly available weights and tools at the time of submission.</p>
+          </details>
+          <details>
+            <summary>Will the test ground truth be released after the competition?</summary>
+            <p>No. The numerical ground truth for the test set remains withheld so QuantiPhy can serve as a reliable long-term benchmark beyond NeurIPS. A small validation set with ground-truth labels is provided for prompt development, local evaluation, and sanity checks.</p>
+          </details>
+          <details>
+            <summary>What format are submissions in?</summary>
+            <p>A CSV file containing the numerical prediction for each test instance, in the required output unit. The evaluation server scores submissions against the protected ground truth automatically.</p>
+          </details>
+          <details>
+            <summary>Can I use Main Track submissions to bootstrap an Open-Weight Track submission?</summary>
+            <p>You may, provided the Open-Weight pipeline at inference time uses only publicly available weights and tools. Closed-API outputs used during method development must be disclosed in the technical report.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== CITATION ============== -->
+    <section id="cite" class="sec--deep">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <div class="section-head__num">§ 11 &nbsp;Citation</div>
+          <div>
+            <h2>If you use QuantiPhy, please cite.</h2>
+          </div>
+        </header>
+
+        <div class="citation reveal" role="region" aria-label="BibTeX citation">
+          <button class="citation__copy" id="copy-bib">Copy BibTeX</button>
+<pre>@article{li2025quantiphy,
+  <span class="k">title</span>   = <span class="s">{QuantiPhy: A Quantitative Benchmark Evaluating Physical
+             Reasoning Abilities of Vision-Language Models}</span>,
+  <span class="k">author</span>  = <span class="s">{Li, Puyin and Xiang, Tiange and Mao, Ella and Wei, Shirley
+             and Chen, Xinye and Masood, Adnan and Li, Fei-Fei and Adeli, Ehsan}</span>,
+  <span class="k">journal</span> = <span class="s">{arXiv preprint arXiv:2512.19526}</span>,
+  <span class="k">year</span>    = <span class="v">2025</span>
+}</pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============== FOOTER ============== -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">QuantiPhy<small>NeurIPS 2026 · Competition Track</small></div>
+          <p style="margin-top:1rem;color:var(--ink-muted);max-width:38ch;font-size:.95rem;">
+            Quantitative physical reasoning, evaluated faithfully — for the vision–language
+            modeling community.
+          </p>
+        </div>
+        <div>
+          <h5>Resources</h5>
+          <ul>
+            <li><a href="https://arxiv.org/pdf/2512.19526" target="_blank" rel="noopener">Paper · arXiv</a></li>
+            <li><a href="https://github.com/Paulineli/QuantiPhy" target="_blank" rel="noopener">Code · GitHub</a></li>
+            <li><a href="https://huggingface.co/datasets/PaulineLi/QuantiPhy" target="_blank" rel="noopener">Dataset · HF</a></li>
+            <li><a href="https://huggingface.co/datasets/PaulineLi/QuantiPhy-validation" target="_blank" rel="noopener">Validation split</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Community</h5>
+          <ul>
+            <li><a href="#">Discord · #quantiphy</a></li>
+            <li><a href="#">Mailing list</a></li>
+            <li><a href="https://quantiphy.stanford.edu/" target="_blank" rel="noopener">Original site</a></li>
+            <li><a href="https://neurips.cc" target="_blank" rel="noopener">NeurIPS 2026</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="mailto:quantiphybench@gmail.com">Email organizers</a></li>
+            <li><a href="mailto:quantiphybench@gmail.com">Become a sponsor</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__legal">
+        <span>© 2026 · QuantiPhy Challenge organizers.</span>
+        <span>NeurIPS 2026 · Competition Track</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
