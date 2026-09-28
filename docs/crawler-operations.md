@@ -116,3 +116,8 @@ after the first deployment to populate challenge records. Take a database snapsh
 that changes existing columns (Section 41) — the workflow includes a
 reminder step, but the actual snapshot call is provider-specific and isn't
 wired up here.
+
+`vercel.json` places Vercel Functions in Singapore next to the Neon database
+and disables Vercel's Git-triggered deployment for `main`. If the GitHub
+integration is connected, preview branches can still deploy automatically;
+production deployments continue through the migrate-then-deploy Action.
