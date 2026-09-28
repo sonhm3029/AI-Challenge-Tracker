@@ -17,6 +17,9 @@ jobs:
   migrate:
     runs-on: ubuntu-latest
     environment: production
+    # Skip cleanly (not "failed") until the production secrets below are
+    # configured in repo Settings -> Environments -> production.
+    if: ${{ secrets.DATABASE_URL != '' }}
     env:
       DATABASE_URL: ${{ secrets.DATABASE_URL }}
     steps:
@@ -38,6 +41,7 @@ jobs:
     needs: migrate
     runs-on: ubuntu-latest
     environment: production
+    if: ${{ secrets.VERCEL_TOKEN != '' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
