@@ -6,20 +6,57 @@ name: Deploy
 #                    repo; this workflow does not duplicate that).
 #   merge to main -> run migrations against production, then deploy.
 #
-# Requires these repository secrets to be configured before this workflow
-# can actually deploy (see docs/crawler-operations.md "Deployment" section):
+# Set the PRODUCTION_ENABLED repository variable to true after configuring
+# these production secrets (see docs/crawler-operations.md "Deployment"):
 #   VERCEL_TOKEN, VERCEL_ORG_ID, VERCEL_PROJECT_ID, DATABASE_URL (production)
 on:
   push:
     branches: [main]
+  workflow_dispatch: {}
 
 jobs:
+  production-ready:
+    runs-on: ubuntu-latest
+    outputs:
+      enabled: ${{ steps.check.outputs.enabled }}
+    steps:
+      - id: check
+        name: Check whether production is enabled
+        env:
+          PRODUCTION_ENABLED: ${{ vars.PRODUCTION_ENABLED }}
+        run: |
+          if [[ "$PRODUCTION_ENABLED" == "true" ]]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "### Production deploy skipped" >> "$GITHUB_STEP_SUMMARY"
+            echo "Set the PRODUCTION_ENABLED repository variable to true after configuring the production secrets listed in docs/crawler-operations.md." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
   migrate:
+    needs: production-ready
+    if: needs.production-ready.outputs.enabled == 'true'
     runs-on: ubuntu-latest
     environment: production
     env:
       DATABASE_URL: ${{ secrets.DATABASE_URL }}
     steps:
+      - name: Check production secrets before migration
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: |
+          missing=()
+          for key in DATABASE_URL VERCEL_TOKEN VERCEL_ORG_ID VERCEL_PROJECT_ID; do
+            if [[ -z "${!key}" ]]; then
+              missing+=("$key")
+            fi
+          done
+          if (( ${#missing[@]} )); then
+            printf 'Missing production secrets: %s\n' "${missing[*]}" | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:

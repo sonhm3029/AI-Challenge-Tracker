@@ -104,8 +104,13 @@ Recommended (Section 62): Vercel (frontend) + a managed Postgres provider
 (Supabase or equivalent) + GitHub Actions (crawler + CI). See
 `.github/workflows/deploy.yml` for the migrate-then-deploy pipeline —
 it needs `VERCEL_TOKEN`, `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID`, and a
-production `DATABASE_URL` configured as repository secrets before it can
-actually deploy anything. Take a database snapshot before any migration
+production `DATABASE_URL` configured as repository or `production` environment
+secrets. Configure the same production database and app secrets in Vercel.
+Then set the repository variable `PRODUCTION_ENABLED` to `true` under
+Settings → Secrets and variables → Actions → Variables. Until then, deploy
+and daily crawl jobs are skipped; CI still runs on every push. Once enabled,
+run Deploy manually from the Actions tab or push to `main`. The workflow checks
+all required secrets before touching the database. Take a database snapshot before any migration
 that changes existing columns (Section 41) — the workflow includes a
 reminder step, but the actual snapshot call is provider-specific and isn't
 wired up here.
