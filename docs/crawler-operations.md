@@ -110,7 +110,9 @@ Then set the repository variable `PRODUCTION_ENABLED` to `true` under
 Settings → Secrets and variables → Actions → Variables. Until then, deploy
 and daily crawl jobs are skipped; CI still runs on every push. Once enabled,
 run Deploy manually from the Actions tab or push to `main`. The workflow checks
-all required secrets before touching the database. Take a database snapshot before any migration
+all required secrets before touching the database, then runs migrations and the
+idempotent taxonomy/source seed before deploying. Run Daily crawl manually once
+after the first deployment to populate challenge records. Take a database snapshot before any migration
 that changes existing columns (Section 41) — the workflow includes a
 reminder step, but the actual snapshot call is provider-specific and isn't
 wired up here.

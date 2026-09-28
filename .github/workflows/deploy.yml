@@ -70,6 +70,8 @@ jobs:
         run: echo "Confirm a database backup/snapshot was taken before this migration runs (Section 41)."
       - name: Run database migrations (Section 42 — migrations only, never ad-hoc schema changes)
         run: npm run db:migrate
+      - name: Seed taxonomy and source registry
+        run: npm run db:seed
 
   deploy:
     needs: migrate
